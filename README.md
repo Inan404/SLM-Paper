@@ -1,4 +1,4 @@
-SLM Paper - Initial Sketch
+#SLM Paper - Initial Sketch
 
 ## Thoughts
 
