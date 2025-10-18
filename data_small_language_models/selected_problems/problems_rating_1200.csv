@@ -1,0 +1,748 @@
+url,tags,type,rating,contest_id,index,statement
+https://codeforces.com/problemset/problem/492/B,"['binary search', 'implementation', 'math', 'sortings']",PROGRAMMING,1200,492,B,"Description:
+
+
+Vanya walks late at night along a straight street of length l , lit by n lanterns. Consider the coordinate system with the beginning of the street corresponding to the point 0 , and its end corresponding to the point l . Then the i -th lantern is at the point a i . The lantern lights all points of the street that are at the distance of at most d from it, where d is some positive number, common for all lanterns.
+ Vanya wonders: what is the minimum light radius d should the lanterns have to light the whole street?
+
+Input
+ The first line contains two integers n , l ( 1 ≤ n ≤ 1000 , 1 ≤ l ≤ 10 9 ) — the number of lanterns and the length of the street respectively.
+ The next line contains n integers a i ( 0 ≤ a i ≤ l ). Multiple lanterns can be located at the same point. The lanterns may be located at the ends of the street.
+
+Output
+ Print the minimum light radius d , needed to light the whole street. The answer will be considered correct if its absolute or relative error doesn't exceed 10 - 9 .
+
+Examples
+Input
+7 15
+
+15 5 3 7 9 14 0
+Output
+2.5000000000
+Input
+2 5
+
+2 5
+Output
+2.0000000000
+
+Note
+ Consider the second sample. At d = 2 the first lantern will light the segment [0, 4] of the street, and the second lantern will light segment [3, 5] . Thus, the whole street will be lit."
+https://codeforces.com/problemset/problem/466/A,['implementation'],PROGRAMMING,1200,466,A,"Description:
+
+
+Ann has recently started commuting by subway. We know that a one ride subway ticket costs a rubles. Besides, Ann found out that she can buy a special ticket for m rides (she can buy it several times). It costs b rubles. Ann did the math; she will need to use subway n times. Help Ann, tell her what is the minimum sum of money she will have to spend to make n rides?
+
+Input
+ The single line contains four space-separated integers n , m , a , b ( 1 ≤ n , m , a , b ≤ 1000 ) — the number of rides Ann has planned, the number of rides covered by the m ride ticket, the price of a one ride ticket and the price of an m ride ticket.
+
+Output
+ Print a single integer — the minimum sum in rubles that Ann will need to spend.
+
+Examples
+Input
+6 2 1 2
+Output
+6
+Input
+5 2 2 3
+Output
+8
+
+Note
+ In the first sample one of the optimal solutions is: each time buy a one ride ticket. There are other optimal solutions. For example, buy three m ride tickets."
+https://codeforces.com/problemset/problem/1352/C,"['binary search', 'math']",PROGRAMMING,1200,1352,C,"Description:
+
+
+You are given two positive integers  n and  k . Print the  k -th positive integer that is not divisible by  n .
+ For example, if  n = 3 , and  k = 7 , then all numbers that are not divisible by  3 are:  1 , 2 , 4 , 5 , 7 , 8 , 10 , 11 , 13 … . The  7 -th number among them is  10 .
+
+Input
+ The first line contains an integer  t (  1 ≤ t ≤ 1000 ) — the number of test cases in the input. Next,  t test cases are given, one per line.
+ Each test case is two positive integers  n (  2 ≤ n ≤ 10 9 ) and  k (  1 ≤ k ≤ 10 9 ).
+
+Output
+ For each test case print the  k -th positive integer that is not divisible by  n .
+
+Example
+Input
+6
+3 7
+4 12
+2 1000000000
+7 97
+1000000000 1000000000
+2 1
+Output
+10
+15
+1999999999
+113
+1000000001
+1"
+https://codeforces.com/problemset/problem/514/A,"['greedy', 'implementation']",PROGRAMMING,1200,514,A,"Description:
+
+
+Luke Skywalker gave Chewbacca an integer number x . Chewbacca isn't good at numbers but he loves inverting digits in them. Inverting digit t means replacing it with digit 9 - t .
+ Help Chewbacca to transform the initial number x to the minimum possible positive number by inverting some (possibly, zero) digits. The decimal representation of the final number shouldn't start with a zero.
+
+Input
+ The first line contains a single integer x  (1 ≤ x ≤ 10 18 ) — the number that Luke Skywalker gave to Chewbacca.
+
+Output
+ Print the minimum possible positive number that Chewbacca can obtain after inverting some digits. The number shouldn't contain leading zeroes.
+
+Examples
+Input
+27
+Output
+22
+Input
+4545
+Output
+4444"
+https://codeforces.com/problemset/problem/474/B,"['binary search', 'implementation']",PROGRAMMING,1200,474,B,"Description:
+
+
+It is lunch time for Mole. His friend, Marmot, prepared him a nice game for lunch.
+ Marmot brought Mole n ordered piles of worms such that i -th pile contains a i worms. He labeled all these worms with consecutive integers: worms in first pile are labeled with numbers 1 to a 1 , worms in second pile are labeled with numbers a 1 + 1 to a 1 + a 2 and so on. See the example for a better understanding.
+ Mole can't eat all the worms (Marmot brought a lot) and, as we all know, Mole is blind, so Marmot tells him the labels of the best juicy worms. Marmot will only give Mole a worm if Mole says correctly in which pile this worm is contained.
+ Poor Mole asks for your help. For all juicy worms said by Marmot, tell Mole the correct answers.
+
+Input
+ The first line contains a single integer n ( 1 ≤ n ≤ 10 5 ), the number of piles.
+ The second line contains n integers a 1 , a 2 , ..., a n ( 1 ≤ a i ≤ 10 3 , a 1 + a 2 + ... + a n ≤ 10 6 ), where a i is the number of worms in the i -th pile.
+ The third line contains single integer m ( 1 ≤ m ≤ 10 5 ), the number of juicy worms said by Marmot.
+ The fourth line contains m integers q 1 , q 2 , ..., q m ( 1 ≤ q i ≤ a 1 + a 2 + ... + a n ), the labels of the juicy worms.
+
+Output
+ Print m lines to the standard output. The i -th line should contain an integer, representing the number of the pile where the worm labeled with the number q i is.
+
+Examples
+Input
+5
+
+2 7 3 4 9
+
+3
+
+1 25 11
+Output
+1
+
+5
+
+3
+
+Note
+ For the sample input:
+ The worms with labels from [ 1 , 2 ] are in the first pile. The worms with labels from [ 3 , 9 ] are in the second pile. The worms with labels from [ 10 , 12 ] are in the third pile. The worms with labels from [ 13 , 16 ] are in the fourth pile. The worms with labels from [ 17 , 25 ] are in the fifth pile."
+https://codeforces.com/problemset/problem/489/B,"['dfs and similar', 'dp', 'graph matchings', 'greedy', 'sortings', 'two pointers']",PROGRAMMING,1200,489,B,"Description:
+
+
+The Berland State University is hosting a ballroom dance in celebration of its 100500-th anniversary! n boys and m girls are already busy rehearsing waltz, minuet, polonaise and quadrille moves.
+ We know that several boy&girl pairs are going to be invited to the ball. However, the partners' dancing skill in each pair must differ by at most one.
+ For each boy, we know his dancing skills. Similarly, for each girl we know her dancing skills. Write a code that can determine the largest possible number of pairs that can be formed from n boys and m girls.
+
+Input
+ The first line contains an integer n ( 1 ≤ n ≤ 100 ) — the number of boys. The second line contains sequence a 1 , a 2 , ..., a n ( 1 ≤ a i ≤ 100 ), where a i is the i -th boy's dancing skill.
+ Similarly, the third line contains an integer m ( 1 ≤ m ≤ 100 ) — the number of girls. The fourth line contains sequence b 1 , b 2 , ..., b m ( 1 ≤ b j ≤ 100 ), where b j is the j -th girl's dancing skill.
+
+Output
+ Print a single number — the required maximum possible number of pairs.
+
+Examples
+Input
+4
+
+1 4 6 2
+
+5
+
+5 1 5 7 9
+Output
+3
+Input
+4
+
+1 2 3 4
+
+4
+
+10 11 12 13
+Output
+0
+Input
+5
+
+1 1 1 1 1
+
+3
+
+1 2 3
+Output
+2"
+https://codeforces.com/problemset/problem/1520/D,"['data structures', 'hashing', 'math']",PROGRAMMING,1200,1520,D,"Description:
+
+
+You are given an array  a of  n integers. Count the number of pairs of indices  ( i , j ) such that  i < j and  a j − a i = j − i .
+
+Input
+ The first line contains one integer  t (  1 ≤ t ≤ 10 4 ). Then  t test cases follow.
+ The first line of each test case contains one integer  n (  1 ≤ n ≤ 2 ⋅ 10 5 ).
+ The second line of each test case contains  n integers  a 1 , a 2 , … , a n (  1 ≤ a i ≤ n ) — array  a .
+ It is guaranteed that the sum of  n over all test cases does not exceed  2 ⋅ 10 5 .
+
+Output
+ For each test case output the number of pairs of indices  ( i , j ) such that  i < j and  a j − a i = j − i .
+
+Example
+Input
+4
+6
+3 5 1 4 6 6
+3
+1 2 3
+4
+1 3 3 4
+6
+1 6 3 4 5 6
+Output
+1
+3
+3
+10"
+https://codeforces.com/problemset/problem/327/A,"['brute force', 'dp', 'implementation']",PROGRAMMING,1200,327,A,"Description:
+
+
+Iahub got bored, so he invented a game to be played on paper.
+ He writes n integers a 1 , a 2 , ..., a n . Each of those integers can be either 0 or 1. He's allowed to do exactly one move: he chooses two indices i and j ( 1 ≤ i ≤ j ≤ n ) and flips all values a k for which their positions are in range [ i , j ] (that is i ≤ k ≤ j ). Flip the value of x means to apply operation x = 1 - x .
+ The goal of the game is that after exactly one move to obtain the maximum number of ones. Write a program to solve the little game of Iahub.
+
+Input
+ The first line of the input contains an integer n ( 1 ≤ n ≤ 100 ). In the second line of the input there are n integers: a 1 , a 2 , ..., a n . It is guaranteed that each of those n values is either 0 or 1.
+
+Output
+ Print an integer — the maximal number of 1s that can be obtained after exactly one move.
+
+Examples
+Input
+5
+
+1 0 0 1 0
+Output
+4
+Input
+4
+
+1 0 0 1
+Output
+4
+
+Note
+ In the first case, flip the segment from 2 to 5 ( i = 2, j = 5) . That flip changes the sequence, it becomes: [1 1 1 0 1]. So, it contains four ones. There is no way to make the whole sequence equal to [1 1 1 1 1].
+ In the second case, flipping only the second and the third element ( i = 2, j = 3) will turn all numbers into 1."
+https://codeforces.com/problemset/problem/433/B,"['dp', 'implementation', 'sortings']",PROGRAMMING,1200,433,B,"Description:
+
+
+Kuriyama Mirai has killed many monsters and got many (namely n ) stones. She numbers the stones from 1 to n . The cost of the i -th stone is v i . Kuriyama Mirai wants to know something about these stones so she will ask you two kinds of questions:
+ She will tell you two numbers, l and r (1 ≤ l ≤ r ≤ n ) , and you should tell her  . Let u i be the cost of the i -th cheapest stone (the cost that will be on the i -th place if we arrange all the stone costs in non-decreasing order). This time she will tell you two numbers, l and r (1 ≤ l ≤ r ≤ n ) , and you should tell her  .
+ For every question you should give the correct answer, or Kuriyama Mirai will say ""fuyukai desu"" and then become unhappy.
+
+Input
+ The first line contains an integer n (1 ≤ n ≤ 10 5 ) . The second line contains n integers: v 1 , v 2 , ..., v n (1 ≤ v i ≤ 10 9 ) — costs of the stones.
+ The third line contains an integer m (1 ≤ m ≤ 10 5 ) — the number of Kuriyama Mirai's questions. Then follow m lines, each line contains three integers type , l and r (1 ≤ l ≤ r ≤ n ; 1 ≤ type ≤ 2) , describing a question. If type equal to 1 , then you should output the answer for the first question, else you should output the answer for the second one.
+
+Output
+ Print m lines. Each line must contain an integer — the answer to Kuriyama Mirai's question. Print the answers to the questions in the order of input.
+
+Examples
+Input
+6
+
+6 4 2 7 2 7
+
+3
+
+2 3 6
+
+1 3 4
+
+1 1 6
+Output
+24
+
+9
+
+28
+Input
+4
+
+5 5 2 3
+
+10
+
+1 2 4
+
+2 1 4
+
+1 1 1
+
+2 1 4
+
+2 1 2
+
+1 1 1
+
+1 3 3
+
+1 1 3
+
+1 4 4
+
+1 2 2
+Output
+10
+
+15
+
+5
+
+15
+
+5
+
+5
+
+2
+
+12
+
+3
+
+5
+
+Note
+ Please note that the answers to the questions may overflow 32-bit integer type."
+https://codeforces.com/problemset/problem/1343/C,"['dp', 'greedy', 'two pointers']",PROGRAMMING,1200,1343,C,"Description:
+
+
+Recall that the sequence  b is a a subsequence of the sequence  a if  b can be derived from  a by removing zero or more elements without changing the order of the remaining elements. For example, if  a = [ 1 , 2 , 1 , 3 , 1 , 2 , 1 ] , then possible subsequences are:  [ 1 , 1 , 1 , 1 ] ,  [ 3 ] and  [ 1 , 2 , 1 , 3 , 1 , 2 , 1 ] , but not  [ 3 , 2 , 3 ] and  [ 1 , 1 , 1 , 1 , 2 ] .
+ You are given a sequence  a consisting of  n positive and negative elements (there is no zeros in the sequence).
+ Your task is to choose maximum by size (length) alternating subsequence of the given sequence (i.e. the sign of each next element is the opposite from the sign of the current element, like positive-negative-positive and so on or negative-positive-negative and so on). Among all such subsequences, you have to choose one which has the maximum sum of elements.
+ In other words, if the maximum length of alternating subsequence is  k then your task is to find the maximum sum of elements of some alternating subsequence of length  k .
+ You have to answer  t independent test cases.
+
+Input
+ The first line of the input contains one integer  t (  1 ≤ t ≤ 10 4 ) — the number of test cases. Then  t test cases follow.
+ The first line of the test case contains one integer  n (  1 ≤ n ≤ 2 ⋅ 10 5 ) — the number of elements in  a . The second line of the test case contains  n integers  a 1 , a 2 , … , a n (  − 10 9 ≤ a i ≤ 10 9 , a i ≠ 0 ), where  a i is the  i -th element of  a .
+ It is guaranteed that the sum of  n over all test cases does not exceed  2 ⋅ 10 5 (  ∑ n ≤ 2 ⋅ 10 5 ).
+
+Output
+ For each test case, print the answer — the maximum sum of the maximum by size (length) alternating subsequence of  a .
+
+Example
+Input
+4
+5
+1 2 3 -1 -2
+4
+-1 -2 -1 -3
+10
+-2 8 3 8 -4 -15 5 -2 -3 1
+6
+1 -1000000000 1 -1000000000 1 -1000000000
+Output
+2
+-1
+6
+-2999999997
+
+Note
+ In the first test case of the example, one of the possible answers is  [ 1 , 2 , 3 _ , − 1 _ , − 2 ] .
+ In the second test case of the example, one of the possible answers is  [ − 1 , − 2 , − 1 _ , − 3 ] .
+ In the third test case of the example, one of the possible answers is  [ − 2 _ , 8 , 3 , 8 _ , − 4 _ , − 15 , 5 _ , − 2 _ , − 3 , 1 _ ] .
+ In the fourth test case of the example, one of the possible answers is  [ 1 _ , − 1000000000 _ , 1 _ , − 1000000000 _ , 1 _ , − 1000000000 _ ] ."
+https://codeforces.com/problemset/problem/1352/B,"['constructive algorithms', 'math']",PROGRAMMING,1200,1352,B,"Description:
+
+
+You are given two positive integers  n (  1 ≤ n ≤ 10 9 ) and  k (  1 ≤ k ≤ 100 ). Represent the number  n as the sum of  k positive integers of the same parity (have the same remainder when divided by  2 ).
+ In other words, find  a 1 , a 2 , … , a k such that all  a i > 0 ,  n = a 1 + a 2 + … + a k and either all  a i are even or all  a i are odd at the same time.
+ If such a representation does not exist, then report it.
+
+Input
+ The first line contains an integer  t (  1 ≤ t ≤ 1000 ) — the number of test cases in the input. Next,  t test cases are given, one per line.
+ Each test case is two positive integers  n (  1 ≤ n ≤ 10 9 ) and  k (  1 ≤ k ≤ 100 ).
+
+Output
+ For each test case print:
+ YES and the required values  a i , if the answer exists (if there are several answers, print any of them); NO if the answer does not exist.
+ The letters in the words YES and NO can be printed in any case.
+
+Example
+Input
+8
+10 3
+100 4
+8 7
+97 2
+8 8
+3 10
+5 3
+1000000000 9
+Output
+YES
+4 2 4
+YES
+55 5 5 35
+NO
+NO
+YES
+1 1 1 1 1 1 1 1
+NO
+YES
+3 1 1
+YES
+111111110 111111110 111111110 111111110 111111110 111111110 111111110 111111110 111111120"
+https://codeforces.com/problemset/problem/1363/A,"['brute force', 'implementation', 'math']",PROGRAMMING,1200,1363,A,"Description:
+
+
+Shubham has an array  a of size  n , and wants to select exactly  x elements from it, such that their sum is odd. These elements do not have to be consecutive. The elements of the array are not guaranteed to be distinct.
+ Tell him whether he can do so.
+
+Input
+ The first line of the input contains a single integer  t   ( 1 ≤ t ≤ 100 ) — the number of test cases. The description of the test cases follows.
+ The first line of each test case contains two integers  n and  x   ( 1 ≤ x ≤ n ≤ 1000 ) — the length of the array and the number of elements you need to choose.
+ The next line of each test case contains  n integers  a 1 , a 2 , … , a n   ( 1 ≤ a i ≤ 1000 ) — elements of the array.
+
+Output
+ For each test case, print "" Yes "" or "" No "" depending on whether it is possible to choose  x elements such that their sum is odd.
+ You may print every letter in any case you want.
+
+Example
+Input
+5
+1 1
+999
+1 1
+1000
+2 1
+51 50
+2 2
+51 50
+3 3
+101 102 103
+Output
+Yes
+No
+Yes
+Yes
+No
+
+Note
+ For  1 st case: We must select element  999 , and the sum is odd.
+ For  2 nd case: We must select element  1000 , so overall sum is not odd.
+ For  3 rd case: We can select element  51 .
+ For  4 th case: We must select both elements  50 and  51 — so overall sum is odd.
+ For  5 th case: We must select all elements  — but overall sum is not odd."
+https://codeforces.com/problemset/problem/977/C,['sortings'],PROGRAMMING,1200,977,C,"Description:
+
+
+You are given a sequence of integers of length  n and integer number  k . You should print any integer number  x in the range of  [ 1 ; 10 9 ] (i.e.  1 ≤ x ≤ 10 9 ) such that exactly  k elements of given sequence are less than or equal to  x .
+ Note that the sequence can contain equal elements.
+ If there is no such  x , print "" -1 "" (without quotes).
+
+Input
+ The first line of the input contains integer numbers  n and  k (  1 ≤ n ≤ 2 ⋅ 10 5 ,  0 ≤ k ≤ n ). The second line of the input contains  n integer numbers  a 1 , a 2 , … , a n (  1 ≤ a i ≤ 10 9 ) — the sequence itself.
+
+Output
+ Print any integer number  x from range  [ 1 ; 10 9 ] such that exactly  k elements of given sequence is less or equal to  x .
+ If there is no such  x , print "" -1 "" (without quotes).
+
+Examples
+Input
+7 4
+
+3 7 5 1 10 3 20
+Output
+6
+Input
+7 2
+
+3 7 5 1 10 3 20
+Output
+-1
+
+Note
+ In the first example  5 is also a valid answer because the elements with indices  [ 1 , 3 , 4 , 6 ] is less than or equal to  5 and obviously less than or equal to  6 .
+ In the second example you cannot choose any number that only  2 elements of the given sequence will be less than or equal to this number because  3 elements of the given sequence will be also less than or equal to this number."
+https://codeforces.com/problemset/problem/459/A,['implementation'],PROGRAMMING,1200,459,A,"Description:
+
+
+Pashmak has fallen in love with an attractive girl called Parmida since one year ago...
+ Today, Pashmak set up a meeting with his partner in a romantic garden. Unfortunately, Pashmak has forgotten where the garden is. But he remembers that the garden looks like a square with sides parallel to the coordinate axes. He also remembers that there is exactly one tree on each vertex of the square. Now, Pashmak knows the position of only two of the trees. Help him to find the position of two remaining ones.
+
+Input
+ The first line contains four space-separated x 1 , y 1 , x 2 , y 2  ( - 100 ≤ x 1 , y 1 , x 2 , y 2 ≤ 100) integers, where x 1 and y 1 are coordinates of the first tree and x 2 and y 2 are coordinates of the second tree. It's guaranteed that the given points are distinct.
+
+Output
+ If there is no solution to the problem, print -1 . Otherwise print four space-separated integers x 3 , y 3 , x 4 , y 4 that correspond to the coordinates of the two other trees. If there are several solutions you can output any of them.
+ Note that x 3 , y 3 , x 4 , y 4 must be in the range ( - 1000 ≤ x 3 , y 3 , x 4 , y 4 ≤ 1000) .
+
+Examples
+Input
+0 0 0 1
+Output
+1 0 1 1
+Input
+0 0 1 1
+Output
+0 1 1 0
+Input
+0 0 1 2
+Output
+-1"
+https://codeforces.com/problemset/problem/1354/B,"['binary search', 'dp', 'implementation', 'two pointers']",PROGRAMMING,1200,1354,B,"Description:
+
+
+You are given a string  s such that each its character is either 1 , 2 , or 3 . You have to choose the shortest contiguous substring of  s such that it contains each of these three characters at least once.
+ A contiguous substring of string  s is a string that can be obtained from  s by removing some (possibly zero) characters from the beginning of  s and some (possibly zero) characters from the end of  s .
+
+Input
+ The first line contains one integer  t (  1 ≤ t ≤ 20000 ) — the number of test cases.
+ Each test case consists of one line containing the string  s (  1 ≤ | s | ≤ 200000 ). It is guaranteed that each character of  s is either 1 , 2 , or 3 .
+ The sum of lengths of all strings in all test cases does not exceed  200000 .
+
+Output
+ For each test case, print one integer — the length of the shortest contiguous substring of  s containing all three types of characters at least once. If there is no such substring, print  0 instead.
+
+Example
+Input
+7
+123
+12222133333332
+112233
+332211
+12121212
+333333
+31121
+Output
+3
+3
+4
+4
+0
+0
+4
+
+Note
+ Consider the example test:
+ In the first test case, the substring 123 can be used.
+ In the second test case, the substring 213 can be used.
+ In the third test case, the substring 1223 can be used.
+ In the fourth test case, the substring 3221 can be used.
+ In the fifth test case, there is no character 3 in  s .
+ In the sixth test case, there is no character 1 in  s .
+ In the seventh test case, the substring 3112 can be used."
+https://codeforces.com/problemset/problem/1328/C,"['greedy', 'implementation']",PROGRAMMING,1200,1328,C,"Description:
+
+
+A number is ternary if it contains only digits  0 ,  1 and  2 . For example, the following numbers are ternary:  1022 ,  11 ,  21 ,  2002 .
+ You are given a long ternary number  x . The first (leftmost) digit of  x is guaranteed to be  2 , the other digits of  x can be  0 ,  1 or  2 .
+ Let's define the ternary XOR operation  ⊙ of two ternary numbers  a and  b (both of length  n ) as a number  c = a ⊙ b of length  n , where  c i = ( a i + b i ) % 3 (where  % is modulo operation). In other words, add the corresponding digits and take the remainders of the sums when divided by  3 . For example,  10222 ⊙ 11021 = 21210 .
+ Your task is to find such ternary numbers  a and  b both of length  n and both without leading zeros that  a ⊙ b = x and  m a x ( a , b ) is the minimum possible.
+ You have to answer  t independent test cases.
+
+Input
+ The first line of the input contains one integer  t (  1 ≤ t ≤ 10 4 ) — the number of test cases. Then  t test cases follow. The first line of the test case contains one integer  n (  1 ≤ n ≤ 5 ⋅ 10 4 ) — the length of  x . The second line of the test case contains ternary number  x consisting of  n digits  0 , 1 or  2 . It is guaranteed that the first digit of  x is  2 . It is guaranteed that the sum of  n over all test cases does not exceed  5 ⋅ 10 4 (  ∑ n ≤ 5 ⋅ 10 4 ).
+
+Output
+ For each test case, print the answer — two ternary integers  a and  b both of length  n and both without leading zeros such that  a ⊙ b = x and  m a x ( a , b ) is the minimum possible. If there are several answers, you can print any.
+
+Example
+Input
+4
+5
+22222
+5
+21211
+1
+2
+9
+220222021
+Output
+11111
+11111
+11000
+10211
+1
+1
+110111011
+110111010"
+https://codeforces.com/problemset/problem/445/A,"['dfs and similar', 'implementation']",PROGRAMMING,1200,445,A,"Description:
+
+
+DZY loves chessboard, and he enjoys playing with it.
+ He has a chessboard of n rows and m columns. Some cells of the chessboard are bad, others are good. For every good cell, DZY wants to put a chessman on it. Each chessman is either white or black. After putting all chessmen, DZY wants that no two chessmen with the same color are on two adjacent cells. Two cells are adjacent if and only if they share a common edge.
+ You task is to find any suitable placement of chessmen on the given chessboard.
+
+Input
+ The first line contains two space-separated integers n and m  (1 ≤ n , m ≤ 100) .
+ Each of the next n lines contains a string of m characters: the j -th character of the i -th string is either "" . "" or "" - "". A "" . "" means that the corresponding cell (in the i -th row and the j -th column) is good, while a "" - "" means it is bad.
+
+Output
+ Output must contain n lines, each line must contain a string of m characters. The j -th character of the i -th string should be either "" W "", "" B "" or "" - "". Character "" W "" means the chessman on the cell is white, "" B "" means it is black, "" - "" means the cell is a bad cell.
+ If multiple answers exist, print any of them. It is guaranteed that at least one answer exists.
+
+Examples
+Input
+1 1
+
+.
+Output
+B
+Input
+2 2
+
+..
+
+..
+Output
+BW
+
+WB
+Input
+3 3
+
+.-.
+
+---
+
+--.
+Output
+B-B
+
+---
+
+--B
+
+Note
+ In the first sample, DZY puts a single black chessman. Of course putting a white one is also OK.
+ In the second sample, all 4 cells are good. No two same chessmen share an edge in the sample output.
+ In the third sample, no good cells are adjacent. So you can just put 3 chessmen, no matter what their colors are."
+https://codeforces.com/problemset/problem/1097/B,"['bitmasks', 'brute force', 'dp']",PROGRAMMING,1200,1097,B,"Description:
+
+
+Petr has just bought a new car. He's just arrived at the most known Petersburg's petrol station to refuel it when he suddenly discovered that the petrol tank is secured with a combination lock! The lock has a scale of  360 degrees and a pointer which initially points at zero:
+ 
+ Petr called his car dealer, who instructed him to rotate the lock's wheel exactly  n times. The  i -th rotation should be  a i degrees, either clockwise or counterclockwise, and after all  n rotations the pointer should again point at zero.
+ This confused Petr a little bit as he isn't sure which rotations should be done clockwise and which should be done counterclockwise. As there are many possible ways of rotating the lock, help him and find out whether there exists at least one, such that after all  n rotations the pointer will point at zero again.
+
+Input
+ The first line contains one integer  n (  1 ≤ n ≤ 15 ) — the number of rotations.
+ Each of the following  n lines contains one integer  a i (  1 ≤ a i ≤ 180 ) — the angle of the  i -th rotation in degrees.
+
+Output
+ If it is possible to do all the rotations so that the pointer will point at zero after all of them are performed, print a single word "" YES "". Otherwise, print "" NO "". Petr will probably buy a new car in this case.
+ You can print each letter in any case (upper or lower).
+
+Examples
+Input
+3
+10
+20
+30
+Output
+YES
+Input
+3
+10
+10
+10
+Output
+NO
+Input
+3
+120
+120
+120
+Output
+YES
+
+Note
+ In the first example, we can achieve our goal by applying the first and the second rotation clockwise, and performing the third rotation counterclockwise.
+ In the second example, it's impossible to perform the rotations in order to make the pointer point at zero in the end.
+ In the third example, Petr can do all three rotations clockwise. In this case, the whole wheel will be rotated by  360 degrees clockwise and the pointer will point at zero again."
+https://codeforces.com/problemset/problem/1541/B,"['brute force', 'implementation', 'math', 'number theory']",PROGRAMMING,1200,1541,B,"Description:
+
+
+You are given an array  a 1 , a 2 , … , a n consisting of  n  distinct integers. Count the number of pairs of indices  ( i , j ) such that  i < j and  a i ⋅ a j = i + j .
+
+Input
+ The first line contains one integer  t (  1 ≤ t ≤ 10 4 ) — the number of test cases. Then  t cases follow.
+ The first line of each test case contains one integer  n (  2 ≤ n ≤ 10 5 ) — the length of array  a .
+ The second line of each test case contains  n space separated integers  a 1 , a 2 , … , a n (  1 ≤ a i ≤ 2 ⋅ n ) — the array  a . It is guaranteed that all elements are distinct .
+ It is guaranteed that the sum of  n over all test cases does not exceed  2 ⋅ 10 5 .
+
+Output
+ For each test case, output the number of pairs of indices  ( i , j ) such that  i < j and  a i ⋅ a j = i + j .
+
+Example
+Input
+3
+2
+3 1
+3
+6 1 5
+5
+3 1 5 9 2
+Output
+1
+1
+3
+
+Note
+ For the first test case, the only pair that satisfies the constraints is  ( 1 , 2 ) , as  a 1 ⋅ a 2 = 1 + 2 = 3
+ For the second test case, the only pair that satisfies the constraints is  ( 2 , 3 ) .
+ For the third test case, the pairs that satisfy the constraints are  ( 1 , 2 ) ,  ( 1 , 5 ) , and  ( 2 , 3 ) ."
+https://codeforces.com/problemset/problem/1399/C,"['brute force', 'greedy', 'two pointers']",PROGRAMMING,1200,1399,C,"Description:
+
+
+There are  n people who want to participate in a boat competition. The weight of the  i -th participant is  w i . Only teams consisting of two people can participate in this competition. As an organizer, you think that it's fair to allow only teams with the same total weight .
+ So, if there are  k teams  ( a 1 , b 1 ) ,  ( a 2 , b 2 ) ,  … ,  ( a k , b k ) , where  a i is the weight of the first participant of the  i -th team and  b i is the weight of the second participant of the  i -th team, then the condition  a 1 + b 1 = a 2 + b 2 = ⋯ = a k + b k = s , where  s is the total weight of each team, should be satisfied.
+ Your task is to choose such  s that the number of teams people can create is the maximum possible. Note that each participant can be in no more than one team.
+ You have to answer  t independent test cases.
+
+Input
+ The first line of the input contains one integer  t (  1 ≤ t ≤ 1000 ) — the number of test cases. Then  t test cases follow.
+ The first line of the test case contains one integer  n (  1 ≤ n ≤ 50 ) — the number of participants. The second line of the test case contains  n integers  w 1 , w 2 , … , w n (  1 ≤ w i ≤ n ), where  w i is the weight of the  i -th participant.
+
+Output
+ For each test case, print one integer  k : the maximum number of teams people can compose with the total weight  s , if you choose  s optimally.
+
+Example
+Input
+5
+5
+1 2 3 4 5
+8
+6 6 6 6 6 6 8 8
+8
+1 2 2 1 2 1 1 2
+3
+1 3 3
+6
+1 1 3 4 2 2
+Output
+2
+3
+4
+1
+2
+
+Note
+ In the first test case of the example, we can reach the optimal answer for  s = 6 . Then the first boat is used by participants  1 and  5 and the second boat is used by participants  2 and  4 (indices are the same as weights).
+ In the second test case of the example, we can reach the optimal answer for  s = 12 . Then first  6 participants can form  3 pairs.
+ In the third test case of the example, we can reach the optimal answer for  s = 3 . The answer is  4 because we have  4 participants with weight  1 and  4 participants with weight  2 .
+ In the fourth test case of the example, we can reach the optimal answer for  s = 4 or  s = 6 .
+ In the fifth test case of the example, we can reach the optimal answer for  s = 3 . Note that participant with weight  3 can't use the boat because there is no suitable pair for him in the list."

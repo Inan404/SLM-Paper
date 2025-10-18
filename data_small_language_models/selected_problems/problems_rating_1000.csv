@@ -1,0 +1,567 @@
+url,tags,type,rating,contest_id,index,statement
+https://codeforces.com/problemset/problem/1/A,['math'],PROGRAMMING,1000,1,A,"Description:
+
+
+Theatre Square in the capital city of Berland has a rectangular shape with the size n × m meters. On the occasion of the city's anniversary, a decision was taken to pave the Square with square granite flagstones. Each flagstone is of the size a × a .
+ What is the least number of flagstones needed to pave the Square? It's allowed to cover the surface larger than the Theatre Square, but the Square has to be covered. It's not allowed to break the flagstones. The sides of flagstones should be parallel to the sides of the Square.
+
+Input
+ The input contains three positive integer numbers in the first line: n , m and a ( 1 ≤ n , m , a ≤ 10 9 ).
+
+Output
+ Write the needed number of flagstones.
+
+Examples
+Input
+6 6 4
+Output
+4"
+https://codeforces.com/problemset/problem/118/A,"['implementation', 'strings']",PROGRAMMING,1000,118,A,"Description:
+
+
+Petya started to attend programming lessons. On the first lesson his task was to write a simple program. The program was supposed to do the following: in the given string, consisting if uppercase and lowercase Latin letters, it:
+ deletes all the vowels, inserts a character "" . "" before each consonant, replaces all uppercase consonants with corresponding lowercase ones.
+ Vowels are letters ""A"", ""O"", ""Y"", ""E"", ""U"", ""I"", and the rest are consonants. The program's input is exactly one string, it should return the output as a single string, resulting after the program's processing the initial string.
+ Help Petya cope with this easy task.
+
+Input
+ The first line represents input string of Petya's program. This string only consists of uppercase and lowercase Latin letters and its length is from 1 to 100 , inclusive.
+
+Output
+ Print the resulting string. It is guaranteed that this string is not empty.
+
+Examples
+Input
+tour
+Output
+.t.r
+Input
+Codeforces
+Output
+.c.d.f.r.c.s
+Input
+aBAcAba
+Output
+.b.c.b"
+https://codeforces.com/problemset/problem/69/A,"['implementation', 'math']",PROGRAMMING,1000,69,A,"Description:
+
+
+A guy named Vasya attends the final grade of a high school. One day Vasya decided to watch a match of his favorite hockey team. And, as the boy loves hockey very much, even more than physics, he forgot to do the homework. Specifically, he forgot to complete his physics tasks. Next day the teacher got very angry at Vasya and decided to teach him a lesson. He gave the lazy student a seemingly easy task: You are given an idle body in space and the forces that affect it. The body can be considered as a material point with coordinates (0; 0; 0). Vasya had only to answer whether it is in equilibrium. ""Piece of cake"" — thought Vasya, we need only to check if the sum of all vectors is equal to 0. So, Vasya began to solve the problem. But later it turned out that there can be lots and lots of these forces, and Vasya can not cope without your help. Help him. Write a program that determines whether a body is idle or is moving by the given vectors of forces.
+
+Input
+ The first line contains a positive integer n ( 1 ≤ n ≤ 100 ), then follow n lines containing three integers each: the x i coordinate, the y i coordinate and the z i coordinate of the force vector, applied to the body ( - 100 ≤ x i , y i , z i ≤ 100 ).
+
+Output
+ Print the word "" YES "" if the body is in equilibrium, or the word "" NO "" if it is not.
+
+Examples
+Input
+3
+
+4 1 7
+
+-2 4 -1
+
+1 -5 -3
+Output
+NO
+Input
+3
+
+3 -1 7
+
+-5 2 -4
+
+2 -1 -3
+Output
+YES"
+https://codeforces.com/problemset/problem/58/A,"['greedy', 'strings']",PROGRAMMING,1000,58,A,"Description:
+
+
+Vasya has recently learned to type and log on to the Internet. He immediately entered a chat room and decided to say hello to everybody. Vasya typed the word s . It is considered that Vasya managed to say hello if several letters can be deleted from the typed word so that it resulted in the word "" hello "". For example, if Vasya types the word "" ahhellllloou "", it will be considered that he said hello, and if he types "" hlelo "", it will be considered that Vasya got misunderstood and he didn't manage to say hello. Determine whether Vasya managed to say hello by the given word s .
+
+Input
+ The first and only line contains the word s , which Vasya typed. This word consisits of small Latin letters, its length is no less that 1 and no more than 100 letters.
+
+Output
+ If Vasya managed to say hello, print "" YES "", otherwise print "" NO "".
+
+Examples
+Input
+ahhellllloou
+Output
+YES
+Input
+hlelo
+Output
+NO"
+https://codeforces.com/problemset/problem/122/A,"['brute force', 'number theory']",PROGRAMMING,1000,122,A,"Description:
+
+
+Petya loves lucky numbers. Everybody knows that lucky numbers are positive integers whose decimal representation contains only the lucky digits 4 and 7 . For example, numbers 47 , 744 , 4 are lucky and 5 , 17 , 467 are not.
+ Petya calls a number almost lucky if it could be evenly divided by some lucky number. Help him find out if the given number n is almost lucky.
+
+Input
+ The single line contains an integer n  (1 ≤ n ≤ 1000) — the number that needs to be checked.
+
+Output
+ In the only line print "" YES "" (without the quotes), if number n is almost lucky. Otherwise, print "" NO "" (without the quotes).
+
+Examples
+Input
+47
+Output
+YES
+Input
+16
+Output
+YES
+Input
+78
+Output
+NO
+
+Note
+ Note that all lucky numbers are almost lucky as any number is evenly divisible by itself.
+ In the first sample 47 is a lucky number. In the second sample 16 is divisible by 4 ."
+https://codeforces.com/problemset/problem/479/A,"['brute force', 'math']",PROGRAMMING,1000,479,A,"Description:
+
+
+Petya studies in a school and he adores Maths. His class has been studying arithmetic expressions. On the last class the teacher wrote three positive integers a , b , c on the blackboard. The task was to insert signs of operations ' + ' and ' * ', and probably brackets between the numbers so that the value of the resulting expression is as large as possible. Let's consider an example: assume that the teacher wrote numbers 1, 2 and 3 on the blackboard. Here are some ways of placing signs and brackets:
+ 1+2*3=7 1*(2+3)=5 1*2*3=6 (1+2)*3=9
+ Note that you can insert operation signs only between a and b , and between b and c , that is, you cannot swap integers. For instance, in the given sample you cannot get expression (1+3)*2.
+ It's easy to see that the maximum value that you can obtain is 9.
+ Your task is: given a , b and c print the maximum value that you can get.
+
+Input
+ The input contains three integers a , b and c , each on a single line ( 1 ≤ a , b , c ≤ 10 ).
+
+Output
+ Print the maximum value of the expression that you can obtain.
+
+Examples
+Input
+1
+
+2
+
+3
+Output
+9
+Input
+2
+
+10
+
+3
+Output
+60"
+https://codeforces.com/problemset/problem/131/A,"['implementation', 'strings']",PROGRAMMING,1000,131,A,"Description:
+
+
+wHAT DO WE NEED cAPS LOCK FOR?
+ Caps lock is a computer keyboard key. Pressing it sets an input mode in which typed letters are capital by default. If it is pressed by accident, it leads to accidents like the one we had in the first passage.
+ Let's consider that a word has been typed with the Caps lock key accidentally switched on, if:
+ either it only contains uppercase letters; or all letters except for the first one are uppercase.
+ In this case we should automatically change the case of all letters. For example, the case of the letters that form words "" hELLO "", "" HTTP "", "" z "" should be changed.
+ Write a program that applies the rule mentioned above. If the rule cannot be applied, the program should leave the word unchanged.
+
+Input
+ The first line of the input data contains a word consisting of uppercase and lowercase Latin letters. The word's length is from 1 to 100 characters, inclusive.
+
+Output
+ Print the result of the given word's processing.
+
+Examples
+Input
+cAPS
+Output
+Caps
+Input
+Lock
+Output
+Lock"
+https://codeforces.com/problemset/problem/230/A,"['greedy', 'sortings']",PROGRAMMING,1000,230,A,"Description:
+
+
+Kirito is stuck on a level of the MMORPG he is playing now. To move on in the game, he's got to defeat all n dragons that live on this level. Kirito and the dragons have strength , which is represented by an integer. In the duel between two opponents the duel's outcome is determined by their strength. Initially, Kirito's strength equals s .
+ If Kirito starts duelling with the i -th ( 1 ≤ i ≤ n ) dragon and Kirito's strength is not greater than the dragon's strength x i , then Kirito loses the duel and dies. But if Kirito's strength is greater than the dragon's strength, then he defeats the dragon and gets a bonus strength increase by y i .
+ Kirito can fight the dragons in any order. Determine whether he can move on to the next level of the game, that is, defeat all dragons without a single loss.
+
+Input
+ The first line contains two space-separated integers s and n ( 1 ≤ s ≤ 10 4 , 1 ≤ n ≤ 10 3 ). Then n lines follow: the i -th line contains space-separated integers x i and y i ( 1 ≤ x i ≤ 10 4 , 0 ≤ y i ≤ 10 4 ) — the i -th dragon's strength and the bonus for defeating it.
+
+Output
+ On a single line print "" YES "" (without the quotes), if Kirito can move on to the next level and print "" NO "" (without the quotes), if he can't.
+
+Examples
+Input
+2 2
+
+1 99
+
+100 0
+Output
+YES
+Input
+10 1
+
+100 100
+Output
+NO
+
+Note
+ In the first sample Kirito's strength initially equals 2. As the first dragon's strength is less than 2, Kirito can fight it and defeat it. After that he gets the bonus and his strength increases to 2 + 99 = 101 . Now he can defeat the second dragon and move on to the next level.
+ In the second sample Kirito's strength is too small to defeat the only dragon and win."
+https://codeforces.com/problemset/problem/339/B,['implementation'],PROGRAMMING,1000,339,B,"Description:
+
+
+Xenia lives in a city that has n houses built along the main ringroad. The ringroad houses are numbered 1 through n in the clockwise order. The ringroad traffic is one way and also is clockwise.
+ Xenia has recently moved into the ringroad house number 1. As a result, she's got m things to do. In order to complete the i -th task, she needs to be in the house number a i and complete all tasks with numbers less than i . Initially, Xenia is in the house number 1, find the minimum time she needs to complete all her tasks if moving from a house to a neighboring one along the ringroad takes one unit of time.
+
+Input
+ The first line contains two integers n and m  (2 ≤ n ≤ 10 5 , 1 ≤ m ≤ 10 5 ) . The second line contains m integers a 1 , a 2 , ..., a m  (1 ≤ a i ≤ n ) . Note that Xenia can have multiple consecutive tasks in one house.
+
+Output
+ Print a single integer — the time Xenia needs to complete all tasks.
+ Please, do not use the %lld specifier to read or write 64-bit integers in С++. It is preferred to use the cin , cout streams or the %I64d specifier.
+
+Examples
+Input
+4 3
+
+3 2 3
+Output
+6
+Input
+4 3
+
+2 3 3
+Output
+2
+
+Note
+ In the first test example the sequence of Xenia's moves along the ringroad looks as follows: 1 → 2 → 3 → 4 → 1 → 2 → 3 . This is optimal sequence. So, she needs 6 time units."
+https://codeforces.com/problemset/problem/579/A,['bitmasks'],PROGRAMMING,1000,579,A,"Description:
+
+
+You are a lover of bacteria. You want to raise some bacteria in a box.
+ Initially, the box is empty. Each morning, you can put any number of bacteria into the box. And each night, every bacterium in the box will split into two bacteria. You hope to see exactly x bacteria in the box at some moment.
+ What is the minimum number of bacteria you need to put into the box across those days?
+
+Input
+ The only line containing one integer x ( 1 ≤ x ≤ 10 9 ).
+
+Output
+ The only line containing one integer: the answer.
+
+Examples
+Input
+5
+Output
+2
+Input
+8
+Output
+1
+
+Note
+ For the first sample, we can add one bacterium in the box in the first day morning and at the third morning there will be 4 bacteria in the box. Now we put one more resulting 5 in the box. We added 2 bacteria in the process so the answer is 2 .
+ For the second sample, we can put one in the first morning and in the 4-th morning there will be 8 in the box. So the answer is 1 ."
+https://codeforces.com/problemset/problem/43/A,['strings'],PROGRAMMING,1000,43,A,"Description:
+
+
+One day Vasya decided to have a look at the results of Berland 1910 Football Championship’s finals. Unfortunately he didn't find the overall score of the match; however, he got hold of a profound description of the match's process. On the whole there are n lines in that description each of which described one goal. Every goal was marked with the name of the team that had scored it. Help Vasya, learn the name of the team that won the finals. It is guaranteed that the match did not end in a tie.
+
+Input
+ The first line contains an integer n ( 1 ≤ n ≤ 100 ) — the number of lines in the description. Then follow n lines — for each goal the names of the teams that scored it. The names are non-empty lines consisting of uppercase Latin letters whose lengths do not exceed 10 symbols. It is guaranteed that the match did not end in a tie and the description contains no more than two different teams.
+
+Output
+ Print the name of the winning team. We remind you that in football the team that scores more goals is considered the winner.
+
+Examples
+Input
+1
+
+ABC
+Output
+ABC
+Input
+5
+
+A
+
+ABA
+
+ABA
+
+A
+
+A
+Output
+A"
+https://codeforces.com/problemset/problem/500/A,"['dfs and similar', 'graphs', 'implementation']",PROGRAMMING,1000,500,A,"Description:
+
+
+New Year is coming in Line World! In this world, there are n cells numbered by integers from 1 to n , as a 1 × n board. People live in cells. However, it was hard to move between distinct cells, because of the difficulty of escaping the cell. People wanted to meet people who live in other cells.
+ So, user tncks0121 has made a transportation system to move between these cells, to celebrate the New Year. First, he thought of n - 1 positive integers a 1 , a 2 , ..., a n - 1 . For every integer i where 1 ≤ i ≤ n - 1 the condition 1 ≤ a i ≤ n - i holds. Next, he made n - 1 portals, numbered by integers from 1 to n - 1 . The i -th ( 1 ≤ i ≤ n - 1 ) portal connects cell i and cell ( i + a i ) , and one can travel from cell i to cell ( i + a i ) using the i -th portal. Unfortunately, one cannot use the portal backwards, which means one cannot move from cell ( i + a i ) to cell i using the i -th portal. It is easy to see that because of condition 1 ≤ a i ≤ n - i one can't leave the Line World using portals.
+ Currently, I am standing at cell 1 , and I want to go to cell t . However, I don't know whether it is possible to go there. Please determine whether I can go to cell t by only using the construted transportation system.
+
+Input
+ The first line contains two space-separated integers n ( 3 ≤ n ≤ 3 × 10 4 ) and t ( 2 ≤ t ≤ n ) — the number of cells, and the index of the cell which I want to go to.
+ The second line contains n - 1 space-separated integers a 1 , a 2 , ..., a n - 1 ( 1 ≤ a i ≤ n - i ). It is guaranteed, that using the given transportation system, one cannot leave the Line World.
+
+Output
+ If I can go to cell t using the transportation system, print "" YES "". Otherwise, print "" NO "".
+
+Examples
+Input
+8 4
+
+1 2 1 2 1 2 1
+Output
+YES
+Input
+8 5
+
+1 2 1 2 1 1 1
+Output
+NO
+
+Note
+ In the first sample, the visited cells are: 1, 2, 4 ; so we can successfully visit the cell 4 .
+ In the second sample, the possible cells to visit are: 1, 2, 4, 6, 7, 8 ; so we can't visit the cell 5 , which we want to visit."
+https://codeforces.com/problemset/problem/1374/C,"['greedy', 'strings']",PROGRAMMING,1000,1374,C,"Description:
+
+
+You are given a bracket sequence  s of length  n , where  n is even (divisible by two). The string  s consists of  n 2 opening brackets ' ( ' and  n 2 closing brackets ' ) '.
+ In one move, you can choose exactly one bracket and move it to the beginning of the string or to the end of the string (i.e. you choose some index  i , remove the  i -th character of  s and insert it before or after all remaining characters of  s ).
+ Your task is to find the minimum number of moves required to obtain regular bracket sequence from  s . It can be proved that the answer always exists under the given constraints.
+ Recall what the regular bracket sequence is:
+ "" () "" is regular bracket sequence; if  s is regular bracket sequence then "" ( "" +  s + "" ) "" is regular bracket sequence; if  s and  t are regular bracket sequences then  s +  t is regular bracket sequence.
+ For example, "" ()() "", "" (())() "", "" (()) "" and "" () "" are regular bracket sequences, but "" )( "", "" ()( "" and "" ))) "" are not.
+ You have to answer  t independent test cases.
+
+Input
+ The first line of the input contains one integer  t (  1 ≤ t ≤ 2000 ) — the number of test cases. Then  t test cases follow.
+ The first line of the test case contains one integer  n (  2 ≤ n ≤ 50 ) — the length of  s . It is guaranteed that  n is even. The second line of the test case containg the string  s consisting of  n 2 opening and  n 2 closing brackets.
+
+Output
+ For each test case, print the answer — the minimum number of moves required to obtain regular bracket sequence from  s . It can be proved that the answer always exists under the given constraints.
+
+Example
+Input
+4
+2
+)(
+4
+()()
+8
+())()()(
+10
+)))((((())
+Output
+1
+0
+1
+3
+
+Note
+ In the first test case of the example, it is sufficient to move the first bracket to the end of the string.
+ In the third test case of the example, it is sufficient to move the last bracket to the beginning of the string.
+ In the fourth test case of the example, we can choose last three openning brackets, move them to the beginning of the string and obtain "" ((()))(()) ""."
+https://codeforces.com/problemset/problem/379/A,['implementation'],PROGRAMMING,1000,379,A,"Description:
+
+
+Vasily the Programmer loves romance, so this year he decided to illuminate his room with candles.
+ Vasily has a candles.When Vasily lights up a new candle, it first burns for an hour and then it goes out. Vasily is smart, so he can make b went out candles into a new candle. As a result, this new candle can be used like any other new candle.
+ Now Vasily wonders: for how many hours can his candles light up the room if he acts optimally well? Help him find this number.
+
+Input
+ The single line contains two integers, a and b  (1 ≤ a ≤ 1000; 2 ≤ b ≤ 1000) .
+
+Output
+ Print a single integer — the number of hours Vasily can light up the room for.
+
+Examples
+Input
+4 2
+Output
+7
+Input
+6 3
+Output
+8
+
+Note
+ Consider the first sample. For the first four hours Vasily lights up new candles, then he uses four burned out candles to make two new ones and lights them up. When these candles go out (stop burning), Vasily can make another candle. Overall, Vasily can light up the room for 7 hours."
+https://codeforces.com/problemset/problem/584/A,['math'],PROGRAMMING,1000,584,A,"Description:
+
+
+Olesya loves numbers consisting of n digits, and Rodion only likes numbers that are divisible by t . Find some number that satisfies both of them.
+ Your task is: given the n and t print an integer strictly larger than zero consisting of n digits that is divisible by t . If such number doesn't exist, print - 1 .
+
+Input
+ The single line contains two numbers, n and t ( 1 ≤ n ≤ 100 , 2 ≤ t ≤ 10 ) — the length of the number and the number it should be divisible by.
+
+Output
+ Print one such positive number without leading zeroes, — the answer to the problem, or - 1 , if such number doesn't exist. If there are multiple possible answers, you are allowed to print any of them.
+
+Examples
+Input
+3 2
+Output
+712"
+https://codeforces.com/problemset/problem/476/A,"['implementation', 'math']",PROGRAMMING,1000,476,A,"Description:
+
+
+Dreamoon wants to climb up a stair of n steps. He can climb 1 or 2 steps at each move. Dreamoon wants the number of moves to be a multiple of an integer m .
+ What is the minimal number of moves making him climb to the top of the stairs that satisfies his condition?
+
+Input
+ The single line contains two space separated integers n , m ( 0 < n ≤ 10000, 1 < m ≤ 10 ).
+
+Output
+ Print a single integer — the minimal number of moves being a multiple of m . If there is no way he can climb satisfying condition print - 1 instead.
+
+Examples
+Input
+10 2
+Output
+6
+Input
+3 5
+Output
+-1
+
+Note
+ For the first sample, Dreamoon could climb in 6 moves with following sequence of steps: {2, 2, 2, 2, 1, 1}.
+ For the second sample, there are only three valid sequence of steps {2, 1}, {1, 2}, {1, 1, 1} with 2, 2, and 3 steps respectively. All these numbers are not multiples of 5."
+https://codeforces.com/problemset/problem/742/A,"['implementation', 'math', 'number theory']",PROGRAMMING,1000,742,A,"Description:
+
+
+There exists an island called Arpa’s land, some beautiful girls live there, as ugly ones do.
+ Mehrdad wants to become minister of Arpa’s land. Arpa has prepared an exam. Exam has only one question, given n , print the last digit of 1378 n .
+ 
+ Mehrdad has become quite confused and wants you to help him. Please help, although it's a naive cheat.
+
+Input
+ The single line of input contains one integer n ( 0  ≤ n ≤  10 9 ).
+
+Output
+ Print single integer — the last digit of 1378 n .
+
+Examples
+Input
+1
+Output
+8
+Input
+2
+Output
+4
+
+Note
+ In the first example, last digit of 1378 1 = 1378 is 8 .
+ In the second example, last digit of 1378 2 = 1378·1378 = 1898884 is 4 ."
+https://codeforces.com/problemset/problem/1342/A,"['greedy', 'math']",PROGRAMMING,1000,1342,A,"Description:
+
+
+You are given two integers  x and  y . You can perform two types of operations:
+ Pay  a dollars and increase or decrease any of these integers by  1 . For example, if  x = 0 and  y = 7 there are four possible outcomes after this operation: x = 0 ,  y = 6 ; x = 0 ,  y = 8 ; x = − 1 ,  y = 7 ; x = 1 ,  y = 7 . Pay  b dollars and increase or decrease both integers by  1 . For example, if  x = 0 and  y = 7 there are two possible outcomes after this operation: x = − 1 ,  y = 6 ; x = 1 ,  y = 8 .
+ Your goal is to make both given integers equal zero simultaneously, i.e.  x = y = 0 . There are no other requirements. In particular, it is possible to move from  x = 1 ,  y = 0 to  x = y = 0 .
+ Calculate the minimum amount of dollars you have to spend on it.
+
+Input
+ The first line contains one integer  t (  1 ≤ t ≤ 100 ) — the number of testcases.
+ The first line of each test case contains two integers  x and  y (  0 ≤ x , y ≤ 10 9 ).
+ The second line of each test case contains two integers  a and  b (  1 ≤ a , b ≤ 10 9 ).
+
+Output
+ For each test case print one integer — the minimum amount of dollars you have to spend.
+
+Example
+Input
+2
+1 3
+391 555
+0 0
+9 4
+Output
+1337
+0
+
+Note
+ In the first test case you can perform the following sequence of operations: first, second, first. This way you spend  391 + 555 + 391 = 1337 dollars.
+ In the second test case both integers are equal to zero initially, so you dont' have to spend money."
+https://codeforces.com/problemset/problem/577/A,"['implementation', 'number theory']",PROGRAMMING,1000,577,A,"Description:
+
+
+Let's consider a table consisting of n rows and n columns. The cell located at the intersection of i -th row and j -th column contains number i × j . The rows and columns are numbered starting from 1.
+ You are given a positive integer x . Your task is to count the number of cells in a table that contain number x .
+
+Input
+ The single line contains numbers n and x ( 1 ≤ n ≤ 10 5 , 1 ≤ x ≤ 10 9 ) — the size of the table and the number that we are looking for in the table.
+
+Output
+ Print a single number: the number of times x occurs in the table.
+
+Examples
+Input
+10 5
+Output
+2
+Input
+6 12
+Output
+4
+Input
+5 13
+Output
+0
+
+Note
+ A table for the second sample test is given below. The occurrences of number 12 are marked bold.
+ "
+https://codeforces.com/problemset/problem/499/B,"['implementation', 'strings']",PROGRAMMING,1000,499,B,"Description:
+
+
+You have a new professor of graph theory and he speaks very quickly. You come up with the following plan to keep up with his lecture and make notes.
+ You know two languages, and the professor is giving the lecture in the first one. The words in both languages consist of lowercase English characters, each language consists of several words. For each language, all words are distinct, i.e. they are spelled differently. Moreover, the words of these languages have a one-to-one correspondence, that is, for each word in each language, there exists exactly one word in the other language having has the same meaning.
+ You can write down every word the professor says in either the first language or the second language. Of course, during the lecture you write down each word in the language in which the word is shorter. In case of equal lengths of the corresponding words you prefer the word of the first language.
+ You are given the text of the lecture the professor is going to read. Find out how the lecture will be recorded in your notes.
+
+Input
+ The first line contains two integers, n and m ( 1 ≤ n ≤ 3000 , 1 ≤ m ≤ 3000 ) — the number of words in the professor's lecture and the number of words in each of these languages.
+ The following m lines contain the words. The i -th line contains two strings a i , b i meaning that the word a i belongs to the first language, the word b i belongs to the second language, and these two words have the same meaning. It is guaranteed that no word occurs in both languages, and each word occurs in its language exactly once.
+ The next line contains n space-separated strings c 1 , c 2 , ..., c n — the text of the lecture. It is guaranteed that each of the strings c i belongs to the set of strings { a 1 , a 2 , ... a m } .
+ All the strings in the input are non-empty, each consisting of no more than 10 lowercase English letters.
+
+Output
+ Output exactly n words: how you will record the lecture in your notebook. Output the words of the lecture in the same order as in the input.
+
+Examples
+Input
+4 3
+
+codeforces codesecrof
+
+contest round
+
+letter message
+
+codeforces contest letter contest
+Output
+codeforces round letter round
+Input
+5 3
+
+joll wuqrd
+
+euzf un
+
+hbnyiyc rsoqqveh
+
+hbnyiyc joll joll euzf joll
+Output
+hbnyiyc joll joll un joll"

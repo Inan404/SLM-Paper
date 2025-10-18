@@ -1,0 +1,785 @@
+url,tags,type,rating,contest_id,index,statement
+https://codeforces.com/problemset/problem/158/B,"['*special', 'greedy', 'implementation']",PROGRAMMING,1100,158,B,"Description:
+
+
+After the lessons n groups of schoolchildren went outside and decided to visit Polycarpus to celebrate his birthday. We know that the i -th group consists of s i friends ( 1 ≤ s i ≤ 4 ), and they want to go to Polycarpus together. They decided to get there by taxi. Each car can carry at most four passengers. What minimum number of cars will the children need if all members of each group should ride in the same taxi (but one taxi can take more than one group)?
+
+Input
+ The first line contains integer n ( 1 ≤ n ≤ 10 5 ) — the number of groups of schoolchildren. The second line contains a sequence of integers s 1 , s 2 , ..., s n ( 1 ≤ s i ≤ 4 ). The integers are separated by a space, s i is the number of children in the i -th group.
+
+Output
+ Print the single number — the minimum number of taxis necessary to drive all children to Polycarpus.
+
+Examples
+Input
+5
+
+1 2 4 3 3
+Output
+4
+Input
+8
+
+2 3 4 4 2 1 3 1
+Output
+5
+
+Note
+ In the first test we can sort the children into four cars like this:
+ the third group (consisting of four children), the fourth group (consisting of three children), the fifth group (consisting of three children), the first and the second group (consisting of one and two children, correspondingly).
+ There are other ways to sort the groups into four cars."
+https://codeforces.com/problemset/problem/706/B,"['binary search', 'dp', 'implementation']",PROGRAMMING,1100,706,B,"Description:
+
+
+Vasiliy likes to rest after a hard work, so you may often meet him in some bar nearby. As all programmers do, he loves the famous drink "" Beecola "", which can be bought in n different shops in the city. It's known that the price of one bottle in the shop i is equal to x i coins.
+ Vasiliy plans to buy his favorite drink for q consecutive days. He knows, that on the i -th day he will be able to spent m i coins. Now, for each of the days he want to know in how many different shops he can buy a bottle of "" Beecola "".
+
+Input
+ The first line of the input contains a single integer n ( 1 ≤ n ≤ 100 000 ) — the number of shops in the city that sell Vasiliy's favourite drink.
+ The second line contains n integers x i ( 1 ≤ x i ≤ 100 000 ) — prices of the bottles of the drink in the i -th shop.
+ The third line contains a single integer q ( 1 ≤ q ≤ 100 000 ) — the number of days Vasiliy plans to buy the drink.
+ Then follow q lines each containing one integer m i ( 1 ≤ m i ≤ 10 9 ) — the number of coins Vasiliy can spent on the i -th day.
+
+Output
+ Print q integers. The i -th of them should be equal to the number of shops where Vasiliy will be able to buy a bottle of the drink on the i -th day.
+
+Example
+Input
+5
+
+3 10 8 6 11
+
+4
+
+1
+
+10
+
+3
+
+11
+Output
+0
+
+4
+
+1
+
+5
+
+Note
+ On the first day, Vasiliy won't be able to buy a drink in any of the shops.
+ On the second day, Vasiliy can buy a drink in the shops 1 , 2 , 3 and 4 .
+ On the third day, Vasiliy can buy a drink only in the shop number 1 .
+ Finally, on the last day Vasiliy can buy a drink in any shop."
+https://codeforces.com/problemset/problem/363/B,"['brute force', 'dp']",PROGRAMMING,1100,363,B,"Description:
+
+
+There is a fence in front of Polycarpus's home. The fence consists of n planks of the same width which go one after another from left to right. The height of the i -th plank is h i meters, distinct planks can have distinct heights.
+ Fence for n = 7 and h = [1, 2, 6, 1, 1, 7, 1]
+ Polycarpus has bought a posh piano and is thinking about how to get it into the house. In order to carry out his plan, he needs to take exactly k consecutive planks from the fence. Higher planks are harder to tear off the fence, so Polycarpus wants to find such k consecutive planks that the sum of their heights is minimal possible.
+ Write the program that finds the indexes of k consecutive planks with minimal total height. Pay attention, the fence is not around Polycarpus's home, it is in front of home (in other words, the fence isn't cyclic).
+
+Input
+ The first line of the input contains integers n and k ( 1 ≤ n ≤ 1.5·10 5 , 1 ≤ k ≤ n ) — the number of planks in the fence and the width of the hole for the piano. The second line contains the sequence of integers h 1 , h 2 , ..., h n ( 1 ≤ h i ≤ 100 ), where h i is the height of the i -th plank of the fence.
+
+Output
+ Print such integer j that the sum of the heights of planks j , j + 1 , ..., j + k - 1 is the minimum possible. If there are multiple such j 's, print any of them.
+
+Examples
+Input
+7 3
+
+1 2 6 1 1 7 1
+Output
+3
+
+Note
+ In the sample, your task is to find three consecutive planks with the minimum sum of heights. In the given case three planks with indexes 3, 4 and 5 have the required attribute, their total height is 8."
+https://codeforces.com/problemset/problem/456/A,['sortings'],PROGRAMMING,1100,456,A,"Description:
+
+
+One day Dima and Alex had an argument about the price and quality of laptops. Dima thinks that the more expensive a laptop is, the better it is. Alex disagrees. Alex thinks that there are two laptops, such that the price of the first laptop is less (strictly smaller) than the price of the second laptop but the quality of the first laptop is higher (strictly greater) than the quality of the second laptop.
+ Please, check the guess of Alex. You are given descriptions of n laptops. Determine whether two described above laptops exist.
+
+Input
+ The first line contains an integer n ( 1 ≤ n ≤ 10 5 ) — the number of laptops.
+ Next n lines contain two integers each, a i and b i  (1 ≤ a i , b i ≤ n ) , where a i is the price of the i -th laptop, and b i is the number that represents the quality of the i -th laptop (the larger the number is, the higher is the quality).
+ All a i are distinct. All b i are distinct.
+
+Output
+ If Alex is correct, print "" Happy Alex "", otherwise print "" Poor Alex "" (without the quotes).
+
+Examples
+Input
+2
+
+1 2
+
+2 1
+Output
+Happy Alex"
+https://codeforces.com/problemset/problem/270/A,"['geometry', 'implementation', 'math']",PROGRAMMING,1100,270,A,"Description:
+
+
+Emuskald needs a fence around his farm, but he is too lazy to build it himself. So he purchased a fence-building robot.
+ He wants the fence to be a regular polygon. The robot builds the fence along a single path, but it can only make fence corners at a single angle a .
+ Will the robot be able to build the fence Emuskald wants? In other words, is there a regular polygon which angles are equal to a ?
+
+Input
+ The first line of input contains an integer t ( 0 < t < 180 ) — the number of tests. Each of the following t lines contains a single integer a ( 0 < a < 180 ) — the angle the robot can make corners at measured in degrees.
+
+Output
+ For each test, output on a single line "" YES "" (without quotes), if the robot can build a fence Emuskald wants, and "" NO "" (without quotes), if it is impossible.
+
+Examples
+Input
+3
+
+30
+
+60
+
+90
+Output
+NO
+
+YES
+
+YES
+
+Note
+ In the first test case, it is impossible to build the fence, since there is no regular polygon with angle  .
+ In the second test case, the fence is a regular triangle, and in the last test case — a square."
+https://codeforces.com/problemset/problem/313/B,"['dp', 'implementation']",PROGRAMMING,1100,313,B,"Description:
+
+
+Ilya the Lion wants to help all his friends with passing exams. They need to solve the following problem to pass the IT exam.
+ You've got string s = s 1 s 2 ... s n ( n is the length of the string), consisting only of characters "" . "" and "" # "" and m queries. Each query is described by a pair of integers l i , r i  (1 ≤ l i < r i ≤ n ) . The answer to the query l i , r i is the number of such integers i  ( l i ≤ i < r i ) , that s i = s i + 1 .
+ Ilya the Lion wants to help his friends but is there anyone to help him? Help Ilya, solve the problem.
+
+Input
+ The first line contains string s of length n  (2 ≤ n ≤ 10 5 ) . It is guaranteed that the given string only consists of characters "" . "" and "" # "".
+ The next line contains integer m  (1 ≤ m ≤ 10 5 ) — the number of queries. Each of the next m lines contains the description of the corresponding query. The i -th line contains integers l i , r i  (1 ≤ l i < r i ≤ n ) .
+
+Output
+ Print m integers — the answers to the queries in the order in which they are given in the input.
+
+Examples
+Input
+......
+
+4
+
+3 4
+
+2 3
+
+1 6
+
+2 6
+Output
+1
+
+1
+
+5
+
+4
+Input
+#..###
+
+5
+
+1 3
+
+5 6
+
+1 5
+
+3 6
+
+3 4
+Output
+1
+
+1
+
+2
+
+2
+
+0"
+https://codeforces.com/problemset/problem/368/B,"['data structures', 'dp']",PROGRAMMING,1100,368,B,"Description:
+
+
+Sereja has an array a , consisting of n integers a 1 , a 2 , ... , a n . The boy cannot sit and do nothing, he decided to study an array. Sereja took a piece of paper and wrote out m integers l 1 , l 2 , ..., l m  (1 ≤ l i ≤ n ) . For each number l i he wants to know how many distinct numbers are staying on the positions l i , l i + 1 , ..., n . Formally, he want to find the number of distinct numbers among a l i , a l i + 1 , ..., a n .?
+ Sereja wrote out the necessary array elements but the array was so large and the boy was so pressed for time. Help him, find the answer for the described question for each l i .
+
+Input
+ The first line contains two integers n and m  (1 ≤ n , m ≤ 10 5 ) . The second line contains n integers a 1 , a 2 , ... , a n  (1 ≤ a i ≤ 10 5 ) — the array elements.
+ Next m lines contain integers l 1 , l 2 , ..., l m . The i -th line contains integer l i  (1 ≤ l i ≤ n ) .
+
+Output
+ Print m lines — on the i -th line print the answer to the number l i .
+
+Examples
+Input
+10 10
+
+1 2 3 4 1 2 3 4 100000 99999
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+Output
+6
+
+6
+
+6
+
+6
+
+6
+
+5
+
+4
+
+3
+
+2
+
+1"
+https://codeforces.com/problemset/problem/519/B,"['data structures', 'implementation', 'sortings']",PROGRAMMING,1100,519,B,"Description:
+
+
+A and B are preparing themselves for programming contests.
+ B loves to debug his code. But before he runs the solution and starts debugging, he has to first compile the code.
+ Initially, the compiler displayed n compilation errors, each of them is represented as a positive integer. After some effort, B managed to fix some mistake and then another one mistake.
+ However, despite the fact that B is sure that he corrected the two errors, he can not understand exactly what compilation errors disappeared — the compiler of the language which B uses shows errors in the new order every time! B is sure that unlike many other programming languages, compilation errors for his programming language do not depend on each other, that is, if you correct one error, the set of other error does not change.
+ Can you help B find out exactly what two errors he corrected?
+
+Input
+ The first line of the input contains integer n ( 3 ≤ n ≤ 10 5 ) — the initial number of compilation errors.
+ The second line contains n space-separated integers a 1 , a 2 , ..., a n ( 1 ≤ a i ≤ 10 9 ) — the errors the compiler displayed for the first time.
+ The third line contains n - 1 space-separated integers b 1 , b 2 , ..., b n - 1 — the errors displayed at the second compilation. It is guaranteed that the sequence in the third line contains all numbers of the second string except for exactly one.
+ The fourth line contains n - 2 space-separated integers с 1 , с 2 , ..., с n - 2 — the errors displayed at the third compilation. It is guaranteed that the sequence in the fourth line contains all numbers of the third line except for exactly one.
+
+Output
+ Print two numbers on a single line: the numbers of the compilation errors that disappeared after B made the first and the second correction, respectively.
+
+Examples
+Input
+5
+
+1 5 8 123 7
+
+123 7 5 1
+
+5 1 7
+Output
+8
+
+123
+Input
+6
+
+1 4 3 3 5 7
+
+3 7 5 4 3
+
+4 3 7 5
+Output
+1
+
+3
+
+Note
+ In the first test sample B first corrects the error number 8, then the error number 123.
+ In the second test sample B first corrects the error number 1, then the error number 3. Note that if there are multiple errors with the same number, B can correct only one of them in one step."
+https://codeforces.com/problemset/problem/1327/A,['math'],PROGRAMMING,1100,1327,A,"Description:
+
+
+You are given two integers  n and  k . Your task is to find if  n can be represented as a sum of  k  distinct positive odd (not divisible by  2 ) integers or not.
+ You have to answer  t independent test cases.
+
+Input
+ The first line of the input contains one integer  t (  1 ≤ t ≤ 10 5 ) — the number of test cases.
+ The next  t lines describe test cases. The only line of the test case contains two integers  n and  k (  1 ≤ n , k ≤ 10 7 ).
+
+Output
+ For each test case, print the answer — "" YES "" (without quotes) if  n can be represented as a sum of  k  distinct positive odd (not divisible by  2 ) integers and "" NO "" otherwise.
+
+Example
+Input
+6
+3 1
+4 2
+10 3
+10 2
+16 4
+16 5
+Output
+YES
+YES
+NO
+YES
+YES
+NO
+
+Note
+ In the first test case, you can represent  3 as  3 .
+ In the second test case, the only way to represent  4 is  1 + 3 .
+ In the third test case, you cannot represent  10 as the sum of three distinct positive odd integers.
+ In the fourth test case, you can represent  10 as  3 + 7 , for example.
+ In the fifth test case, you can represent  16 as  1 + 3 + 5 + 7 .
+ In the sixth test case, you cannot represent  16 as the sum of five distinct positive odd integers."
+https://codeforces.com/problemset/problem/467/B,"['bitmasks', 'brute force', 'constructive algorithms', 'implementation']",PROGRAMMING,1100,467,B,"Description:
+
+
+After you had helped George and Alex to move in the dorm, they went to help their friend Fedor play a new computer game «Call of Soldiers 3».
+ The game has ( m + 1) players and n types of soldiers in total. Players «Call of Soldiers 3» are numbered form 1 to ( m + 1) . Types of soldiers are numbered from 0 to n - 1 . Each player has an army. Army of the i -th player can be described by non-negative integer x i . Consider binary representation of x i : if the j -th bit of number x i equal to one, then the army of the i -th player has soldiers of the j -th type.
+ Fedor is the ( m + 1) -th player of the game. He assume that two players can become friends if their armies differ in at most k types of soldiers (in other words, binary representations of the corresponding numbers differ in at most k bits). Help Fedor and count how many players can become his friends.
+
+Input
+ The first line contains three integers n , m , k  (1 ≤ k ≤ n ≤ 20; 1 ≤ m ≤ 1000) .
+ The i -th of the next ( m + 1) lines contains a single integer x i  (1 ≤ x i ≤ 2 n - 1) , that describes the i -th player's army. We remind you that Fedor is the ( m + 1) -th player.
+
+Output
+ Print a single integer — the number of Fedor's potential friends.
+
+Examples
+Input
+7 3 1
+
+8
+
+5
+
+111
+
+17
+Output
+0
+Input
+3 3 3
+
+1
+
+2
+
+3
+
+4
+Output
+3"
+https://codeforces.com/problemset/problem/1335/C,"['binary search', 'greedy', 'implementation', 'sortings']",PROGRAMMING,1100,1335,C,"Description:
+
+
+You have  n students under your control and you have to compose exactly two teams consisting of some subset of your students. Each student had his own skill, the  i -th student skill is denoted by an integer  a i (different students can have the same skills).
+ So, about the teams. Firstly, these two teams should have the same size. Two more constraints:
+ The first team should consist of students with distinct skills (i.e. all skills in the first team are unique). The second team should consist of students with the same skills (i.e. all skills in the second team are equal).
+ Note that it is permissible that some student of the first team has the same skill as a student of the second team.
+ Consider some examples (skills are given):
+ [ 1 , 2 , 3 ] ,  [ 4 , 4 ] is not a good pair of teams because sizes should be the same; [ 1 , 1 , 2 ] ,  [ 3 , 3 , 3 ] is not a good pair of teams because the first team should not contain students with the same skills; [ 1 , 2 , 3 ] ,  [ 3 , 4 , 4 ] is not a good pair of teams because the second team should contain students with the same skills; [ 1 , 2 , 3 ] ,  [ 3 , 3 , 3 ] is a good pair of teams; [ 5 ] ,  [ 6 ] is a good pair of teams.
+ Your task is to find the maximum possible size  x for which it is possible to compose a valid pair of teams, where each team size is  x (skills in the first team needed to be unique, skills in the second team should be the same between them). A student cannot be part of more than one team.
+ You have to answer  t independent test cases.
+
+Input
+ The first line of the input contains one integer  t (  1 ≤ t ≤ 10 4 ) — the number of test cases. Then  t test cases follow.
+ The first line of the test case contains one integer  n (  1 ≤ n ≤ 2 ⋅ 10 5 ) — the number of students. The second line of the test case contains  n integers  a 1 , a 2 , … , a n (  1 ≤ a i ≤ n ), where  a i is the skill of the  i -th student. Different students can have the same skills.
+ It is guaranteed that the sum of  n over all test cases does not exceed  2 ⋅ 10 5 (  ∑ n ≤ 2 ⋅ 10 5 ).
+
+Output
+ For each test case, print the answer — the maximum possible size  x for which it is possible to compose a valid pair of teams, where each team size is  x .
+
+Example
+Input
+4
+7
+4 2 4 1 4 3 4
+5
+2 1 5 4 3
+1
+1
+4
+1 1 1 3
+Output
+3
+1
+0
+2
+
+Note
+ In the first test case of the example, it is possible to construct two teams of size  3 : the first team is  [ 1 , 2 , 4 ] and the second team is  [ 4 , 4 , 4 ] . Note, that there are some other ways to construct two valid teams of size  3 ."
+https://codeforces.com/problemset/problem/1490/C,"['binary search', 'brute force', 'brute force', 'math']",PROGRAMMING,1100,1490,C,"Description:
+
+
+You are given a positive integer  x . Check whether the number  x is representable as the sum of the cubes of two positive integers.
+ Formally, you need to check if there are two integers  a and  b (  1 ≤ a , b ) such that  a 3 + b 3 = x .
+ For example, if  x = 35 , then the numbers  a = 2 and  b = 3 are suitable (  2 3 + 3 3 = 8 + 27 = 35 ). If  x = 4 , then no pair of numbers  a and  b is suitable.
+
+Input
+ The first line contains one integer  t (  1 ≤ t ≤ 100 ) — the number of test cases. Then  t test cases follow.
+ Each test case contains one integer  x (  1 ≤ x ≤ 10 12 ).
+ Please note, that the input for some test cases won't fit into  32 -bit integer type, so you should use at least  64 -bit integer type in your programming language.
+
+Output
+ For each test case, output on a separate line:
+ "" YES "" if  x is representable as the sum of the cubes of two positive integers. "" NO "" otherwise.
+ You can output "" YES "" and "" NO "" in any case (for example, the strings yEs , yes , Yes and YES will be recognized as positive).
+
+Example
+Input
+7
+1
+2
+4
+34
+35
+16
+703657519796
+Output
+NO
+YES
+NO
+NO
+YES
+YES
+YES
+
+Note
+ The number  1 is not representable as the sum of two cubes.
+ The number  2 is represented as  1 3 + 1 3 .
+ The number  4 is not representable as the sum of two cubes.
+ The number  34 is not representable as the sum of two cubes.
+ The number  35 is represented as  2 3 + 3 3 .
+ The number  16 is represented as  2 3 + 2 3 .
+ The number  703657519796 is represented as  5779 3 + 7993 3 ."
+https://codeforces.com/problemset/problem/1360/C,"['constructive algorithms', 'graph matchings', 'greedy', 'sortings']",PROGRAMMING,1100,1360,C,"Description:
+
+
+We call two numbers  x and  y  similar if they have the same parity (the same remainder when divided by  2 ), or if  | x − y | = 1 . For example, in each of the pairs  ( 2 , 6 ) ,  ( 4 , 3 ) ,  ( 11 , 7 ) , the numbers are similar to each other, and in the pairs  ( 1 , 4 ) ,  ( 3 , 12 ) , they are not.
+ You are given an array  a of  n (  n is even) positive integers. Check if there is such a partition of the array into pairs that each element of the array belongs to exactly one pair and the numbers in each pair are similar to each other.
+ For example, for the array  a = [ 11 , 14 , 16 , 12 ] , there is a partition into pairs  ( 11 , 12 ) and  ( 14 , 16 ) . The numbers in the first pair are similar because they differ by one, and in the second pair because they are both even.
+
+Input
+ The first line contains a single integer  t (  1 ≤ t ≤ 1000 ) — the number of test cases. Then  t test cases follow.
+ Each test case consists of two lines.
+ The first line contains an even positive integer  n (  2 ≤ n ≤ 50 ) — length of array  a .
+ The second line contains  n positive integers  a 1 , a 2 , … , a n (  1 ≤ a i ≤ 100 ).
+
+Output
+ For each test case print:
+ YES if the such a partition exists, NO otherwise.
+ The letters in the words YES and NO can be displayed in any case.
+
+Example
+Input
+7
+4
+11 14 16 12
+2
+1 8
+4
+1 1 1 1
+4
+1 2 5 6
+2
+12 13
+6
+1 6 3 10 5 8
+6
+1 12 3 10 5 8
+Output
+YES
+NO
+YES
+YES
+YES
+YES
+NO
+
+Note
+ The first test case was explained in the statement.
+ In the second test case, the two given numbers are not similar.
+ In the third test case, any partition is suitable."
+https://codeforces.com/problemset/problem/1472/C,"['dp', 'graphs']",PROGRAMMING,1100,1472,C,"Description:
+
+
+Polycarp found under the Christmas tree an array  a of  n elements and instructions for playing with it:
+ At first, choose index  i (  1 ≤ i ≤ n ) — starting position in the array. Put the chip at the index  i (on the value  a i ). While  i ≤ n , add  a i to your score and move the chip  a i positions to the right (i.e. replace  i with  i + a i ). If  i > n , then Polycarp ends the game.
+ For example, if  n = 5 and  a = [ 7 , 3 , 1 , 2 , 3 ] , then the following game options are possible:
+ Polycarp chooses  i = 1 . Game process:  i = 1 ⟶ + 7 8 . The score of the game is:  a 1 = 7 . Polycarp chooses  i = 2 . Game process:  i = 2 ⟶ + 3 5 ⟶ + 3 8 . The score of the game is:  a 2 + a 5 = 6 . Polycarp chooses  i = 3 . Game process:  i = 3 ⟶ + 1 4 ⟶ + 2 6 . The score of the game is:  a 3 + a 4 = 3 . Polycarp chooses  i = 4 . Game process:  i = 4 ⟶ + 2 6 . The score of the game is:  a 4 = 2 . Polycarp chooses  i = 5 . Game process:  i = 5 ⟶ + 3 8 . The score of the game is:  a 5 = 3 .
+ Help Polycarp to find out the maximum score he can get if he chooses the starting index in an optimal way.
+
+Input
+ The first line contains one integer  t (  1 ≤ t ≤ 10 4 ) — the number of test cases. Then  t test cases follow.
+ The first line of each test case contains one integer  n (  1 ≤ n ≤ 2 ⋅ 10 5 ) — the length of the array  a .
+ The next line contains  n integers  a 1 , a 2 , … , a n (  1 ≤ a i ≤ 10 9 ) — elements of the array  a .
+ It is guaranteed that the sum of  n over all test cases does not exceed  2 ⋅ 10 5 .
+
+Output
+ For each test case, output on a separate line one number — the maximum score that Polycarp can get by playing the game on the corresponding array according to the instruction from the statement. Note that Polycarp chooses any starting position from  1 to  n in such a way as to maximize his result.
+
+Example
+Input
+4
+5
+7 3 1 2 3
+3
+2 1 4
+6
+2 1000 2 3 995 1
+5
+1 1 1 1 1
+Output
+7
+6
+1000
+5
+
+Note
+ The first test case is explained in the statement.
+ In the second test case, the maximum score can be achieved by choosing  i = 1 .
+ In the third test case, the maximum score can be achieved by choosing  i = 2 .
+ In the fourth test case, the maximum score can be achieved by choosing  i = 1 ."
+https://codeforces.com/problemset/problem/349/A,"['greedy', 'implementation']",PROGRAMMING,1100,349,A,"Description:
+
+
+The new ""Die Hard"" movie has just been released! There are n people at the cinema box office standing in a huge line. Each of them has a single 100 , 50 or 25 ruble bill. A ""Die Hard"" ticket costs 25 rubles. Can the booking clerk sell a ticket to each person and give the change if he initially has no money and sells the tickets strictly in the order people follow in the line?
+
+Input
+ The first line contains integer n  (1 ≤ n ≤ 10 5 ) — the number of people in the line. The next line contains n integers, each of them equals 25 , 50 or 100 — the values of the bills the people have. The numbers are given in the order from the beginning of the line (at the box office) to the end of the line.
+
+Output
+ Print "" YES "" (without the quotes) if the booking clerk can sell a ticket to each person and give the change. Otherwise print "" NO "".
+
+Examples
+Input
+4
+
+25 25 50 50
+Output
+YES
+Input
+2
+
+25 100
+Output
+NO
+Input
+4
+
+50 50 25 25
+Output
+NO"
+https://codeforces.com/problemset/problem/1366/A,"['binary search', 'greedy', 'math']",PROGRAMMING,1100,1366,A,"Description:
+
+
+Polycarp plays a well-known computer game (we won't mention its name). In this game, he can craft tools of two types — shovels and swords. To craft a shovel, Polycarp spends two sticks and one diamond; to craft a sword, Polycarp spends two diamonds and one stick.
+ Each tool can be sold for exactly one emerald. How many emeralds can Polycarp earn, if he has  a sticks and  b diamonds?
+
+Input
+ The first line contains one integer  t (  1 ≤ t ≤ 1000 ) — the number of test cases.
+ The only line of each test case contains two integers  a and  b (  0 ≤ a , b ≤ 10 9 ) — the number of sticks and the number of diamonds, respectively.
+
+Output
+ For each test case print one integer — the maximum number of emeralds Polycarp can earn.
+
+Example
+Input
+4
+4 4
+1000000000 0
+7 15
+8 7
+Output
+2
+0
+7
+5
+
+Note
+ In the first test case Polycarp can earn two emeralds as follows: craft one sword and one shovel.
+ In the second test case Polycarp does not have any diamonds, so he cannot craft anything."
+https://codeforces.com/problemset/problem/82/A,"['implementation', 'math']",PROGRAMMING,1100,82,A,"Description:
+
+
+Sheldon, Leonard, Penny, Rajesh and Howard are in the queue for a ""Double Cola"" drink vending machine; there are no other people in the queue. The first one in the queue (Sheldon) buys a can, drinks it and doubles! The resulting two Sheldons go to the end of the queue. Then the next in the queue (Leonard) buys a can, drinks it and gets to the end of the queue as two Leonards, and so on. This process continues ad infinitum.
+ For example, Penny drinks the third can of cola and the queue will look like this: Rajesh, Howard, Sheldon, Sheldon, Leonard, Leonard, Penny, Penny.
+ Write a program that will print the name of a man who will drink the n -th can.
+ Note that in the very beginning the queue looks like that: Sheldon, Leonard, Penny, Rajesh, Howard. The first person is Sheldon.
+
+Input
+ The input data consist of a single integer n ( 1 ≤ n ≤ 10 9 ).
+ It is guaranteed that the pretests check the spelling of all the five names, that is, that they contain all the five possible answers.
+
+Output
+ Print the single line — the name of the person who drinks the n -th can of cola. The cans are numbered starting from 1. Please note that you should spell the names like this: "" Sheldon "", "" Leonard "", "" Penny "", "" Rajesh "", "" Howard "" (without the quotes). In that order precisely the friends are in the queue initially.
+
+Examples
+Input
+1
+Output
+Sheldon
+Input
+6
+Output
+Sheldon
+Input
+1802
+Output
+Penny"
+https://codeforces.com/problemset/problem/1791/E,"['dp', 'greedy', 'sortings']",PROGRAMMING,1100,1791,E,"Description:
+
+
+Given an array  a consisting of  n elements, find the maximum possible sum the array can have after performing the following operation any number of times :
+ Choose  2  adjacent elements and flip both of their signs. In other words choose an index  i such that  1 ≤ i ≤ n − 1 and assign  a i = − a i and  a i + 1 = − a i + 1 .
+
+Input
+ The input consists of multiple test cases. The first line contains an integer  t (  1 ≤ t ≤ 1000 ) — the number of test cases. The descriptions of the test cases follow.
+ The first line of each test case contains an integer  n (  2 ≤ n ≤ 2 ⋅ 10 5 ) — the length of the array.
+ The following line contains  n space-separated integers  a 1 , a 2 , … , a n (  − 10 9 ≤ a i ≤ 10 9 ).
+ It is guaranteed that the sum of  n over all test cases does not exceed  2 ⋅ 10 5 .
+
+Output
+ For each test case, output the maximum possible sum the array can have after performing the described operation any number of times.
+
+Example
+Input
+5
+3
+-1 -1 -1
+5
+1 5 -5 0 2
+3
+1 2 3
+6
+-1 10 9 8 7 6
+2
+-1 -1
+Output
+1
+13
+6
+39
+2
+
+Note
+ For the first test case, by performing the operation on the first two elements, we can change the array from  [ − 1 , − 1 , − 1 ] to  [ 1 , 1 , − 1 ] , and it can be proven this array obtains the maximum possible sum which is  1 + 1 + ( − 1 ) = 1 .
+ For the second test case, by performing the operation on  − 5 and  0 , we change the array from  [ 1 , 5 , − 5 , 0 , 2 ] to  [ 1 , 5 , − ( − 5 ) , − 0 , 2 ] = [ 1 , 5 , 5 , 0 , 2 ] , which has the maximum sum since all elements are non-negative. So, the answer is  1 + 5 + 5 + 0 + 2 = 13 .
+ For the third test case, the array already contains only positive numbers, so performing operations is unnecessary. The answer is just the sum of the whole array, which is  1 + 2 + 3 = 6 ."
+https://codeforces.com/problemset/problem/1409/B,"['brute force', 'greedy', 'math']",PROGRAMMING,1100,1409,B,"Description:
+
+
+You are given four integers  a ,  b ,  x and  y . Initially,  a ≥ x and  b ≥ y . You can do the following operation no more than   n times:
+ Choose either  a or  b and decrease it by one. However, as a result of this operation, value of  a cannot become less than  x , and value of  b cannot become less than  y .
+ Your task is to find the minimum possible product of  a and  b (  a ⋅ b ) you can achieve by applying the given operation no more than  n times.
+ You have to answer  t independent test cases.
+
+Input
+ The first line of the input contains one integer  t (  1 ≤ t ≤ 2 ⋅ 10 4 ) — the number of test cases. Then  t test cases follow.
+ The only line of the test case contains five integers  a ,  b ,  x ,  y and  n (  1 ≤ a , b , x , y , n ≤ 10 9 ). Additional constraint on the input:  a ≥ x and  b ≥ y always holds.
+
+Output
+ For each test case, print one integer: the minimum possible product of  a and  b (  a ⋅ b ) you can achieve by applying the given operation no more than  n times.
+
+Example
+Input
+7
+10 10 8 5 3
+12 8 8 7 2
+12343 43 4543 39 123212
+1000000000 1000000000 1 1 1
+1000000000 1000000000 1 1 1000000000
+10 11 2 1 5
+10 11 9 1 10
+Output
+70
+77
+177177
+999999999000000000
+999999999
+55
+10
+
+Note
+ In the first test case of the example, you need to decrease  b three times and obtain  10 ⋅ 7 = 70 .
+ In the second test case of the example, you need to decrease  a one time,  b one time and obtain  11 ⋅ 7 = 77 .
+ In the sixth test case of the example, you need to decrease  a five times and obtain  5 ⋅ 11 = 55 .
+ In the seventh test case of the example, you need to decrease  b ten times and obtain  10 ⋅ 1 = 10 ."
+https://codeforces.com/problemset/problem/1873/E,"['binary search', 'sortings']",PROGRAMMING,1100,1873,E,"Description:
+
+
+You love fish, that's why you have decided to build an aquarium. You have a piece of coral made of  n columns, the  i -th of which is  a i units tall. Afterwards, you will build a tank around the coral as follows:
+ Pick an integer  h ≥ 1 — the height of the tank. Build walls of height  h on either side of the tank. Then, fill the tank up with water so that the height of each column is  h , unless the coral is taller than  h ; then no water should be added to this column.
+ 
+ a = [ 3 , 1 , 2 , 4 , 6 , 2 , 5 ]
+ a=[3,1,2,4,6,2,5]
+ 
+ h = 4
+ h=4
+ 
+ w = 8
+ w=8
+ 
+ 
+ x
+ x
+ 
+ h
+ h
+
+Input
+ The first line contains a single integer  t (  1 ≤ t ≤ 10 4 ) — the number of test cases.
+ The first line of each test case contains two positive integers  n and  x (  1 ≤ n ≤ 2 ⋅ 10 5 ;  1 ≤ x ≤ 10 9 ) — the number of columns of the coral and the maximum amount of water you can use.
+ The second line of each test case contains  n space-separated integers  a i (  1 ≤ a i ≤ 10 9 ) — the heights of the coral.
+ The sum of  n over all test cases doesn't exceed  2 ⋅ 10 5 .
+
+Output
+ For each test case, output a single positive integer  h (  h ≥ 1 ) — the maximum height the tank can have, so you need at most  x units of water to fill up the tank.
+ We have a proof that under these constraints, such a value of  h always exists.
+
+Example
+Input
+5
+7 9
+3 1 2 4 6 2 5
+3 10
+1 1 1
+4 1
+1 4 3 4
+6 1984
+2 6 5 9 1 8
+1 1000000000
+1
+Output
+4
+4
+2
+335
+1000000001
+
+Note
+ The first test case is pictured in the statement. With  h = 4 we need  8 units of water, but if  h is increased to  5 we need  13 units of water, which is more than  x = 9 . So  h = 4 is optimal.
+ In the second test case, we can pick  h = 4 and add  3 units to each column, using a total of  9 units of water. It can be shown that this is optimal.
+ In the third test case, we can pick  h = 2 and use all of our water, so it is optimal."

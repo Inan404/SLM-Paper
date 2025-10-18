@@ -1,0 +1,738 @@
+url,tags,type,rating,contest_id,index,statement
+https://codeforces.com/problemset/problem/25/A,['brute force'],PROGRAMMING,1300,25,A,"Description:
+
+
+Bob is preparing to pass IQ test. The most frequent task in this test is to find out which one of the given n numbers differs from the others. Bob observed that one number usually differs from the others in evenness. Help Bob — to check his answers, he needs a program that among the given n numbers finds one that is different in evenness.
+
+Input
+ The first line contains integer n ( 3 ≤ n ≤ 100 ) — amount of numbers in the task. The second line contains n space-separated natural numbers, not exceeding 100. It is guaranteed, that exactly one of these numbers differs from the others in evenness.
+
+Output
+ Output index of number that differs from the others in evenness. Numbers are numbered from 1 in the input order.
+
+Examples
+Input
+5
+
+2 4 7 8 10
+Output
+3
+Input
+4
+
+1 2 1 1
+Output
+2"
+https://codeforces.com/problemset/problem/4/C,"['data structures', 'hashing', 'implementation']",PROGRAMMING,1300,4,C,"Description:
+
+
+A new e-mail service ""Berlandesk"" is going to be opened in Berland in the near future. The site administration wants to launch their project as soon as possible, that's why they ask you to help. You're suggested to implement the prototype of site registration system. The system should work on the following principle.
+ Each time a new user wants to register, he sends to the system a request with his name . If such a name does not exist in the system database, it is inserted into the database, and the user gets the response OK , confirming the successful registration. If the name already exists in the system database, the system makes up a new user name, sends it to the user as a prompt and also inserts the prompt into the database . The new name is formed by the following rule. Numbers, starting with 1, are appended one after another to name ( name1 , name2 , ...), among these numbers the least i is found so that name i does not yet exist in the database.
+
+Input
+ The first line contains number n ( 1 ≤ n ≤ 10 5 ). The following n lines contain the requests to the system. Each request is a non-empty line, and consists of not more than 32 characters, which are all lowercase Latin letters.
+
+Output
+ Print n lines, which are system responses to the requests: OK in case of successful registration, or a prompt with a new name, if the requested name is already taken.
+
+Examples
+Input
+4
+
+abacaba
+
+acaba
+
+abacaba
+
+acab
+Output
+OK
+
+OK
+
+abacaba1
+
+OK
+Input
+6
+
+first
+
+first
+
+second
+
+second
+
+third
+
+third
+Output
+OK
+
+first1
+
+OK
+
+second1
+
+OK
+
+third1"
+https://codeforces.com/problemset/problem/230/B,"['binary search', 'implementation', 'math', 'number theory']",PROGRAMMING,1300,230,B,"Description:
+
+
+We know that prime numbers are positive integers that have exactly two distinct positive divisors. Similarly, we'll call a positive integer t  Т-prime , if t has exactly three distinct positive divisors.
+ You are given an array of n positive integers. For each of them determine whether it is Т-prime or not.
+
+Input
+ The first line contains a single positive integer, n ( 1 ≤ n ≤ 10 5 ), showing how many numbers are in the array. The next line contains n space-separated integers x i ( 1 ≤ x i ≤ 10 12 ).
+ Please, do not use the %lld specifier to read or write 64-bit integers in С++. It is advised to use the cin , cout streams or the %I64d specifier.
+
+Output
+ Print n lines: the i -th line should contain "" YES "" (without the quotes), if number x i is Т-prime, and "" NO "" (without the quotes), if it isn't.
+
+Examples
+Input
+3
+
+4 5 6
+Output
+YES
+
+NO
+
+NO
+
+Note
+ The given test has three numbers. The first number 4 has exactly three divisors — 1, 2 and 4, thus the answer for this number is "" YES "". The second number 5 has two divisors (1 and 5), and the third number 6 has four divisors (1, 2, 3, 6), hence the answer for them is "" NO ""."
+https://codeforces.com/problemset/problem/189/A,"['brute force', 'dp']",PROGRAMMING,1300,189,A,"Description:
+
+
+Polycarpus has a ribbon, its length is n . He wants to cut the ribbon in a way that fulfils the following two conditions:
+ After the cutting each ribbon piece should have length a , b or c . After the cutting the number of ribbon pieces should be maximum.
+ Help Polycarpus and find the number of ribbon pieces after the required cutting.
+
+Input
+ The first line contains four space-separated integers n , a , b and c  (1 ≤ n , a , b , c ≤ 4000) — the length of the original ribbon and the acceptable lengths of the ribbon pieces after the cutting, correspondingly. The numbers a , b and c can coincide.
+
+Output
+ Print a single number — the maximum possible number of ribbon pieces. It is guaranteed that at least one correct ribbon cutting exists.
+
+Examples
+Input
+5 5 3 2
+Output
+2
+Input
+7 5 5 2
+Output
+2
+
+Note
+ In the first example Polycarpus can cut the ribbon in such way: the first piece has length 2, the second piece has length 3.
+ In the second example Polycarpus can cut the ribbon in such way: the first piece has length 5, the second piece has length 2."
+https://codeforces.com/problemset/problem/451/B,"['implementation', 'sortings']",PROGRAMMING,1300,451,B,"Description:
+
+
+Being a programmer, you like arrays a lot. For your birthday, your friends have given you an array a consisting of n  distinct integers.
+ Unfortunately, the size of a is too small. You want a bigger array! Your friends agree to give you a bigger array, but only if you are able to answer the following question correctly: is it possible to sort the array a (in increasing order) by reversing exactly one segment of a ? See definitions of segment and reversing in the notes.
+
+Input
+ The first line of the input contains an integer n ( 1 ≤ n ≤ 10 5 ) — the size of array a .
+ The second line contains n distinct space-separated integers: a [1], a [2], ..., a [ n ] ( 1 ≤ a [ i ] ≤ 10 9 ).
+
+Output
+ Print "" yes "" or "" no "" (without quotes), depending on the answer.
+ If your answer is "" yes "", then also print two space-separated integers denoting start and end (start must not be greater than end) indices of the segment to be reversed. If there are multiple ways of selecting these indices, print any of them.
+
+Examples
+Input
+3
+
+3 2 1
+Output
+yes
+
+1 3
+Input
+4
+
+2 1 3 4
+Output
+yes
+
+1 2
+Input
+4
+
+3 1 2 4
+Output
+no
+Input
+2
+
+1 2
+Output
+yes
+
+1 1
+
+Note
+ Sample 1. You can reverse the entire array to get [1, 2, 3] , which is sorted.
+ Sample 3. No segment can be reversed such that the array will be sorted.
+ Definitions
+ A segment [ l , r ] of array a is the sequence a [ l ], a [ l + 1], ..., a [ r ] .
+ If you have an array a of size n and you reverse its segment [ l , r ] , the array will become:
+ a [1], a [2], ..., a [ l - 2], a [ l - 1], a [ r ], a [ r - 1], ..., a [ l + 1], a [ l ], a [ r + 1], a [ r + 2], ..., a [ n - 1], a [ n ]."
+https://codeforces.com/problemset/problem/459/B,"['combinatorics', 'implementation', 'sortings']",PROGRAMMING,1300,459,B,"Description:
+
+
+Pashmak decided to give Parmida a pair of flowers from the garden. There are n flowers in the garden and the i -th of them has a beauty number b i . Parmida is a very strange girl so she doesn't want to have the two most beautiful flowers necessarily. She wants to have those pairs of flowers that their beauty difference is maximal possible!
+ Your task is to write a program which calculates two things:
+ The maximum beauty difference of flowers that Pashmak can give to Parmida. The number of ways that Pashmak can pick the flowers. Two ways are considered different if and only if there is at least one flower that is chosen in the first way and not chosen in the second way.
+
+Input
+ The first line of the input contains n  (2 ≤ n ≤ 2·10 5 ) . In the next line there are n space-separated integers b 1 , b 2 , ..., b n  (1 ≤ b i ≤ 10 9 ) .
+
+Output
+ The only line of output should contain two integers. The maximum beauty difference and the number of ways this may happen, respectively.
+
+Examples
+Input
+2
+
+1 2
+Output
+1 1
+Input
+3
+
+1 4 5
+Output
+4 1
+Input
+5
+
+3 1 2 3 1
+Output
+2 4
+
+Note
+ In the third sample the maximum beauty difference is 2 and there are 4 ways to do this:
+ choosing the first and the second flowers; choosing the first and the fifth flowers; choosing the fourth and the second flowers; choosing the fourth and the fifth flowers."
+https://codeforces.com/problemset/problem/478/B,"['combinatorics', 'constructive algorithms', 'greedy', 'math']",PROGRAMMING,1300,478,B,"Description:
+
+
+n participants of the competition were split into m teams in some manner so that each team has at least one participant. After the competition each pair of participants from the same team became friends.
+ Your task is to write a program that will find the minimum and the maximum number of pairs of friends that could have formed by the end of the competition.
+
+Input
+ The only line of input contains two integers n and m , separated by a single space ( 1 ≤ m ≤ n ≤ 10 9 ) — the number of participants and the number of teams respectively.
+
+Output
+ The only line of the output should contain two integers k min and k max — the minimum possible number of pairs of friends and the maximum possible number of pairs of friends respectively.
+
+Examples
+Input
+5 1
+Output
+10 10
+Input
+3 2
+Output
+1 1
+Input
+6 3
+Output
+3 6
+
+Note
+ In the first sample all the participants get into one team, so there will be exactly ten pairs of friends.
+ In the second sample at any possible arrangement one team will always have two participants and the other team will always have one participant. Thus, the number of pairs of friends will always be equal to one.
+ In the third sample minimum number of newly formed friendships can be achieved if participants were split on teams consisting of 2 people, maximum number can be achieved if participants were split on teams of 1 , 1 and 4 people."
+https://codeforces.com/problemset/problem/1294/C,"['greedy', 'math', 'number theory']",PROGRAMMING,1300,1294,C,"Description:
+
+
+You are given one integer number  n . Find three distinct integers   a , b , c such that  2 ≤ a , b , c and  a ⋅ b ⋅ c = n or say that it is impossible to do it.
+ If there are several answers, you can print any.
+ You have to answer  t independent test cases.
+
+Input
+ The first line of the input contains one integer  t (  1 ≤ t ≤ 100 ) — the number of test cases.
+ The next  n lines describe test cases. The  i -th test case is given on a new line as one integer  n (  2 ≤ n ≤ 10 9 ).
+
+Output
+ For each test case, print the answer on it. Print "" NO "" if it is impossible to represent  n as  a ⋅ b ⋅ c for some distinct integers   a , b , c such that  2 ≤ a , b , c .
+ Otherwise, print "" YES "" and any possible such representation.
+
+Example
+Input
+5
+64
+32
+97
+2
+12345
+Output
+YES
+2 4 8 
+NO
+NO
+NO
+YES
+3 5 823"
+https://codeforces.com/problemset/problem/1360/D,"['math', 'number theory']",PROGRAMMING,1300,1360,D,"Description:
+
+
+Polycarp wants to buy exactly   n shovels. The shop sells packages with shovels. The store has  k types of packages: the package of the  i -th type consists of exactly  i shovels (  1 ≤ i ≤ k ). The store has an infinite number of packages of each type.
+ Polycarp wants to choose one type of packages and then buy several (one or more) packages of this type. What is the smallest number of packages Polycarp will have to buy to get exactly  n shovels?
+ For example, if  n = 8 and  k = 7 , then Polycarp will buy  2 packages of  4 shovels.
+ Help Polycarp find the minimum number of packages that he needs to buy, given that he:
+ will buy exactly  n shovels in total; the sizes of all packages he will buy are all the same and the number of shovels in each package is an integer from  1 to  k , inclusive.
+
+Input
+ The first line contains an integer  t (  1 ≤ t ≤ 100 ) — the number of test cases in the input. Then,  t test cases follow, one per line.
+ Each test case consists of two positive integers  n (  1 ≤ n ≤ 10 9 ) and  k (  1 ≤ k ≤ 10 9 ) — the number of shovels and the number of types of packages.
+
+Output
+ Print  t answers to the test cases. Each answer is a positive integer — the minimum number of packages.
+
+Example
+Input
+5
+8 7
+8 1
+6 10
+999999733 999999732
+999999733 999999733
+Output
+2
+8
+1
+999999733
+1
+
+Note
+ The answer to the first test case was explained in the statement.
+ In the second test case, there is only one way to buy  8 shovels —  8 packages of one shovel.
+ In the third test case, you need to buy a  1 package of  6 shovels."
+https://codeforces.com/problemset/problem/476/B,"['bitmasks', 'brute force', 'combinatorics', 'dp', 'math', 'probabilities']",PROGRAMMING,1300,476,B,"Description:
+
+
+Dreamoon is standing at the position 0 on a number line. Drazil is sending a list of commands through Wi-Fi to Dreamoon's smartphone and Dreamoon follows them.
+ Each command is one of the following two types:
+ Go 1 unit towards the positive direction, denoted as '+' Go 1 unit towards the negative direction, denoted as '-'
+ But the Wi-Fi condition is so poor that Dreamoon's smartphone reports some of the commands can't be recognized and Dreamoon knows that some of them might even be wrong though successfully recognized. Dreamoon decides to follow every recognized command and toss a fair coin to decide those unrecognized ones (that means, he moves to the 1 unit to the negative or positive direction with the same probability 0.5 ).
+ You are given an original list of commands sent by Drazil and list received by Dreamoon. What is the probability that Dreamoon ends in the position originally supposed to be final by Drazil's commands?
+
+Input
+ The first line contains a string s 1 — the commands Drazil sends to Dreamoon, this string consists of only the characters in the set { '+' , '-' }.
+ The second line contains a string s 2 — the commands Dreamoon's smartphone recognizes, this string consists of only the characters in the set { '+' , '-' , '?' }. '?' denotes an unrecognized command.
+ Lengths of two strings are equal and do not exceed 10 .
+
+Output
+ Output a single real number corresponding to the probability. The answer will be considered correct if its relative or absolute error doesn't exceed 10 - 9 .
+
+Examples
+Input
+++-+-
+
++-+-+
+Output
+1.000000000000
+Input
++-+-
+
++-??
+Output
+0.500000000000
+Input
++++
+
+??-
+Output
+0.000000000000
+
+Note
+ For the first sample, both s 1 and s 2 will lead Dreamoon to finish at the same position + 1 .
+ For the second sample, s 1 will lead Dreamoon to finish at position 0, while there are four possibilites for s 2 : { ""+-++"" , ""+-+-"" , ""+--+"" , ""+---"" } with ending position {+2, 0, 0, -2} respectively. So there are 2 correct cases out of 4 , so the probability of finishing at the correct position is 0.5 .
+ For the third sample, s 2 could only lead us to finish at positions {+1, -1, -3}, so the probability to finish at the correct position + 3 is 0 ."
+https://codeforces.com/problemset/problem/600/B,"['binary search', 'data structures', 'sortings', 'two pointers']",PROGRAMMING,1300,600,B,"Description:
+
+
+You are given two arrays of integers a and b . For each element of the second array b j you should find the number of elements in array a that are less than or equal to the value b j .
+
+Input
+ The first line contains two integers n , m ( 1 ≤ n , m ≤ 2·10 5 ) — the sizes of arrays a and b .
+ The second line contains n integers — the elements of array a ( - 10 9 ≤ a i ≤ 10 9 ).
+ The third line contains m integers — the elements of array b ( - 10 9 ≤ b j ≤ 10 9 ).
+
+Output
+ Print m integers, separated by spaces: the j -th of which is equal to the number of such elements in array a that are less than or equal to the value b j .
+
+Examples
+Input
+5 4
+
+1 3 5 7 9
+
+6 4 2 8
+Output
+3 2 1 4
+Input
+5 5
+
+1 2 1 2 5
+
+3 1 4 1 5
+Output
+4 2 4 2 5"
+https://codeforces.com/problemset/problem/1538/C,"['binary search', 'data structures', 'math', 'two pointers']",PROGRAMMING,1300,1538,C,"Description:
+
+
+You are given an array  a of  n integers. Find the number of pairs  ( i , j ) (  1 ≤ i < j ≤ n ) where the sum of  a i + a j is greater than or equal to  l and less than or equal to  r (that is,  l ≤ a i + a j ≤ r ).
+ For example, if  n = 3 ,  a = [ 5 , 1 , 2 ] ,  l = 4 and  r = 7 , then two pairs are suitable:
+ i = 1 and  j = 2 (  4 ≤ 5 + 1 ≤ 7 ); i = 1 and  j = 3 (  4 ≤ 5 + 2 ≤ 7 ).
+
+Input
+ The first line contains an integer  t (  1 ≤ t ≤ 10 4 ). Then  t test cases follow.
+ The first line of each test case contains three integers  n , l , r (  1 ≤ n ≤ 2 ⋅ 10 5 ,  1 ≤ l ≤ r ≤ 10 9 ) — the length of the array and the limits on the sum in the pair.
+ The second line contains  n integers  a 1 , a 2 , … , a n (  1 ≤ a i ≤ 10 9 ).
+ It is guaranteed that the sum of  n overall test cases does not exceed  2 ⋅ 10 5 .
+
+Output
+ For each test case, output a single integer — the number of index pairs  ( i , j ) (  i < j ), such that  l ≤ a i + a j ≤ r .
+
+Example
+Input
+4
+3 4 7
+5 1 2
+5 5 8
+5 1 2 4 3
+4 100 1000
+1 1 1 1
+5 9 13
+2 5 5 1 1
+Output
+2
+7
+0
+1"
+https://codeforces.com/problemset/problem/1328/B,"['binary search', 'brute force', 'combinatorics', 'implementation', 'math']",PROGRAMMING,1300,1328,B,"Description:
+
+
+For the given integer  n (  n > 2 ) let's write down all the strings of length  n which contain  n − 2 letters ' a ' and two letters ' b ' in lexicographical (alphabetical) order.
+ Recall that the string  s of length  n is lexicographically less than string  t of length  n , if there exists such  i (  1 ≤ i ≤ n ), that  s i < t i , and for any  j (  1 ≤ j < i )  s j = t j . The lexicographic comparison of strings is implemented by the operator < in modern programming languages.
+ For example, if  n = 5 the strings are (the order does matter):
+ aaabb aabab aabba abaab ababa abbaa baaab baaba babaa bbaaa
+ It is easy to show that such a list of strings will contain exactly  n ⋅ ( n − 1 ) 2 strings.
+ You are given  n (  n > 2 ) and  k (  1 ≤ k ≤ n ⋅ ( n − 1 ) 2 ). Print the  k -th string from the list.
+
+Input
+ The input contains one or more test cases.
+ The first line contains one integer  t (  1 ≤ t ≤ 10 4 ) — the number of test cases in the test. Then  t test cases follow.
+ Each test case is written on the the separate line containing two integers  n and  k (  3 ≤ n ≤ 10 5 , 1 ≤ k ≤ min ( 2 ⋅ 10 9 , n ⋅ ( n − 1 ) 2 ) .
+ The sum of values  n over all test cases in the test doesn't exceed  10 5 .
+
+Output
+ For each test case print the  k -th string from the list of all described above strings of length  n . Strings in the list are sorted lexicographically (alphabetically).
+
+Example
+Input
+7
+5 1
+5 2
+5 8
+5 10
+3 1
+3 2
+20 100
+Output
+aaabb
+aabab
+baaba
+bbaaa
+abb
+bab
+aaaaabaaaaabaaaaaaaa"
+https://codeforces.com/problemset/problem/276/B,"['games', 'greedy']",PROGRAMMING,1300,276,B,"Description:
+
+
+The Little Girl loves problems on games very much. Here's one of them.
+ Two players have got a string s , consisting of lowercase English letters. They play a game that is described by the following rules:
+ The players move in turns; In one move the player can remove an arbitrary letter from string s . If the player before his turn can reorder the letters in string s so as to get a palindrome, this player wins. A palindrome is a string that reads the same both ways (from left to right, and vice versa). For example, string "" abba "" is a palindrome and string "" abc "" isn't.
+ Determine which player will win, provided that both sides play optimally well — the one who moves first or the one who moves second.
+
+Input
+ The input contains a single line, containing string s ( 1 ≤ | s |  ≤  10 3 ). String s consists of lowercase English letters.
+
+Output
+ In a single line print word "" First "" if the first player wins (provided that both players play optimally well). Otherwise, print word "" Second "". Print the words without the quotes.
+
+Examples
+Input
+aba
+Output
+First
+Input
+abca
+Output
+Second"
+https://codeforces.com/problemset/problem/1372/B,"['greedy', 'math', 'number theory']",PROGRAMMING,1300,1372,B,"Description:
+
+
+In Omkar's last class of math, he learned about the least common multiple, or  L C M .  L C M ( a , b ) is the smallest positive integer  x which is divisible by both  a and  b .
+ Omkar, having a laudably curious mind, immediately thought of a problem involving the  L C M operation: given an integer  n , find positive integers  a and  b such that  a + b = n and  L C M ( a , b ) is the minimum value possible.
+ Can you help Omkar solve his ludicrously challenging math problem?
+
+Input
+ Each test contains multiple test cases. The first line contains the number of test cases  t (  1 ≤ t ≤ 10 ). Description of the test cases follows.
+ Each test case consists of a single integer  n (  2 ≤ n ≤ 10 9 ).
+
+Output
+ For each test case, output two positive integers  a and  b , such that  a + b = n and  L C M ( a , b ) is the minimum possible.
+
+Example
+Input
+3
+4
+6
+9
+Output
+2 2
+3 3
+3 6
+
+Note
+ For the first test case, the numbers we can choose are  1 , 3 or  2 , 2 .  L C M ( 1 , 3 ) = 3 and  L C M ( 2 , 2 ) = 2 , so we output  2  2 .
+ For the second test case, the numbers we can choose are  1 , 5 ,  2 , 4 , or  3 , 3 .  L C M ( 1 , 5 ) = 5 ,  L C M ( 2 , 4 ) = 4 , and  L C M ( 3 , 3 ) = 3 , so we output  3  3 .
+ For the third test case,  L C M ( 3 , 6 ) = 6 . It can be shown that there are no other pairs of numbers which sum to  9 that have a lower  L C M ."
+https://codeforces.com/problemset/problem/1335/D,"['constructive algorithms', 'implementation']",PROGRAMMING,1300,1335,D,"Description:
+
+
+You are given a correct solution of the sudoku puzzle. If you don't know what is the sudoku, you can read about it here .
+ The picture showing the correct sudoku solution:
+ 
+ Blocks are bordered with bold black color.
+ Your task is to change at most   9 elements of this field (i.e. choose some  1 ≤ i , j ≤ 9 and change the number at the position  ( i , j ) to any other number in range  [ 1 ; 9 ] ) to make it anti-sudoku . The anti-sudoku is the  9 × 9 field, in which:
+ Any number in this field is in range  [ 1 ; 9 ] ; each row contains at least two equal elements; each column contains at least two equal elements; each  3 × 3 block (you can read what is the block in the link above) contains at least two equal elements.
+ It is guaranteed that the answer exists.
+ You have to answer  t independent test cases.
+
+Input
+ The first line of the input contains one integer  t (  1 ≤ t ≤ 10 4 ) — the number of test cases. Then  t test cases follow.
+ Each test case consists of  9 lines, each line consists of  9 characters from  1 to  9 without any whitespaces — the correct solution of the sudoku puzzle.
+
+Output
+ For each test case, print the answer — the initial field with at most   9 changed elements so that the obtained field is anti-sudoku . If there are several solutions, you can print any. It is guaranteed that the answer exists.
+
+Example
+Input
+1
+154873296
+386592714
+729641835
+863725149
+975314628
+412968357
+631457982
+598236471
+247189563
+Output
+154873396
+336592714
+729645835
+863725145
+979314628
+412958357
+631457992
+998236471
+247789563"
+https://codeforces.com/problemset/problem/1365/B,"['constructive algorithms', 'implementation']",PROGRAMMING,1300,1365,B,"Description:
+
+
+Ashish has  n elements arranged in a line.
+ These elements are represented by two integers  a i — the value of the element and  b i — the type of the element (there are only two possible types:  0 and  1 ). He wants to sort the elements in non-decreasing values of  a i .
+ He can perform the following operation any number of times:
+ Select any two elements  i and  j such that  b i ≠ b j and swap them. That is, he can only swap two elements of different types in one move.
+ Tell him if he can sort the elements in non-decreasing values of  a i after performing any number of operations.
+
+Input
+ The first line contains one integer  t   ( 1 ≤ t ≤ 100 ) — the number of test cases. The description of the test cases follows.
+ The first line of each test case contains one integer  n   ( 1 ≤ n ≤ 500 ) — the size of the arrays.
+ The second line contains  n integers  a i   ( 1 ≤ a i ≤ 10 5 ) — the value of the  i -th element.
+ The third line containts  n integers  b i   ( b i ∈ { 0 , 1 } ) — the type of the  i -th element.
+
+Output
+ For each test case, print "" Yes "" or "" No "" (without quotes) depending on whether it is possible to sort elements in non-decreasing order of their value.
+ You may print each letter in any case (upper or lower).
+
+Example
+Input
+5
+4
+10 20 20 30
+0 1 0 1
+3
+3 1 2
+0 1 1
+4
+2 2 4 8
+1 1 1 1
+3
+5 15 4
+0 0 0
+4
+20 10 100 50
+1 0 0 1
+Output
+Yes
+Yes
+Yes
+No
+Yes
+
+Note
+ For the first case: The elements are already in sorted order.
+ For the second case: Ashish may first swap elements at positions  1 and  2 , then swap elements at positions  2 and  3 .
+ For the third case: The elements are already in sorted order.
+ For the fourth case: No swap operations may be performed as there is no pair of elements  i and  j such that  b i ≠ b j . The elements cannot be sorted.
+ For the fifth case: Ashish may swap elements at positions  3 and  4 , then elements at positions  1 and  2 ."
+https://codeforces.com/problemset/problem/1352/D,['implementation'],PROGRAMMING,1300,1352,D,"Description:
+
+
+There are  n candies in a row, they are numbered from left to right from  1 to  n . The size of the  i -th candy is  a i .
+ Alice and Bob play an interesting and tasty game: they eat candy. Alice will eat candy from left to right , and Bob — from right to left . The game ends if all the candies are eaten.
+ The process consists of moves. During a move, the player eats one or more sweets from her/his side (Alice eats from the left, Bob — from the right).
+ Alice makes the first move. During the first move, she will eat  1 candy (its size is  a 1 ). Then, each successive move the players alternate — that is, Bob makes the second move, then Alice, then again Bob and so on.
+ On each move, a player counts the total size of candies eaten during the current move. Once this number becomes strictly greater than the total size of candies eaten by the other player on their previous move, the current player stops eating and the move ends. In other words, on a move, a player eats the smallest possible number of candies such that the sum of the sizes of candies eaten on this move is strictly greater than the sum of the sizes of candies that the other player ate on the previous move. If there are not enough candies to make a move this way, then the player eats up all the remaining candies and the game ends.
+ For example, if  n = 11 and  a = [ 3 , 1 , 4 , 1 , 5 , 9 , 2 , 6 , 5 , 3 , 5 ] , then:
+ move 1: Alice eats one candy of size  3 and the sequence of candies becomes  [ 1 , 4 , 1 , 5 , 9 , 2 , 6 , 5 , 3 , 5 ] . move 2: Alice ate  3 on the previous move, which means Bob must eat  4 or more. Bob eats one candy of size  5 and the sequence of candies becomes  [ 1 , 4 , 1 , 5 , 9 , 2 , 6 , 5 , 3 ] . move 3: Bob ate  5 on the previous move, which means Alice must eat  6 or more. Alice eats three candies with the total size of  1 + 4 + 1 = 6 and the sequence of candies becomes  [ 5 , 9 , 2 , 6 , 5 , 3 ] . move 4: Alice ate  6 on the previous move, which means Bob must eat  7 or more. Bob eats two candies with the total size of  3 + 5 = 8 and the sequence of candies becomes  [ 5 , 9 , 2 , 6 ] . move 5: Bob ate  8 on the previous move, which means Alice must eat  9 or more. Alice eats two candies with the total size of  5 + 9 = 14 and the sequence of candies becomes  [ 2 , 6 ] . move 6 (the last): Alice ate  14 on the previous move, which means Bob must eat  15 or more. It is impossible, so Bob eats the two remaining candies and the game ends.
+ Print the number of moves in the game and two numbers:
+ a — the total size of all sweets eaten by Alice during the game; b — the total size of all sweets eaten by Bob during the game.
+
+Input
+ The first line contains an integer  t (  1 ≤ t ≤ 5000 ) — the number of test cases in the input. The following are descriptions of the  t test cases.
+ Each test case consists of two lines. The first line contains an integer  n (  1 ≤ n ≤ 1000 ) — the number of candies. The second line contains a sequence of integers  a 1 , a 2 , … , a n (  1 ≤ a i ≤ 1000 ) — the sizes of candies in the order they are arranged from left to right.
+ It is guaranteed that the sum of the values of  n for all sets of input data in a test does not exceed  2 ⋅ 10 5 .
+
+Output
+ For each set of input data print three integers — the number of moves in the game and the required values  a and  b .
+
+Example
+Input
+7
+11
+3 1 4 1 5 9 2 6 5 3 5
+1
+1000
+3
+1 1 1
+13
+1 2 3 4 5 6 7 8 9 10 11 12 13
+2
+2 1
+6
+1 1 1 1 1 1
+7
+1 1 1 1 1 1 1
+Output
+6 23 21
+1 1000 0
+2 1 2
+6 45 46
+2 2 1
+3 4 2
+4 4 3"
+https://codeforces.com/problemset/problem/450/B,"['implementation', 'math']",PROGRAMMING,1300,450,B,"Description:
+
+
+Jzzhu has invented a kind of sequences, they meet the following property:
+ 
+ You are given x and y , please calculate f n modulo 1000000007  (10 9 + 7) .
+
+Input
+ The first line contains two integers x and y  (| x |, | y | ≤ 10 9 ) . The second line contains a single integer n  (1 ≤ n ≤ 2·10 9 ) .
+
+Output
+ Output a single integer representing f n modulo 1000000007  (10 9 + 7) .
+
+Examples
+Input
+2 3
+
+3
+Output
+1
+Input
+0 -1
+
+2
+Output
+1000000006
+
+Note
+ In the first sample, f 2 = f 1 + f 3 , 3 = 2 + f 3 , f 3 = 1 .
+ In the second sample, f 2 =  - 1 ; - 1 modulo (10 9 + 7) equals (10 9 + 6) ."
+https://codeforces.com/problemset/problem/1360/E,"['dp', 'graphs', 'implementation', 'shortest paths']",PROGRAMMING,1300,1360,E,"Description:
+
+
+Polygon is not only the best platform for developing problems but also a square matrix with side  n , initially filled with the character 0 .
+ On the polygon, military training was held. The soldiers placed a cannon above each cell in the first row and a cannon to the left of each cell in the first column. Thus, exactly  2 n cannons were placed.
+ Initial polygon for  n = 4 .
+ Cannons shoot character 1 . At any moment of time, no more than one cannon is shooting. When a 1 flies out of a cannon, it flies forward (in the direction of the shot) until it collides with a polygon border or another 1 . After that, it takes the cell in which it was before the collision and remains there. Take a look at the examples for better understanding.
+ More formally:
+ if a cannon stands in the row  i , to the left of the first column, and shoots with a 1 , then the 1 starts its flight from the cell (  i , 1 ) and ends in some cell (  i , j ); if a cannon stands in the column  j , above the first row, and shoots with a 1 , then the 1 starts its flight from the cell (  1 , j ) and ends in some cell (  i , j ).
+ For example, consider the following sequence of shots:
+ 1. Shoot the cannon in the row22.                         2. Shoot the cannon in the row22.                         3. Shoot the cannon in column33.
+ You have a report from the military training on your desk. This report is a square matrix with side length  n consisting of 0 and 1 . You wonder if the training actually happened. In other words, is there a sequence of shots such that, after the training, you get the given matrix?
+ Each cannon can make an arbitrary number of shots. Before the training, each cell of the polygon contains 0 .
+
+Input
+ The first line contains an integer  t (  1 ≤ t ≤ 1000 ) — the number of test cases. Then  t test cases follow.
+ Each test case starts with a line containing an integer  n (  1 ≤ n ≤ 50 ) — the size of the polygon.
+ This is followed by  n lines of length  n , consisting of 0 and 1 — the polygon matrix after the training.
+ The total area of the matrices in all test cases in one test does not exceed  10 5 .
+
+Output
+ For each test case print:
+ YES if there is a sequence of shots leading to a given matrix; NO if such a sequence does not exist.
+ The letters in the words YES and NO can be printed in any case.
+
+Example
+Input
+5
+4
+0010
+0011
+0000
+0000
+2
+10
+01
+2
+00
+00
+4
+0101
+1111
+0101
+0111
+4
+0100
+1110
+0101
+0111
+Output
+YES
+NO
+YES
+YES
+NO
+
+Note
+ The first test case was explained in the statement.
+ The answer to the second test case is NO , since a 1 in a cell (  1 , 1 ) flying out of any cannon would continue its flight further."

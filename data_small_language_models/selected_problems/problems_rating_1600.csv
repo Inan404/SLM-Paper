@@ -1,0 +1,771 @@
+url,tags,type,rating,contest_id,index,statement
+https://codeforces.com/problemset/problem/1398/C,"['data structures', 'dp', 'math']",PROGRAMMING,1600,1398,C,"Description:
+
+
+You are given an array  a 1 , a 2 , … , a n consisting of integers from  0 to  9 . A subarray  a l , a l + 1 , a l + 2 , … , a r − 1 , a r is good if the sum of elements of this subarray is equal to the length of this subarray (  ∑ i = l r a i = r − l + 1 ).
+ For example, if  a = [ 1 , 2 , 0 ] , then there are  3 good subarrays:  a 1 … 1 = [ 1 ] , a 2 … 3 = [ 2 , 0 ] and  a 1 … 3 = [ 1 , 2 , 0 ] .
+ Calculate the number of good subarrays of the array  a .
+
+Input
+ The first line contains one integer  t (  1 ≤ t ≤ 1000 ) — the number of test cases.
+ The first line of each test case contains one integer  n (  1 ≤ n ≤ 10 5 ) — the length of the array  a .
+ The second line of each test case contains a string consisting of  n decimal digits, where the  i -th digit is equal to the value of  a i .
+ It is guaranteed that the sum of  n over all test cases does not exceed  10 5 .
+
+Output
+ For each test case print one integer — the number of good subarrays of the array  a .
+
+Example
+Input
+3
+3
+120
+5
+11011
+6
+600005
+Output
+3
+6
+1
+
+Note
+ The first test case is considered in the statement.
+ In the second test case, there are  6 good subarrays:  a 1 … 1 ,  a 2 … 2 ,  a 1 … 2 ,  a 4 … 4 ,  a 5 … 5 and  a 4 … 5 .
+ In the third test case there is only one good subarray:  a 2 … 6 ."
+https://codeforces.com/problemset/problem/371/C,"['binary search', 'brute force']",PROGRAMMING,1600,371,C,"Description:
+
+
+Polycarpus loves hamburgers very much. He especially adores the hamburgers he makes with his own hands. Polycarpus thinks that there are only three decent ingredients to make hamburgers from: a bread, sausage and cheese. He writes down the recipe of his favorite ""Le Hamburger de Polycarpus"" as a string of letters ' B ' (bread), ' S ' (sausage) и ' C ' (cheese). The ingredients in the recipe go from bottom to top, for example, recipe "" ВSCBS "" represents the hamburger where the ingredients go from bottom to top as bread, sausage, cheese, bread and sausage again.
+ Polycarpus has n b pieces of bread, n s pieces of sausage and n c pieces of cheese in the kitchen. Besides, the shop nearby has all three ingredients, the prices are p b rubles for a piece of bread, p s for a piece of sausage and p c for a piece of cheese.
+ Polycarpus has r rubles and he is ready to shop on them. What maximum number of hamburgers can he cook? You can assume that Polycarpus cannot break or slice any of the pieces of bread, sausage or cheese. Besides, the shop has an unlimited number of pieces of each ingredient.
+
+Input
+ The first line of the input contains a non-empty string that describes the recipe of ""Le Hamburger de Polycarpus"". The length of the string doesn't exceed 100, the string contains only letters ' B ' (uppercase English B ), ' S ' (uppercase English S ) and ' C ' (uppercase English C ).
+ The second line contains three integers n b , n s , n c ( 1 ≤ n b , n s , n c ≤ 100 ) — the number of the pieces of bread, sausage and cheese on Polycarpus' kitchen. The third line contains three integers p b , p s , p c ( 1 ≤ p b , p s , p c ≤ 100 ) — the price of one piece of bread, sausage and cheese in the shop. Finally, the fourth line contains integer r ( 1 ≤ r ≤ 10 12 ) — the number of rubles Polycarpus has.
+ Please, do not write the %lld specifier to read or write 64-bit integers in С++. It is preferred to use the cin , cout streams or the %I64d specifier.
+
+Output
+ Print the maximum number of hamburgers Polycarpus can make. If he can't make any hamburger, print 0 .
+
+Examples
+Input
+BBBSSC
+
+6 4 1
+
+1 2 3
+
+4
+Output
+2
+Input
+BBC
+
+1 10 1
+
+1 10 1
+
+21
+Output
+7
+Input
+BSC
+
+1 1 1
+
+1 1 3
+
+1000000000000
+Output
+200000000001"
+https://codeforces.com/problemset/problem/431/C,"['dp', 'implementation', 'trees']",PROGRAMMING,1600,431,C,"Description:
+
+
+Quite recently a creative student Lesha had a lecture on trees. After the lecture Lesha was inspired and came up with the tree of his own which he called a k -tree.
+ A k -tree is an infinite rooted tree where:
+ each vertex has exactly k children; each edge has some weight; if we look at the edges that goes from some vertex to its children (exactly k edges), then their weights will equal 1, 2, 3, ..., k .
+ The picture below shows a part of a 3-tree.
+ 
+ 
+ n
+ k
+ d
+ Help Dima find an answer to his question. As the number of ways can be rather large, print it modulo 1000000007 ( 10 9 + 7 ).
+
+Input
+ A single line contains three space-separated integers: n , k and d ( 1 ≤ n , k ≤ 100;  1 ≤ d ≤ k ).
+
+Output
+ Print a single integer — the answer to the problem modulo 1000000007 ( 10 9 + 7 ).
+
+Examples
+Input
+3 3 2
+Output
+3
+Input
+3 3 3
+Output
+1
+Input
+4 3 2
+Output
+6
+Input
+4 5 2
+Output
+7"
+https://codeforces.com/problemset/problem/1526/C2,"['data structures', 'greedy']",PROGRAMMING,1600,1526,C2,"Description:
+
+
+This is the hard version of the problem. The only difference is that in this version  n ≤ 200000 . You can make hacks only if both versions of the problem are solved.
+ There are  n potions in a line, with potion  1 on the far left and potion  n on the far right. Each potion will increase your health by  a i when drunk.  a i can be negative, meaning that potion will decrease will health.
+ You start with  0 health and you will walk from left to right, from first potion to the last one. At each potion, you may choose to drink it or ignore it. You must ensure that your health is always non-negative .
+ What is the largest number of potions you can drink?
+
+Input
+ The first line contains a single integer  n (  1 ≤ n ≤ 200000 ) — the number of potions.
+ The next line contains  n integers  a 1 ,  a 2 , ... ,  a n (  − 10 9 ≤ a i ≤ 10 9 ) which represent the change in health after drinking that potion.
+
+Output
+ Output a single integer, the maximum number of potions you can drink without your health becoming negative.
+
+Example
+Input
+6
+4 -4 1 -3 1 -3
+Output
+5
+
+Note
+ For the sample, you can drink  5 potions by taking potions  1 ,  3 ,  4 ,  5 and  6 . It is not possible to drink all  6 potions because your health will go negative at some point"
+https://codeforces.com/problemset/problem/1/B,"['implementation', 'math']",PROGRAMMING,1600,1,B,"Description:
+
+
+In the popular spreadsheets systems (for example, in Excel) the following numeration of columns is used. The first column has number A, the second — number B, etc. till column 26 that is marked by Z. Then there are two-letter numbers: column 27 has number AA, 28 — AB, column 52 is marked by AZ. After ZZ there follow three-letter numbers, etc.
+ The rows are marked by integer numbers starting with 1. The cell name is the concatenation of the column and the row numbers. For example, BC23 is the name for the cell that is in column 55, row 23.
+ Sometimes another numeration system is used: RXCY, where X and Y are integer numbers, showing the column and the row numbers respectfully. For instance, R23C55 is the cell from the previous example.
+ Your task is to write a program that reads the given sequence of cell coordinates and produce each item written according to the rules of another numeration system.
+
+Input
+ The first line of the input contains integer number n ( 1 ≤ n ≤ 10 5 ), the number of coordinates in the test. Then there follow n lines, each of them contains coordinates. All the coordinates are correct, there are no cells with the column and/or the row numbers larger than 10 6 .
+
+Output
+ Write n lines, each line should contain a cell coordinates in the other numeration system.
+
+Examples
+Input
+2
+
+R23C55
+
+BC23
+Output
+BC23
+
+R23C55"
+https://codeforces.com/problemset/problem/377/A,['dfs and similar'],PROGRAMMING,1600,377,A,"Description:
+
+
+Pavel loves grid mazes. A grid maze is an n × m rectangle maze where each cell is either empty, or is a wall. You can go from one cell to another only if both cells are empty and have a common side.
+ Pavel drew a grid maze with all empty cells forming a connected area. That is, you can go from any empty cell to any other one. Pavel doesn't like it when his maze has too little walls. He wants to turn exactly k empty cells into walls so that all the remaining cells still formed a connected area. Help him.
+
+Input
+ The first line contains three integers n , m , k ( 1 ≤ n , m ≤ 500 , 0 ≤ k < s ), where n and m are the maze's height and width, correspondingly, k is the number of walls Pavel wants to add and letter s represents the number of empty cells in the original maze.
+ Each of the next n lines contains m characters. They describe the original maze. If a character on a line equals "" . "", then the corresponding cell is empty and if the character equals "" # "", then the cell is a wall.
+
+Output
+ Print n lines containing m characters each: the new maze that fits Pavel's requirements. Mark the empty cells that you transformed into walls as "" X "", the other cells must be left without changes (that is, "" . "" and "" # "").
+ It is guaranteed that a solution exists. If there are multiple solutions you can output any of them.
+
+Examples
+Input
+3 4 2
+
+#..#
+
+..#.
+
+#...
+Output
+#.X#
+
+X.#.
+
+#...
+Input
+5 4 5
+
+#...
+
+#.#.
+
+.#..
+
+...#
+
+.#.#
+Output
+#XXX
+
+#X#.
+
+X#..
+
+...#
+
+.#.#"
+https://codeforces.com/problemset/problem/1352/G,['constructive algorithms'],PROGRAMMING,1600,1352,G,"Description:
+
+
+A permutation of length  n is an array  p = [ p 1 , p 2 , … , p n ] , which contains every integer from  1 to  n (inclusive) and, moreover, each number appears exactly once. For example,  p = [ 3 , 1 , 4 , 2 , 5 ] is a permutation of length  5 .
+ For a given number  n (  n ≥ 2 ), find a permutation  p in which absolute difference (that is, the absolute value of difference) of any two neighboring (adjacent) elements is between  2 and  4 , inclusive. Formally, find such permutation  p that  2 ≤ | p i − p i + 1 | ≤ 4 for each  i (  1 ≤ i < n ).
+ Print any such permutation for the given integer  n or determine that it does not exist.
+
+Input
+ The first line contains an integer  t (  1 ≤ t ≤ 100 ) — the number of test cases in the input. Then  t test cases follow.
+ Each test case is described by a single line containing an integer  n (  2 ≤ n ≤ 1000 ).
+
+Output
+ Print  t lines. Print a permutation that meets the given requirements. If there are several such permutations, then print any of them. If no such permutation exists, print -1 .
+
+Example
+Input
+6
+10
+2
+4
+6
+7
+13
+Output
+9 6 10 8 4 7 3 1 5 2 
+-1
+3 1 4 2 
+5 3 6 2 4 1 
+5 1 3 6 2 4 7 
+13 9 7 11 8 4 1 3 5 2 6 10 12"
+https://codeforces.com/problemset/problem/1336/A,"['dfs and similar', 'dp', 'greedy', 'sortings', 'trees']",PROGRAMMING,1600,1336,A,"Description:
+
+
+Writing light novels is the most important thing in Linova's life. Last night, Linova dreamed about a fantastic kingdom. She began to write a light novel for the kingdom as soon as she woke up, and of course, she is the queen of it.
+ 
+ There are  n cities and  n − 1 two-way roads connecting pairs of cities in the kingdom. From any city, you can reach any other city by walking through some roads. The cities are numbered from  1 to  n , and the city  1 is the capital of the kingdom. So, the kingdom has a tree structure.
+ As the queen, Linova plans to choose exactly   k cities developing industry, while the other cities will develop tourism. The capital also can be either industrial or tourism city.
+ A meeting is held in the capital once a year. To attend the meeting, each industry city sends an envoy. All envoys will follow the shortest path from the departure city to the capital (which is unique).
+ Traveling in tourism cities is pleasant. For each envoy, his happiness is equal to the number of tourism cities on his path.
+ In order to be a queen loved by people, Linova wants to choose  k cities which can maximize the sum of happinesses of all envoys. Can you calculate the maximum sum for her?
+
+Input
+ The first line contains two integers  n and  k (  2 ≤ n ≤ 2 ⋅ 10 5 ,  1 ≤ k < n )  — the number of cities and industry cities respectively.
+ Each of the next  n − 1 lines contains two integers  u and  v (  1 ≤ u , v ≤ n ), denoting there is a road connecting city  u and city  v .
+ It is guaranteed that from any city, you can reach any other city by the roads.
+
+Output
+ Print the only line containing a single integer  — the maximum possible sum of happinesses of all envoys.
+
+Examples
+Input
+7 4
+1 2
+1 3
+1 4
+3 5
+3 6
+4 7
+Output
+7
+Input
+4 1
+1 2
+1 3
+2 4
+Output
+2
+Input
+8 5
+7 5
+1 7
+6 1
+3 7
+8 3
+2 1
+4 5
+Output
+9
+
+Note
+ 
+ In the first example, Linova can choose cities  2 ,  5 ,  6 ,  7 to develop industry, then the happiness of the envoy from city  2 is  1 , the happiness of envoys from cities  5 ,  6 ,  7 is  2 . The sum of happinesses is  7 , and it can be proved to be the maximum one.
+ 
+ In the second example, choosing cities  3 ,  4 developing industry can reach a sum of  3 , but remember that Linova plans to choose exactly   k cities developing industry, then the maximum sum is  2 ."
+https://codeforces.com/problemset/problem/1458/A,"['math', 'number theory']",PROGRAMMING,1600,1458,A,"Description:
+
+
+You are given two positive integer sequences  a 1 , … , a n and  b 1 , … , b m . For each  j = 1 , … , m find the greatest common divisor of  a 1 + b j , … , a n + b j .
+
+Input
+ The first line contains two integers  n and  m (  1 ≤ n , m ≤ 2 ⋅ 10 5 ).
+ The second line contains  n integers  a 1 , … , a n (  1 ≤ a i ≤ 10 18 ) .
+ The third line contains  m integers  b 1 , … , b m (  1 ≤ b j ≤ 10 18 ) .
+
+Output
+ Print  m integers. The  j -th of them should be equal to GCD  ( a 1 + b j , … , a n + b j ) .
+
+Example
+Input
+4 4
+1 25 121 169
+1 2 7 23
+Output
+2 3 8 24"
+https://codeforces.com/problemset/problem/1363/C,"['games', 'trees']",PROGRAMMING,1600,1363,C,"Description:
+
+
+Ayush and Ashish play a game on an unrooted tree consisting of  n nodes numbered  1 to  n . Players make the following move in turns:
+ Select any leaf node in the tree and remove it together with any edge which has this node as one of its endpoints. A leaf node is a node with degree less than or equal to  1 .
+ A tree is a connected undirected graph without cycles.
+ There is a special node numbered  x . The player who removes this node wins the game.
+ Ayush moves first. Determine the winner of the game if each player plays optimally.
+
+Input
+ The first line of the input contains a single integer  t   ( 1 ≤ t ≤ 10 ) — the number of testcases. The description of the test cases follows.
+ The first line of each testcase contains two integers  n and  x   ( 1 ≤ n ≤ 1000 , 1 ≤ x ≤ n ) — the number of nodes in the tree and the special node respectively.
+ Each of the next  n − 1 lines contain two integers  u ,  v   ( 1 ≤ u , v ≤ n ,  u ≠ v ) , meaning that there is an edge between nodes  u and  v in the tree.
+
+Output
+ For every test case, if Ayush wins the game, print "" Ayush "", otherwise print "" Ashish "" (without quotes).
+
+Examples
+Input
+1
+3 1
+2 1
+3 1
+Output
+Ashish
+Input
+1
+3 2
+1 2
+1 3
+Output
+Ayush
+
+Note
+ For the  1 st test case, Ayush can only remove node  2 or  3 , after which node  1 becomes a leaf node and Ashish can remove it in his turn.
+ For the  2 nd test case, Ayush can remove node  2 in the first move itself."
+https://codeforces.com/problemset/problem/1353/D,"['constructive algorithms', 'data structures', 'sortings']",PROGRAMMING,1600,1353,D,"Description:
+
+
+You are given an array  a of length  n consisting of zeros. You perform  n actions with this array: during the  i -th action, the following sequence of operations appears:
+ Choose the maximum by length subarray ( continuous subsegment ) consisting only of zeros, among all such segments choose the leftmost one; Let this segment be  [ l ; r ] . If  r − l + 1 is odd (not divisible by  2 ) then assign (set)  a [ l + r 2 ] := i (where  i is the number of the current action), otherwise (if  r − l + 1 is even) assign (set)  a [ l + r − 1 2 ] := i .
+ Consider the array  a of length  5 (initially  a = [ 0 , 0 , 0 , 0 , 0 ] ). Then it changes as follows:
+ Firstly, we choose the segment  [ 1 ; 5 ] and assign  a [ 3 ] := 1 , so  a becomes  [ 0 , 0 , 1 , 0 , 0 ] ; then we choose the segment  [ 1 ; 2 ] and assign  a [ 1 ] := 2 , so  a becomes  [ 2 , 0 , 1 , 0 , 0 ] ; then we choose the segment  [ 4 ; 5 ] and assign  a [ 4 ] := 3 , so  a becomes  [ 2 , 0 , 1 , 3 , 0 ] ; then we choose the segment  [ 2 ; 2 ] and assign  a [ 2 ] := 4 , so  a becomes  [ 2 , 4 , 1 , 3 , 0 ] ; and at last we choose the segment  [ 5 ; 5 ] and assign  a [ 5 ] := 5 , so  a becomes  [ 2 , 4 , 1 , 3 , 5 ] .
+ Your task is to find the array  a of length  n after performing all  n actions. Note that the answer exists and unique .
+ You have to answer  t independent test cases.
+
+Input
+ The first line of the input contains one integer  t (  1 ≤ t ≤ 10 4 ) — the number of test cases. Then  t test cases follow.
+ The only line of the test case contains one integer  n (  1 ≤ n ≤ 2 ⋅ 10 5 ) — the length of  a .
+ It is guaranteed that the sum of  n over all test cases does not exceed  2 ⋅ 10 5 (  ∑ n ≤ 2 ⋅ 10 5 ).
+
+Output
+ For each test case, print the answer — the array  a of length  n after performing  n actions described in the problem statement. Note that the answer exists and unique .
+
+Example
+Input
+6
+1
+2
+3
+4
+5
+6
+Output
+1 
+1 2 
+2 1 3 
+3 1 2 4 
+2 4 1 3 5 
+3 4 1 5 2 6"
+https://codeforces.com/problemset/problem/235/A,['number theory'],PROGRAMMING,1600,235,A,"Description:
+
+
+Some days ago, I learned the concept of LCM (least common multiple). I've played with it for several times and I want to make a big number with it.
+ But I also don't want to use many numbers, so I'll choose three positive integers (they don't have to be distinct) which are not greater than n . Can you help me to find the maximum possible least common multiple of these three integers?
+
+Input
+ The first line contains an integer n ( 1 ≤ n ≤ 10 6 ) — the n mentioned in the statement.
+
+Output
+ Print a single integer — the maximum possible LCM of three not necessarily distinct positive integers that are not greater than n .
+
+Examples
+Input
+9
+Output
+504
+Input
+7
+Output
+210
+
+Note
+ The least common multiple of some positive integers is the least positive integer which is multiple for each of them.
+ The result may become very large, 32-bit integer won't be enough. So using 64-bit integers is recommended.
+ For the last example, we can chose numbers 7 , 6 , 5 and the LCM of them is 7·6·5 = 210 . It is the maximum value we can get."
+https://codeforces.com/problemset/problem/1349/A,"['data structures', 'math', 'number theory']",PROGRAMMING,1600,1349,A,"Description:
+
+
+For the multiset of positive integers  s = { s 1 , s 2 , … , s k } , define the Greatest Common Divisor (GCD) and Least Common Multiple (LCM) of  s as follow:
+ gcd ( s ) is the maximum positive integer  x , such that all integers in  s are divisible on  x . lcm ( s ) is the minimum positive integer  x , that divisible on all integers from  s .
+ For example,  gcd ( { 8 , 12 } ) = 4 , gcd ( { 12 , 18 , 6 } ) = 6 and  lcm ( { 4 , 6 } ) = 12 . Note that for any positive integer  x ,  gcd ( { x } ) = lcm ( { x } ) = x .
+ Orac has a sequence  a with length  n . He come up with the multiset  t = { lcm ( { a i , a j } )  |  i < j } , and asked you to find the value of  gcd ( t ) for him. In other words, you need to calculate the GCD of LCMs of all pairs of elements in the given sequence.
+
+Input
+ The first line contains one integer  n  ( 2 ≤ n ≤ 100  000 ) .
+ The second line contains  n integers,  a 1 , a 2 , … , a n (  1 ≤ a i ≤ 200  000 ).
+
+Output
+ Print one integer:  gcd ( { lcm ( { a i , a j } )  |  i < j } ) .
+
+Examples
+Input
+2
+1 1
+Output
+1
+Input
+4
+10 24 40 80
+Output
+40
+Input
+10
+540 648 810 648 720 540 594 864 972 648
+Output
+54
+
+Note
+ For the first example,  t = { lcm ( { 1 , 1 } ) } = { 1 } , so  gcd ( t ) = 1 .
+ For the second example,  t = { 120 , 40 , 80 , 120 , 240 , 80 } , and it's not hard to see that  gcd ( t ) = 40 ."
+https://codeforces.com/problemset/problem/1497/C2,"['constructive algorithms', 'math']",PROGRAMMING,1600,1497,C2,"Description:
+
+
+It is the hard version of the problem. The only difference is that in this version  3 ≤ k ≤ n .
+ You are given a positive integer  n . Find  k positive integers  a 1 , a 2 , … , a k , such that:
+ a 1 + a 2 + … + a k = n L C M ( a 1 , a 2 , … , a k ) ≤ n 2
+ Here  L C M is the least common multiple of numbers  a 1 , a 2 , … , a k .
+ We can show that for given constraints the answer always exists.
+
+Input
+ The first line contains a single integer  t   ( 1 ≤ t ≤ 10 4 ) — the number of test cases.
+ The only line of each test case contains two integers  n ,  k (  3 ≤ n ≤ 10 9 ,  3 ≤ k ≤ n ).
+ It is guaranteed that the sum of  k over all test cases does not exceed  10 5 .
+
+Output
+ For each test case print  k positive integers  a 1 , a 2 , … , a k , for which all conditions are satisfied.
+
+Example
+Input
+2
+6 4
+9 5
+Output
+1 2 2 1 
+1 3 3 1 1"
+https://codeforces.com/problemset/problem/1358/C,['math'],PROGRAMMING,1600,1358,C,"Description:
+
+
+During the quarantine, Sicromoft has more free time to create the new functions in "" Celex-2021 "". The developers made a new function GAZ-GIZ , which infinitely fills an infinite table to the right and down from the upper left corner as follows:
+ 
+ 
+ ( x , y )
+ (x, y)
+ 
+ x
+ x
+ 
+ y
+ y
+ 
+ ( 1 , 1 )
+ (1,1)
+ 
+ 1
+ 1
+ The developers of the SUM function don't sleep either. Because of the boredom, they teamed up with the developers of the RAND function, so they added the ability to calculate the sum on an arbitrary path from one cell to another, moving down or right. Formally, from the cell  ( x , y ) in one step you can move to the cell  ( x + 1 , y ) or  ( x , y + 1 ) .
+ After another Dinwows update, Levian started to study "" Celex-2021 "" (because he wants to be an accountant!). After filling in the table with the GAZ-GIZ function, he asked you to calculate the quantity of possible different amounts on the path from a given cell  ( x 1 , y 1 ) to another given cell  ( x 2 , y 2 ), if you can only move one cell down or right.
+ Formally, consider all the paths from the cell  ( x 1 , y 1 ) to cell  ( x 2 , y 2 ) such that each next cell in the path is located either to the down or to the right of the previous one. Calculate the number of different sums of elements for all such paths.
+
+Input
+ The first line contains one integer  t (  1 ≤ t ≤ 57179 ) — the number of test cases.
+ Each of the following  t lines contains four natural numbers  x 1 ,  y 1 ,  x 2 ,  y 2 (  1 ≤ x 1 ≤ x 2 ≤ 10 9 ,  1 ≤ y 1 ≤ y 2 ≤ 10 9 ) — coordinates of the start and the end cells.
+
+Output
+ For each test case, in a separate line, print the number of possible different sums on the way from the start cell to the end cell.
+
+Example
+Input
+4
+1 1 2 2
+1 2 2 4
+179 1 179 100000
+5 7 5 7
+Output
+2
+3
+1
+1
+
+Note
+ In the first test case there are two possible sums:  1 + 2 + 5 = 8 and  1 + 3 + 5 = 9 ."
+https://codeforces.com/problemset/problem/1389/B,"['brute force', 'dp', 'greedy']",PROGRAMMING,1600,1389,B,"Description:
+
+
+You are given an array  a 1 , a 2 , … , a n , consisting of  n  positive integers.
+ Initially you are standing at index  1 and have a score equal to  a 1 . You can perform two kinds of moves:
+ move right — go from your current index  x to  x + 1 and add  a x + 1 to your score. This move can only be performed if  x < n . move left — go from your current index  x to  x − 1 and add  a x − 1 to your score. This move can only be performed if  x > 1 . Also, you can't perform two or more moves to the left in a row.
+ You want to perform exactly   k moves. Also, there should be no more than  z moves to the left among them.
+ What is the maximum score you can achieve?
+
+Input
+ The first line contains a single integer  t (  1 ≤ t ≤ 10 4 ) — the number of testcases.
+ The first line of each testcase contains three integers  n , k and  z (  2 ≤ n ≤ 10 5 ,  1 ≤ k ≤ n − 1 ,  0 ≤ z ≤ m i n ( 5 , k ) ) — the number of elements in the array, the total number of moves you should perform and the maximum number of moves to the left you can perform.
+ The second line of each testcase contains  n integers  a 1 , a 2 , … , a n (  1 ≤ a i ≤ 10 4 ) — the given array.
+ The sum of  n over all testcases does not exceed  3 ⋅ 10 5 .
+
+Output
+ Print  t integers — for each testcase output the maximum score you can achieve if you make exactly  k moves in total, no more than  z of them are to the left and there are no two or more moves to the left in a row.
+
+Example
+Input
+4
+5 4 0
+1 5 4 3 2
+5 4 1
+1 5 4 3 2
+5 4 4
+10 20 30 40 50
+10 7 3
+4 6 8 2 9 9 7 4 10 9
+Output
+15
+19
+150
+56
+
+Note
+ In the first testcase you are not allowed to move left at all. So you make four moves to the right and obtain the score  a 1 + a 2 + a 3 + a 4 + a 5 .
+ In the second example you can move one time to the left. So we can follow these moves: right, right, left, right. The score will be  a 1 + a 2 + a 3 + a 2 + a 3 .
+ In the third example you can move four times to the left but it's not optimal anyway, you can just move four times to the right and obtain the score  a 1 + a 2 + a 3 + a 4 + a 5 ."
+https://codeforces.com/problemset/problem/510/C,"['dfs and similar', 'graphs', 'sortings']",PROGRAMMING,1600,510,C,"Description:
+
+
+Fox Ciel is going to publish a paper on FOCS (Foxes Operated Computer Systems, pronounce: ""Fox""). She heard a rumor: the authors list on the paper is always sorted in the lexicographical order.
+ After checking some examples, she found out that sometimes it wasn't true. On some papers authors' names weren't sorted in lexicographical order in normal sense. But it was always true that after some modification of the order of letters in alphabet, the order of authors becomes lexicographical !
+ She wants to know, if there exists an order of letters in Latin alphabet such that the names on the paper she is submitting are following in the lexicographical order. If so, you should find out any such order.
+ Lexicographical order is defined in following way. When we compare s and t , first we find the leftmost position with differing characters: s i ≠ t i . If there is no such position (i. e. s is a prefix of t or vice versa) the shortest string is less. Otherwise, we compare characters s i and t i according to their order in alphabet.
+
+Input
+ The first line contains an integer n ( 1 ≤ n ≤ 100 ): number of names.
+ Each of the following n lines contain one string name i ( 1 ≤ | name i | ≤ 100 ), the i -th name. Each name contains only lowercase Latin letters. All names are different.
+
+Output
+ If there exists such order of letters that the given names are sorted lexicographically, output any such order as a permutation of characters 'a'–'z' (i. e. first output the first letter of the modified alphabet, then the second, and so on).
+ Otherwise output a single word ""Impossible"" (without quotes).
+
+Examples
+Input
+3
+
+rivest
+
+shamir
+
+adleman
+Output
+bcdefghijklmnopqrsatuvwxyz
+Input
+10
+
+tourist
+
+petr
+
+wjmzbmr
+
+yeputons
+
+vepifanov
+
+scottwu
+
+oooooooooooooooo
+
+subscriber
+
+rowdark
+
+tankengineer
+Output
+Impossible
+Input
+10
+
+petr
+
+egor
+
+endagorion
+
+feferivan
+
+ilovetanyaromanova
+
+kostka
+
+dmitriyh
+
+maratsnowbear
+
+bredorjaguarturnik
+
+cgyforever
+Output
+aghjlnopefikdmbcqrstuvwxyz
+Input
+7
+
+car
+
+care
+
+careful
+
+carefully
+
+becarefuldontforgetsomething
+
+otherwiseyouwillbehacked
+
+goodluck
+Output
+acbdefhijklmnogpqrstuvwxyz"
+https://codeforces.com/problemset/problem/1334/C,"['brute force', 'constructive algorithms', 'greedy', 'math']",PROGRAMMING,1600,1334,C,"Description:
+
+
+You are playing another computer game, and now you have to slay  n monsters. These monsters are standing in a circle, numbered clockwise from  1 to  n . Initially, the  i -th monster has  a i health.
+ You may shoot the monsters to kill them. Each shot requires exactly one bullet and decreases the health of the targeted monster by  1 (deals  1 damage to it). Furthermore, when the health of some monster  i becomes  0 or less than  0 , it dies and explodes, dealing  b i damage to the next monster (monster  i + 1 , if  i < n , or monster  1 , if  i = n ). If the next monster is already dead, then nothing happens. If the explosion kills the next monster, it explodes too, damaging the monster after it and possibly triggering another explosion, and so on.
+ You have to calculate the minimum number of bullets you have to fire to kill all  n monsters in the circle.
+
+Input
+ The first line contains one integer  T (  1 ≤ T ≤ 150000 ) — the number of test cases.
+ Then the test cases follow, each test case begins with a line containing one integer  n (  2 ≤ n ≤ 300000 ) — the number of monsters. Then  n lines follow, each containing two integers  a i and  b i (  1 ≤ a i , b i ≤ 10 12 ) — the parameters of the  i -th monster in the circle.
+ It is guaranteed that the total number of monsters in all test cases does not exceed  300000 .
+
+Output
+ For each test case, print one integer — the minimum number of bullets you have to fire to kill all of the monsters.
+
+Example
+Input
+1
+3
+7 15
+2 14
+5 3
+Output
+6"
+https://codeforces.com/problemset/problem/706/C,"['dp', 'strings']",PROGRAMMING,1600,706,C,"Description:
+
+
+Vasiliy is fond of solving different tasks. Today he found one he wasn't able to solve himself, so he asks you to help.
+ Vasiliy is given n strings consisting of lowercase English letters. He wants them to be sorted in lexicographical order (as in the dictionary), but he is not allowed to swap any of them. The only operation he is allowed to do is to reverse any of them (first character becomes last, second becomes one before last and so on).
+ To reverse the i -th string Vasiliy has to spent c i units of energy. He is interested in the minimum amount of energy he has to spent in order to have strings sorted in lexicographical order.
+ String A is lexicographically smaller than string B if it is shorter than B ( | A | < | B | ) and is its prefix, or if none of them is a prefix of the other and at the first position where they differ character in A is smaller than the character in B .
+ For the purpose of this problem, two equal strings nearby do not break the condition of sequence being sorted lexicographically.
+
+Input
+ The first line of the input contains a single integer n ( 2 ≤ n ≤ 100 000 ) — the number of strings.
+ The second line contains n integers c i ( 0 ≤ c i ≤ 10 9 ), the i -th of them is equal to the amount of energy Vasiliy has to spent in order to reverse the i -th string.
+ Then follow n lines, each containing a string consisting of lowercase English letters. The total length of these strings doesn't exceed 100 000 .
+
+Output
+ If it is impossible to reverse some of the strings such that they will be located in lexicographical order, print - 1 . Otherwise, print the minimum total amount of energy Vasiliy has to spent.
+
+Examples
+Input
+2
+
+1 2
+
+ba
+
+ac
+Output
+1
+Input
+3
+
+1 3 1
+
+aa
+
+ba
+
+ac
+Output
+1
+Input
+2
+
+5 5
+
+bbb
+
+aaa
+Output
+-1
+Input
+2
+
+3 3
+
+aaa
+
+aa
+Output
+-1
+
+Note
+ In the second sample one has to reverse string 2 or string 3 . To amount of energy required to reverse the string 3 is smaller.
+ In the third sample, both strings do not change after reverse and they go in the wrong order, so the answer is - 1 .
+ In the fourth sample, both strings consists of characters ' a ' only, but in the sorted order string "" aa "" should go before string "" aaa "", thus the answer is - 1 ."
+https://codeforces.com/problemset/problem/1165/D,"['math', 'number theory']",PROGRAMMING,1600,1165,D,"Description:
+
+
+We guessed some integer number  x . You are given a list of almost all its divisors. Almost all means that there are all divisors except  1 and  x in the list.
+ Your task is to find the minimum possible integer  x that can be the guessed number, or say that the input data is contradictory and it is impossible to find such number.
+ You have to answer  t independent queries.
+
+Input
+ The first line of the input contains one integer  t (  1 ≤ t ≤ 25 ) — the number of queries. Then  t queries follow.
+ The first line of the query contains one integer  n (  1 ≤ n ≤ 300 ) — the number of divisors in the list.
+ The second line of the query contains  n integers  d 1 , d 2 , … , d n (  2 ≤ d i ≤ 10 6 ), where  d i is the  i -th divisor of the guessed number. It is guaranteed that all values  d i are distinct .
+
+Output
+ For each query print the answer to it.
+ If the input data in the query is contradictory and it is impossible to find such number  x that the given list of divisors is the list of almost all its divisors, print -1 . Otherwise print the minimum possible  x .
+
+Example
+Input
+2
+8
+8 2 12 6 4 24 16 3
+1
+2
+Output
+48
+4"

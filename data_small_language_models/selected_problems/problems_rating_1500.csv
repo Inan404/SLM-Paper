@@ -1,0 +1,723 @@
+url,tags,type,rating,contest_id,index,statement
+https://codeforces.com/problemset/problem/455/A,['dp'],PROGRAMMING,1500,455,A,"Description:
+
+
+Alex doesn't like boredom. That's why whenever he gets bored, he comes up with games. One long winter evening he came up with a game and decided to play it.
+ Given a sequence a consisting of n integers. The player can make several steps. In a single step he can choose an element of the sequence (let's denote it a k ) and delete it, at that all elements equal to a k + 1 and a k - 1 also must be deleted from the sequence. That step brings a k points to the player.
+ Alex is a perfectionist, so he decided to get as many points as possible. Help him.
+
+Input
+ The first line contains integer n ( 1 ≤ n ≤ 10 5 ) that shows how many numbers are in Alex's sequence.
+ The second line contains n integers a 1 , a 2 , ..., a n ( 1 ≤ a i ≤ 10 5 ).
+
+Output
+ Print a single integer — the maximum number of points that Alex can earn.
+
+Examples
+Input
+2
+
+1 2
+Output
+2
+Input
+3
+
+1 2 3
+Output
+4
+Input
+9
+
+1 2 1 3 2 2 2 2 3
+Output
+10
+
+Note
+ Consider the third test example. At first step we need to choose any element equal to 2 . After that step our sequence looks like this [2, 2, 2, 2] . Then we do 4 steps, on each step we choose any element equals to 2 . In total we earn 10 points."
+https://codeforces.com/problemset/problem/580/C,"['dfs and similar', 'graphs', 'trees']",PROGRAMMING,1500,580,C,"Description:
+
+
+Kefa decided to celebrate his first big salary by going to the restaurant.
+ He lives by an unusual park. The park is a rooted tree consisting of n vertices with the root at vertex 1 . Vertex 1 also contains Kefa's house. Unfortunaely for our hero, the park also contains cats. Kefa has already found out what are the vertices with cats in them.
+ The leaf vertices of the park contain restaurants. Kefa wants to choose a restaurant where he will go, but unfortunately he is very afraid of cats, so there is no way he will go to the restaurant if the path from the restaurant to his house contains more than m  consecutive vertices with cats.
+ Your task is to help Kefa count the number of restaurants where he can go.
+
+Input
+ The first line contains two integers, n and m ( 2 ≤ n ≤ 10 5 , 1 ≤ m ≤ n ) — the number of vertices of the tree and the maximum number of consecutive vertices with cats that is still ok for Kefa.
+ The second line contains n integers a 1 , a 2 , ..., a n , where each a i either equals to 0 (then vertex i has no cat), or equals to 1 (then vertex i has a cat).
+ Next n - 1 lines contains the edges of the tree in the format "" x i  y i "" (without the quotes) ( 1 ≤ x i , y i ≤ n , x i ≠ y i ), where x i and y i are the vertices of the tree, connected by an edge.
+ It is guaranteed that the given set of edges specifies a tree.
+
+Output
+ A single integer — the number of distinct leaves of a tree the path to which from Kefa's home contains at most m consecutive vertices with cats.
+
+Examples
+Input
+4 1
+
+1 1 0 0
+
+1 2
+
+1 3
+
+1 4
+Output
+2
+Input
+7 1
+
+1 0 1 1 0 0 0
+
+1 2
+
+1 3
+
+2 4
+
+2 5
+
+3 6
+
+3 7
+Output
+2
+
+Note
+ Let us remind you that a tree is a connected graph on n vertices and n - 1 edge. A rooted tree is a tree with a special vertex called root . In a rooted tree among any two vertices connected by an edge, one vertex is a parent (the one closer to the root), and the other one is a child. A vertex is called a leaf , if it has no children.
+ Note to the first sample test:  The vertices containing cats are marked red. The restaurants are at vertices 2, 3, 4. Kefa can't go only to the restaurant located at vertex 2 .
+ Note to the second sample test:  The restaurants are located at vertices 4, 5, 6, 7. Kefa can't go to restaurants 6, 7."
+https://codeforces.com/problemset/problem/550/A,"['brute force', 'dp', 'greedy', 'implementation', 'strings']",PROGRAMMING,1500,550,A,"Description:
+
+
+You are given string s . Your task is to determine if the given string s contains two non-overlapping substrings "" AB "" and "" BA "" (the substrings can go in any order).
+
+Input
+ The only line of input contains a string s of length between 1 and 10 5 consisting of uppercase Latin letters.
+
+Output
+ Print "" YES "" (without the quotes), if string s contains two non-overlapping substrings "" AB "" and "" BA "", and "" NO "" otherwise.
+
+Examples
+Input
+ABA
+Output
+NO
+Input
+BACFAB
+Output
+YES
+Input
+AXBYBXA
+Output
+NO
+
+Note
+ In the first sample test, despite the fact that there are substrings "" AB "" and "" BA "", their occurrences overlap, so the answer is "" NO "".
+ In the second sample test there are the following occurrences of the substrings: BA CF AB .
+ In the third sample test there is no substring "" AB "" nor substring "" BA ""."
+https://codeforces.com/problemset/problem/550/C,"['brute force', 'dp', 'math']",PROGRAMMING,1500,550,C,"Description:
+
+
+You are given a non-negative integer n , its decimal representation consists of at most 100 digits and doesn't contain leading zeroes.
+ Your task is to determine if it is possible in this case to remove some of the digits (possibly not remove any digit at all) so that the result contains at least one digit, forms a non-negative integer, doesn't have leading zeroes and is divisible by 8. After the removing, it is forbidden to rearrange the digits.
+ If a solution exists, you should print it.
+
+Input
+ The single line of the input contains a non-negative integer n . The representation of number n doesn't contain any leading zeroes and its length doesn't exceed 100 digits.
+
+Output
+ Print "" NO "" (without quotes), if there is no such way to remove some digits from number n .
+ Otherwise, print "" YES "" in the first line and the resulting number after removing digits from number n in the second line. The printed number must be divisible by 8 .
+ If there are multiple possible answers, you may print any of them.
+
+Examples
+Input
+3454
+Output
+YES
+
+344
+Input
+10
+Output
+YES
+
+0
+Input
+111111
+Output
+NO"
+https://codeforces.com/problemset/problem/276/C,"['data structures', 'greedy', 'implementation', 'sortings']",PROGRAMMING,1500,276,C,"Description:
+
+
+The little girl loves the problems on array queries very much.
+ One day she came across a rather well-known problem: you've got an array of  n elements (the elements of the array are indexed starting from 1); also, there are  q queries, each one is defined by a pair of integers  l i ,  r i   ( 1 ≤ l i ≤ r i ≤ n ) . You need to find for each query the sum of elements of the array with indexes from  l i to  r i , inclusive.
+ The little girl found the problem rather boring. She decided to reorder the array elements before replying to the queries in a way that makes the sum of query replies maximum possible. Your task is to find the value of this maximum sum.
+
+Input
+ The first line contains two space-separated integers  n (  1 ≤ n ≤ 2 ⋅ 10 5 ) and  q (  1 ≤ q ≤ 2 ⋅ 10 5 ) — the number of elements in the array and the number of queries, correspondingly.
+ The next line contains  n space-separated integers  a i (  1 ≤ a i ≤ 2 ⋅ 10 5 ) — the array elements.
+ Each of the following  q lines contains two space-separated integers  l i and  r i (  1 ≤ l i ≤ r i ≤ n ) — the  i -th query.
+
+Output
+ In a single line print, a single integer — the maximum sum of query replies after the array elements are reordered.
+ Please, do not use the %lld specifier to read or write 64-bit integers in C++. It is preferred to use the cin , cout streams or the %I64d specifier.
+
+Examples
+Input
+3 3
+
+5 3 2
+
+1 2
+
+2 3
+
+1 3
+Output
+25
+Input
+5 3
+
+5 2 4 1 3
+
+1 5
+
+2 3
+
+2 3
+Output
+33"
+https://codeforces.com/problemset/problem/545/C,"['dp', 'greedy']",PROGRAMMING,1500,545,C,"Description:
+
+
+Little Susie listens to fairy tales before bed every day. Today's fairy tale was about wood cutters and the little girl immediately started imagining the choppers cutting wood. She imagined the situation that is described below.
+ There are n trees located along the road at points with coordinates x 1 , x 2 , ..., x n . Each tree has its height h i . Woodcutters can cut down a tree and fell it to the left or to the right. After that it occupies one of the segments [ x i - h i , x i ] or [ x i ; x i + h i ] . The tree that is not cut down occupies a single point with coordinate x i . Woodcutters can fell a tree if the segment to be occupied by the fallen tree doesn't contain any occupied point. The woodcutters want to process as many trees as possible, so Susie wonders, what is the maximum number of trees to fell.
+
+Input
+ The first line contains integer n ( 1 ≤ n ≤ 10 5 ) — the number of trees.
+ Next n lines contain pairs of integers x i , h i ( 1 ≤ x i , h i ≤ 10 9 ) — the coordinate and the height of the і -th tree.
+ The pairs are given in the order of ascending x i . No two trees are located at the point with the same coordinate.
+
+Output
+ Print a single number — the maximum number of trees that you can cut down by the given rules.
+
+Examples
+Input
+5
+
+1 2
+
+2 1
+
+5 10
+
+10 9
+
+19 1
+Output
+3
+Input
+5
+
+1 2
+
+2 1
+
+5 10
+
+10 9
+
+20 1
+Output
+4
+
+Note
+ In the first sample you can fell the trees like that:
+ fell the 1 -st tree to the left — now it occupies segment [ - 1;1] fell the 2 -nd tree to the right — now it occupies segment [2;3] leave the 3 -rd tree — it occupies point 5 leave the 4 -th tree — it occupies point 10 fell the 5 -th tree to the right — now it occupies segment [19;20]
+ In the second sample you can also fell 4 -th tree to the right, after that it will occupy segment [10;19] ."
+https://codeforces.com/problemset/problem/580/B,"['binary search', 'sortings', 'two pointers']",PROGRAMMING,1500,580,B,"Description:
+
+
+Kefa wants to celebrate his first big salary by going to restaurant. However, he needs company.
+ Kefa has n friends, each friend will agree to go to the restaurant if Kefa asks. Each friend is characterized by the amount of money he has and the friendship factor in respect to Kefa. The parrot doesn't want any friend to feel poor compared to somebody else in the company (Kefa doesn't count). A friend feels poor if in the company there is someone who has at least d units of money more than he does. Also, Kefa wants the total friendship factor of the members of the company to be maximum. Help him invite an optimal company!
+
+Input
+ The first line of the input contains two space-separated integers, n and d ( 1 ≤ n ≤ 10 5 ,  ) — the number of Kefa's friends and the minimum difference between the amount of money in order to feel poor, respectively.
+ Next n lines contain the descriptions of Kefa's friends, the ( i + 1) -th line contains the description of the i -th friend of type m i , s i ( 0 ≤ m i , s i ≤ 10 9 ) — the amount of money and the friendship factor, respectively.
+
+Output
+ Print the maximum total friendship factir that can be reached.
+
+Examples
+Input
+4 5
+
+75 5
+
+0 100
+
+150 20
+
+75 1
+Output
+100
+Input
+5 100
+
+0 7
+
+11 32
+
+99 10
+
+46 8
+
+87 54
+Output
+111
+
+Note
+ In the first sample test the most profitable strategy is to form a company from only the second friend. At all other variants the total degree of friendship will be worse.
+ In the second sample test we can take all the friends."
+https://codeforces.com/problemset/problem/2/A,"['hashing', 'implementation']",PROGRAMMING,1500,2,A,"Description:
+
+
+The winner of the card game popular in Berland ""Berlogging"" is determined according to the following rules. If at the end of the game there is only one player with the maximum number of points, he is the winner. The situation becomes more difficult if the number of such players is more than one. During each round a player gains or loses a particular number of points. In the course of the game the number of points is registered in the line "" name score "", where name is a player's name, and score is the number of points gained in this round, which is an integer number. If score is negative, this means that the player has lost in the round. So, if two or more players have the maximum number of points (say, it equals to m ) at the end of the game, than wins the one of them who scored at least m points first. Initially each player has 0 points. It's guaranteed that at the end of the game at least one player has a positive number of points.
+
+Input
+ The first line contains an integer number n ( 1  ≤ n ≤  1000 ), n is the number of rounds played. Then follow n lines, containing the information about the rounds in "" name score "" format in chronological order, where name is a string of lower-case Latin letters with the length from 1 to 32, and score is an integer number between -1000 and 1000, inclusive.
+
+Output
+ Print the name of the winner.
+
+Examples
+Input
+3
+
+mike 3
+
+andrew 5
+
+mike 2
+Output
+andrew
+Input
+3
+
+andrew 3
+
+andrew 2
+
+mike 5
+Output
+andrew"
+https://codeforces.com/problemset/problem/1338/A,"['greedy', 'math']",PROGRAMMING,1500,1338,A,"Description:
+
+
+You have an array  a of length  n . For every positive integer  x you are going to perform the following operation during the  x -th second:
+ Select some distinct indices  i 1 , i 2 , … , i k which are between  1 and  n inclusive, and add  2 x − 1 to each corresponding position of  a . Formally,  a i j := a i j + 2 x − 1 for  j = 1 , 2 , … , k . Note that you are allowed to not select any indices at all.
+ You have to make  a nondecreasing as fast as possible. Find the smallest number  T such that you can make the array nondecreasing after at most  T seconds.
+ Array  a is nondecreasing if and only if  a 1 ≤ a 2 ≤ … ≤ a n .
+ You have to answer  t independent test cases.
+
+Input
+ The first line contains a single integer  t (  1 ≤ t ≤ 10 4 ) — the number of test cases.
+ The first line of each test case contains single integer  n (  1 ≤ n ≤ 10 5 ) — the length of array  a . It is guaranteed that the sum of values of  n over all test cases in the input does not exceed  10 5 .
+ The second line of each test case contains  n integers  a 1 , a 2 , … , a n (  − 10 9 ≤ a i ≤ 10 9 ).
+
+Output
+ For each test case, print the minimum number of seconds in which you can make  a nondecreasing.
+
+Example
+Input
+3
+4
+1 7 6 5
+5
+1 2 3 4 5
+2
+0 -4
+Output
+2
+0
+3
+
+Note
+ In the first test case, if you select indices  3 , 4 at the  1 -st second and  4 at the  2 -nd second, then  a will become  [ 1 , 7 , 7 , 8 ] . There are some other possible ways to make  a nondecreasing in  2 seconds, but you can't do it faster.
+ In the second test case,  a is already nondecreasing, so answer is  0 .
+ In the third test case, if you do nothing at first  2 seconds and select index  2 at the  3 -rd second,  a will become  [ 0 , 0 ] ."
+https://codeforces.com/problemset/problem/1542/B,"['constructive algorithms', 'math', 'number theory']",PROGRAMMING,1500,1542,B,"Description:
+
+
+There is an infinite set generated as follows:
+ 1 is in this set. If  x is in this set,  x ⋅ a and  x + b both are in this set.
+ For example, when  a = 3 and  b = 6 , the five smallest elements of the set are:
+ 1 , 3 (  1 is in this set, so  1 ⋅ a = 3 is in this set), 7 (  1 is in this set, so  1 + b = 7 is in this set), 9 (  3 is in this set, so  3 ⋅ a = 9 is in this set), 13 (  7 is in this set, so  7 + b = 13 is in this set).
+ Given positive integers  a ,  b ,  n , determine if  n is in this set.
+
+Input
+ The input consists of multiple test cases. The first line contains an integer  t (  1 ≤ t ≤ 10 5 ) — the number of test cases. The description of the test cases follows.
+ The only line describing each test case contains three integers  n ,  a ,  b (  1 ≤ n , a , b ≤ 10 9 ) separated by a single space.
+
+Output
+ For each test case, print "" Yes "" if  n is in this set, and "" No "" otherwise. You can print each letter in any case.
+
+Example
+Input
+5
+24 3 5
+10 3 6
+2345 1 4
+19260817 394 485
+19260817 233 264
+Output
+Yes
+No
+Yes
+No
+Yes
+
+Note
+ In the first test case,  24 is generated as follows:
+ 1 is in this set, so  3 and  6 are in this set; 3 is in this set, so  9 and  8 are in this set; 8 is in this set, so  24 and  13 are in this set.
+ Thus we can see  24 is in this set.
+ The five smallest elements of the set in the second test case is described in statements. We can see that  10 isn't among them."
+https://codeforces.com/problemset/problem/1526/C1,"['brute force', 'data structures', 'dp', 'greedy']",PROGRAMMING,1500,1526,C1,"Description:
+
+
+This is the easy version of the problem. The only difference is that in this version  n ≤ 2000 . You can make hacks only if both versions of the problem are solved.
+ There are  n potions in a line, with potion  1 on the far left and potion  n on the far right. Each potion will increase your health by  a i when drunk.  a i can be negative, meaning that potion will decrease will health.
+ You start with  0 health and you will walk from left to right, from first potion to the last one. At each potion, you may choose to drink it or ignore it. You must ensure that your health is always non-negative .
+ What is the largest number of potions you can drink?
+
+Input
+ The first line contains a single integer  n (  1 ≤ n ≤ 2000 ) — the number of potions.
+ The next line contains  n integers  a 1 ,  a 2 , ... ,  a n (  − 10 9 ≤ a i ≤ 10 9 ) which represent the change in health after drinking that potion.
+
+Output
+ Output a single integer, the maximum number of potions you can drink without your health becoming negative.
+
+Example
+Input
+6
+4 -4 1 -3 1 -3
+Output
+5
+
+Note
+ For the sample, you can drink  5 potions by taking potions  1 ,  3 ,  4 ,  5 and  6 . It is not possible to drink all  6 potions because your health will go negative at some point"
+https://codeforces.com/problemset/problem/166/E,"['dp', 'math', 'matrices']",PROGRAMMING,1500,166,E,"Description:
+
+
+You are given a tetrahedron. Let's mark its vertices with letters A , B , C and D correspondingly.
+ 
+ An ant is standing in the vertex D of the tetrahedron. The ant is quite active and he wouldn't stay idle. At each moment of time he makes a step from one vertex to another one along some edge of the tetrahedron. The ant just can't stand on one place.
+ You do not have to do much to solve the problem: your task is to count the number of ways in which the ant can go from the initial vertex D to itself in exactly n steps. In other words, you are asked to find out the number of different cyclic paths with the length of n from vertex D to itself. As the number can be quite large, you should print it modulo 1000000007 ( 10 9 + 7 ).
+
+Input
+ The first line contains the only integer n ( 1 ≤ n ≤ 10 7 ) — the required length of the cyclic path.
+
+Output
+ Print the only integer — the required number of ways modulo 1000000007 ( 10 9 + 7 ).
+
+Examples
+Input
+2
+Output
+3
+Input
+4
+Output
+21
+
+Note
+ The required paths in the first sample are:
+ D - A - D D - B - D D - C - D"
+https://codeforces.com/problemset/problem/977/E,"['dfs and similar', 'dsu', 'graphs']",PROGRAMMING,1500,977,E,"Description:
+
+
+You are given an undirected graph consisting of  n vertices and  m edges. Your task is to find the number of connected components which are cycles.
+ Here are some definitions of graph theory.
+ An undirected graph consists of two sets: set of nodes (called vertices) and set of edges. Each edge connects a pair of vertices. All edges are bidirectional (i.e. if a vertex  a is connected with a vertex  b , a vertex  b is also connected with a vertex  a ). An edge can't connect vertex with itself, there is at most one edge between a pair of vertices.
+ Two vertices  u and  v belong to the same connected component if and only if there is at least one path along edges connecting  u and  v .
+ A connected component is a cycle if and only if its vertices can be reordered in such a way that:
+ the first vertex is connected with the second vertex by an edge, the second vertex is connected with the third vertex by an edge, ... the last vertex is connected with the first vertex by an edge, all the described edges of a cycle are distinct.
+ A cycle doesn't contain any other edges except described above. By definition any cycle contains three or more vertices.
+ There are  6 connected components,  2 of them are cycles:  [ 7 , 10 , 16 ] and  [ 5 , 11 , 9 , 15 ] .
+
+Input
+ The first line contains two integer numbers  n and  m (  1 ≤ n ≤ 2 ⋅ 10 5 ,  0 ≤ m ≤ 2 ⋅ 10 5 ) — number of vertices and edges.
+ The following  m lines contains edges: edge  i is given as a pair of vertices  v i ,  u i (  1 ≤ v i , u i ≤ n ,  u i ≠ v i ). There is no multiple edges in the given graph, i.e. for each pair (  v i , u i ) there no other pairs (  v i , u i ) and (  u i , v i ) in the list of edges.
+
+Output
+ Print one integer — the number of connected components which are also cycles.
+
+Examples
+Input
+5 4
+
+1 2
+
+3 4
+
+5 4
+
+3 5
+Output
+1
+Input
+17 15
+
+1 8
+
+1 12
+
+5 11
+
+11 9
+
+9 15
+
+15 5
+
+4 13
+
+3 13
+
+4 3
+
+10 16
+
+7 10
+
+16 7
+
+14 3
+
+14 4
+
+17 6
+Output
+2
+
+Note
+ In the first example only component  [ 3 , 4 , 5 ] is also a cycle.
+ The illustration above corresponds to the second example."
+https://codeforces.com/problemset/problem/1352/E,"['brute force', 'implementation', 'two pointers']",PROGRAMMING,1500,1352,E,"Description:
+
+
+Pay attention to the non-standard memory limit in this problem.
+ In order to cut off efficient solutions from inefficient ones in this problem, the time limit is rather strict. Prefer to use compiled statically typed languages (e.g. C++). If you use Python, then submit solutions on PyPy. Try to write an efficient solution.
+ The array  a = [ a 1 , a 2 , … , a n ] (  1 ≤ a i ≤ n ) is given. Its element  a i is called special if there exists a pair of indices  l and  r (  1 ≤ l < r ≤ n ) such that  a i = a l + a l + 1 + … + a r . In other words, an element is called special if it can be represented as the sum of two or more consecutive elements of an array (no matter if they are special or not).
+ Print the number of special elements of the given array  a .
+ For example, if  n = 9 and  a = [ 3 , 1 , 4 , 1 , 5 , 9 , 2 , 6 , 5 ] , then the answer is  5 :
+ a 3 = 4 is a special element, since  a 3 = 4 = a 1 + a 2 = 3 + 1 ; a 5 = 5 is a special element, since  a 5 = 5 = a 2 + a 3 = 1 + 4 ; a 6 = 9 is a special element, since  a 6 = 9 = a 1 + a 2 + a 3 + a 4 = 3 + 1 + 4 + 1 ; a 8 = 6 is a special element, since  a 8 = 6 = a 2 + a 3 + a 4 = 1 + 4 + 1 ; a 9 = 5 is a special element, since  a 9 = 5 = a 2 + a 3 = 1 + 4 .
+ Please note that some of the elements of the array  a may be equal — if several elements are equal and special, then all of them should be counted in the answer.
+
+Input
+ The first line contains an integer  t (  1 ≤ t ≤ 1000 ) — the number of test cases in the input. Then  t test cases follow.
+ Each test case is given in two lines. The first line contains an integer  n (  1 ≤ n ≤ 8000 ) — the length of the array  a . The second line contains integers  a 1 , a 2 , … , a n (  1 ≤ a i ≤ n ).
+ It is guaranteed that the sum of the values of  n for all test cases in the input does not exceed  8000 .
+
+Output
+ Print  t numbers — the number of special elements for each of the given arrays.
+
+Example
+Input
+5
+9
+3 1 4 1 5 9 2 6 5
+3
+1 1 2
+5
+1 1 1 1 1
+8
+8 7 6 5 4 3 2 1
+1
+1
+Output
+5
+1
+0
+4
+0"
+https://codeforces.com/problemset/problem/1418/C,"['dp', 'graphs', 'greedy', 'shortest paths']",PROGRAMMING,1500,1418,C,"Description:
+
+
+You and your friend are playing the game Mortal Kombat XI. You are trying to pass a challenge tower. There are  n bosses in this tower, numbered from  1 to  n . The type of the  i -th boss is  a i . If the  i -th boss is easy then its type is  a i = 0 , otherwise this boss is hard and its type is  a i = 1 .
+ During one session, either you or your friend can kill one or two bosses (neither you nor your friend can skip the session, so the minimum number of bosses killed during one session is at least one). After your friend session, your session begins, then again your friend session begins, your session begins, and so on. The first session is your friend's session .
+ Your friend needs to get good because he can't actually kill hard bosses. To kill them, he uses skip points. One skip point can be used to kill one hard boss.
+ Your task is to find the minimum number of skip points your friend needs to use so you and your friend kill all  n bosses in the given order.
+ For example: suppose  n = 8 ,  a = [ 1 , 0 , 1 , 1 , 0 , 1 , 1 , 1 ] . Then the best course of action is the following:
+ your friend kills two first bosses, using one skip point for the first boss; you kill the third and the fourth bosses; your friend kills the fifth boss; you kill the sixth and the seventh bosses; your friend kills the last boss, using one skip point, so the tower is completed using two skip points.
+ You have to answer  t independent test cases.
+
+Input
+ The first line of the input contains one integer  t (  1 ≤ t ≤ 2 ⋅ 10 4 ) — the number of test cases. Then  t test cases follow.
+ The first line of the test case contains one integer  n (  1 ≤ n ≤ 2 ⋅ 10 5 ) — the number of bosses. The second line of the test case contains  n integers  a 1 , a 2 , … , a n (  0 ≤ a i ≤ 1 ), where  a i is the type of the  i -th boss.
+ It is guaranteed that the sum of  n does not exceed  2 ⋅ 10 5 (  ∑ n ≤ 2 ⋅ 10 5 ).
+
+Output
+ For each test case, print the answer: the minimum number of skip points your friend needs to use so you and your friend kill all  n bosses in the given order.
+
+Example
+Input
+6
+8
+1 0 1 1 0 1 1 1
+5
+1 1 1 1 0
+7
+1 1 1 1 0 0 1
+6
+1 1 1 1 1 1
+1
+1
+1
+0
+Output
+2
+2
+2
+2
+1
+0"
+https://codeforces.com/problemset/problem/1516/B,"['bitmasks', 'brute force', 'dp', 'greedy']",PROGRAMMING,1500,1516,B,"Description:
+
+
+Baby Ehab is known for his love for a certain operation. He has an array  a of length  n , and he decided to keep doing the following operation on it:
+ he picks  2 adjacent elements; he then removes them and places a single integer in their place: their bitwise XOR . Note that the length of the array decreases by one.
+ Now he asks you if he can make all elements of the array equal. Since babies like to make your life harder, he requires that you leave at least  2 elements remaining.
+
+Input
+ The first line contains an integer  t (  1 ≤ t ≤ 15 ) — the number of test cases you need to solve.
+ The first line of each test case contains an integers  n (  2 ≤ n ≤ 2000 ) — the number of elements in the array  a .
+ The second line contains  n space-separated integers  a 1 ,  a 2 ,  … ,  a n (  0 ≤ a i < 2 30 ) — the elements of the array  a .
+
+Output
+ If Baby Ehab can make all elements equal while leaving at least  2 elements standing, print "" YES "". Otherwise, print "" NO "".
+
+Example
+Input
+2
+3
+0 2 2
+4
+2 3 1 10
+Output
+YES
+NO
+
+Note
+ In the first sample, he can remove the first  2 elements,  0 and  2 , and replace them by  0 ⊕ 2 = 2 . The array will be  [ 2 , 2 ] , so all the elements are equal.
+ In the second sample, there's no way to make all the elements equal."
+https://codeforces.com/problemset/problem/1368/B,"['brute force', 'constructive algorithms', 'greedy', 'math', 'strings']",PROGRAMMING,1500,1368,B,"Description:
+
+
+Karl likes Codeforces and subsequences. He wants to find a string of lowercase English letters that contains at least $$$k$$$ subsequences codeforces . Out of all possible strings, Karl wants to find a shortest one.
+ Formally, a codeforces subsequence of a string $$$s$$$ is a subset of ten characters of $$$s$$$ that read codeforces from left to right. For example, codeforces contains codeforces a single time, while codeforcesisawesome contains codeforces four times: codeforces isawesome , codeforce si s awesome , codeforce sisawe s ome , codeforc esisaw es ome .
+ Help Karl find any shortest string that contains at least $$$k$$$ codeforces subsequences.
+
+Input
+ The only line contains a single integer $$$k$$$ ($$$1 ≤q k ≤q 10^{16})$$$.
+
+Output
+ Print a shortest string of lowercase English letters that contains at least $$$k$$$ codeforces subsequences. If there are several such strings, print any of them.
+
+Examples
+Input
+1
+Output
+codeforces
+Input
+3
+Output
+codeforcesss"
+https://codeforces.com/problemset/problem/1538/F,"['binary search', 'dp', 'math', 'number theory']",PROGRAMMING,1500,1538,F,"Description:
+
+
+You are given two integers  l and  r , where  l < r . We will add  1 to  l until the result is equal to  r . Thus, there will be exactly  r − l additions performed. For each such addition, let's look at the number of digits that will be changed after it.
+ For example:
+ if  l = 909 , then adding one will result in  910 and  2 digits will be changed; if you add one to  l = 9 , the result will be  10 and  2 digits will also be changed; if you add one to  l = 489999 , the result will be  490000 and  5 digits will be changed.
+ Changed digits always form a suffix of the result written in the decimal system.
+ Output the total number of changed digits, if you want to get  r from  l , adding  1 each time.
+
+Input
+ The first line contains an integer  t (  1 ≤ t ≤ 10 4 ). Then  t test cases follow.
+ Each test case is characterized by two integers  l and  r (  1 ≤ l < r ≤ 10 9 ).
+
+Output
+ For each test case, calculate the total number of changed digits if you want to get  r from  l , adding one each time.
+
+Example
+Input
+4
+1 9
+9 10
+10 20
+1 1000000000
+Output
+8
+2
+11
+1111111110"
+https://codeforces.com/problemset/problem/1409/D,"['greedy', 'math']",PROGRAMMING,1500,1409,D,"Description:
+
+
+You are given a positive integer  n . In one move, you can increase  n by one (i.e. make  n := n + 1 ). Your task is to find the minimum number of moves you need to perform in order to make the sum of digits of  n be less than or equal to  s .
+ You have to answer  t independent test cases.
+
+Input
+ The first line of the input contains one integer  t (  1 ≤ t ≤ 2 ⋅ 10 4 ) — the number of test cases. Then  t test cases follow.
+ The only line of the test case contains two integers  n and  s (  1 ≤ n ≤ 10 18 ;  1 ≤ s ≤ 162 ).
+
+Output
+ For each test case, print the answer: the minimum number of moves you need to perform in order to make the sum of digits of  n be less than or equal to  s .
+
+Example
+Input
+5
+2 1
+1 1
+500 4
+217871987498122 10
+100000000000000001 1
+Output
+8
+0
+500
+2128012501878
+899999999999999999"
+https://codeforces.com/problemset/problem/1201/B,"['greedy', 'math']",PROGRAMMING,1500,1201,B,"Description:
+
+
+You are given an array  a 1 , a 2 , … , a n .
+ In one operation you can choose two elements  a i and  a j (  i ≠ j ) and decrease each of them by one.
+ You need to check whether it is possible to make all the elements equal to zero or not.
+
+Input
+ The first line contains a single integer  n (  2 ≤ n ≤ 10 5 ) — the size of the array.
+ The second line contains  n integers  a 1 , a 2 , … , a n (  1 ≤ a i ≤ 10 9 ) — the elements of the array.
+
+Output
+ Print "" YES "" if it is possible to make all elements zero, otherwise print "" NO "".
+
+Examples
+Input
+4
+1 1 2 2
+Output
+YES
+Input
+6
+1 2 3 4 5 6
+Output
+NO
+
+Note
+ In the first example, you can make all elements equal to zero in  3 operations:
+ Decrease  a 1 and  a 2 , Decrease  a 3 and  a 4 , Decrease  a 3 and  a 4
+ In the second example, one can show that it is impossible to make all elements equal to zero."

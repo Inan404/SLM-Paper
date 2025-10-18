@@ -1,0 +1,1862 @@
+url,tags,type,rating,contest_id,index,statement
+https://codeforces.com/problemset/problem/380/C,"['data structures', 'schedules']",PROGRAMMING,2000,380,C,"Description:
+
+
+Sereja has a bracket sequence s 1 , s 2 , ..., s n , or, in other words, a string s of length n , consisting of characters "" ( "" and "" ) "".
+ Sereja needs to answer m queries, each of them is described by two integers l i , r i  (1 ≤ l i ≤ r i ≤ n ) . The answer to the i -th query is the length of the maximum correct bracket subsequence of sequence s l i , s l i + 1 , ..., s r i . Help Sereja answer all queries.
+ You can find the definitions for a subsequence and a correct bracket sequence in the notes.
+
+Input
+ The first line contains a sequence of characters s 1 , s 2 , ..., s n  (1 ≤ n ≤ 10 6 ) without any spaces. Each character is either a "" ( "" or a "" ) "". The second line contains integer m  (1 ≤ m ≤ 10 5 ) — the number of queries. Each of the next m lines contains a pair of integers. The i -th line contains integers l i , r i  (1 ≤ l i ≤ r i ≤ n ) — the description of the i -th query.
+
+Output
+ Print the answer to each question on a single line. Print the answers in the order they go in the input.
+
+Examples
+Input
+())(())(())(
+
+7
+
+1 1
+
+2 3
+
+1 2
+
+1 12
+
+8 12
+
+5 11
+
+2 10
+Output
+0
+
+0
+
+2
+
+10
+
+4
+
+6
+
+6
+
+Note
+ A subsequence of length | x | of string s = s 1 s 2 ... s | s | (where | s | is the length of string s ) is string x = s k 1 s k 2 ... s k | x |  (1 ≤ k 1 < k 2 < ... < k | x | ≤ | s |) .
+ A correct bracket sequence is a bracket sequence that can be transformed into a correct aryphmetic expression by inserting characters "" 1 "" and "" + "" between the characters of the string. For example, bracket sequences "" ()() "", "" (()) "" are correct (the resulting expressions "" (1)+(1) "", "" ((1+1)+1) ""), and "" )( "" and "" ( "" are not.
+ For the third query required sequence will be « () ».
+ For the fourth query required sequence will be « ()(())(()) »."
+https://codeforces.com/problemset/problem/2/B,"['dp', 'math']",PROGRAMMING,2000,2,B,"Description:
+
+
+There is a square matrix n × n , consisting of non-negative integer numbers. You should find such a way on it that
+ starts in the upper left cell of the matrix; each following cell is to the right or down from the current cell; the way ends in the bottom right cell.
+ Moreover, if we multiply together all the numbers along the way, the result should be the least ""round"". In other words, it should end in the least possible number of zeros.
+
+Input
+ The first line contains an integer number n ( 2 ≤ n ≤ 1000 ), n is the size of the matrix. Then follow n lines containing the matrix elements (non-negative integer numbers not exceeding 10 9 ).
+
+Output
+ In the first line print the least number of trailing zeros. In the second line print the correspondent way itself.
+
+Examples
+Input
+3
+
+1 2 3
+
+4 5 6
+
+7 8 9
+Output
+0
+
+DDRR"
+https://codeforces.com/problemset/problem/1366/D,"['constructive algorithms', 'math', 'number theory']",PROGRAMMING,2000,1366,D,"Description:
+
+
+You are given  n integers  a 1 , a 2 , … , a n .
+ For each  a i find its two divisors   d 1 > 1 and  d 2 > 1 such that  gcd ( d 1 + d 2 , a i ) = 1 (where  gcd ( a , b ) is the greatest common divisor of  a and  b ) or say that there is no such pair.
+
+Input
+ The first line contains single integer  n (  1 ≤ n ≤ 5 ⋅ 10 5 ) — the size of the array  a .
+ The second line contains  n integers  a 1 , a 2 , … , a n (  2 ≤ a i ≤ 10 7 ) — the array  a .
+
+Output
+ To speed up the output, print two lines with  n integers in each line.
+ The  i -th integers in the first and second lines should be corresponding divisors  d 1 > 1 and  d 2 > 1 such that  gcd ( d 1 + d 2 , a i ) = 1 or  − 1 and  − 1 if there is no such pair. If there are multiple answers, print any of them.
+
+Example
+Input
+10
+2 3 4 5 6 7 8 9 10 24
+Output
+-1 -1 -1 -1 3 -1 -1 -1 2 2 
+-1 -1 -1 -1 2 -1 -1 -1 5 3
+
+Note
+ Let's look at  a 7 = 8 . It has  3 divisors greater than  1 :  2 ,  4 ,  8 . As you can see, the sum of any pair of divisors is divisible by  2 as well as  a 7 .
+ There are other valid pairs of  d 1 and  d 2 for  a 10 = 24 , like  ( 3 , 4 ) or  ( 8 , 3 ) . You can print any of them."
+https://codeforces.com/problemset/problem/1438/C,"['2-sat', 'chinese remainder theorem', 'constructive algorithms', 'fft', 'flows']",PROGRAMMING,2000,1438,C,"Description:
+
+
+Artem is building a new robot. He has a matrix  a consisting of  n rows and  m columns. The cell located on the  i -th row from the top and the  j -th column from the left has a value  a i , j written in it.
+ If two adjacent cells contain the same value, the robot will break. A matrix is called good if no two adjacent cells contain the same value, where two cells are called adjacent if they share a side.
+ Artem wants to increment the values in some cells by one to make  a good.
+ More formally, find a good matrix  b that satisfies the following condition —
+ For all valid (  i , j ), either  b i , j = a i , j or  b i , j = a i , j + 1 .
+ For the constraints of this problem, it can be shown that such a matrix  b always exists. If there are several such tables, you can output any of them. Please note that you do not have to minimize the number of increments.
+
+Input
+ Each test contains multiple test cases. The first line contains the number of test cases  t (  1 ≤ t ≤ 10 ). Description of the test cases follows.
+ The first line of each test case contains two integers  n , m (  1 ≤ n ≤ 100 ,  1 ≤ m ≤ 100 )  — the number of rows and columns, respectively.
+ The following  n lines each contain  m integers. The  j -th integer in the  i -th line is  a i , j (  1 ≤ a i , j ≤ 10 9 ).
+
+Output
+ For each case, output  n lines each containing  m integers. The  j -th integer in the  i -th line is  b i , j .
+
+Example
+Input
+3
+3 2
+1 2
+4 5
+7 8
+2 2
+1 1
+3 3
+2 2
+1 3
+2 2
+Output
+1 2
+5 6
+7 8
+2 1
+4 3
+2 4
+3 2
+
+Note
+ In all the cases, you can verify that no two adjacent cells have the same value and that  b is the same as  a with some values incremented by one."
+https://codeforces.com/problemset/problem/1370/D,"['binary search', 'dp', 'dsu', 'greedy', 'implementation']",PROGRAMMING,2000,1370,D,"Description:
+
+
+Ashish has an array  a of size  n .
+ A subsequence of  a is defined as a sequence that can be obtained from  a by deleting some elements (possibly none), without changing the order of the remaining elements.
+ Consider a subsequence  s of  a . He defines the cost of  s as the minimum between:
+ The maximum among all elements at odd indices of  s . The maximum among all elements at even indices of  s .
+ Note that the index of an element is its index in  s , rather than its index in  a . The positions are numbered from  1 . So, the cost of  s is equal to  m i n ( m a x ( s 1 , s 3 , s 5 , … ) , m a x ( s 2 , s 4 , s 6 , … ) ) .
+ For example, the cost of  { 7 , 5 , 6 } is  m i n ( m a x ( 7 , 6 ) , m a x ( 5 ) ) = m i n ( 7 , 5 ) = 5 .
+ Help him find the minimum cost of a subsequence of size  k .
+
+Input
+ The first line contains two integers  n and  k (  2 ≤ k ≤ n ≤ 2 ⋅ 10 5 )  — the size of the array  a and the size of the subsequence.
+ The next line contains  n integers  a 1 , a 2 , … , a n (  1 ≤ a i ≤ 10 9 )  — the elements of the array  a .
+
+Output
+ Output a single integer  — the minimum cost of a subsequence of size  k .
+
+Examples
+Input
+4 2
+1 2 3 4
+Output
+1
+Input
+4 3
+1 2 3 4
+Output
+2
+Input
+5 3
+5 3 4 2 6
+Output
+2
+Input
+6 4
+5 3 50 2 4 5
+Output
+3
+
+Note
+ In the first test, consider the subsequence  s =  { 1 , 3 } . Here the cost is equal to  m i n ( m a x ( 1 ) , m a x ( 3 ) ) = 1 .
+ In the second test, consider the subsequence  s =  { 1 , 2 , 4 } . Here the cost is equal to  m i n ( m a x ( 1 , 4 ) , m a x ( 2 ) ) = 2 .
+ In the fourth test, consider the subsequence  s =  { 3 , 50 , 2 , 4 } . Here the cost is equal to  m i n ( m a x ( 3 , 2 ) , m a x ( 50 , 4 ) ) = 3 ."
+https://codeforces.com/problemset/problem/242/E,"['bitmasks', 'data structures']",PROGRAMMING,2000,242,E,"Description:
+
+
+You've got an array a , consisting of n integers a 1 , a 2 , ..., a n . You are allowed to perform two operations on this array:
+ Calculate the sum of current array elements on the segment [ l , r ] , that is, count value a l + a l + 1 + ... + a r . Apply the xor operation with a given number x to each array element on the segment [ l , r ] , that is, execute  . This operation changes exactly r - l + 1 array elements.
+ Expression  means applying bitwise xor operation to numbers x and y . The given operation exists in all modern programming languages, for example in language C++ and Java it is marked as "" ^ "", in Pascal — as "" xor "".
+ You've got a list of m operations of the indicated type. Your task is to perform all given operations, for each sum query you should print the result you get.
+
+Input
+ The first line contains integer n ( 1 ≤ n ≤ 10 5 ) — the size of the array. The second line contains space-separated integers a 1 , a 2 , ..., a n ( 0 ≤ a i ≤ 10 6 ) — the original array.
+ The third line contains integer m ( 1 ≤ m ≤ 5·10 4 ) — the number of operations with the array. The i -th of the following m lines first contains an integer t i ( 1 ≤ t i ≤ 2 ) — the type of the i -th query. If t i = 1 , then this is the query of the sum, if t i = 2 , then this is the query to change array elements. If the i -th operation is of type 1 , then next follow two integers l i , r i ( 1 ≤ l i ≤ r i ≤ n ). If the i -th operation is of type 2 , then next follow three integers l i , r i , x i ( 1 ≤ l i ≤ r i ≤ n , 1 ≤ x i ≤ 10 6 ). The numbers on the lines are separated by single spaces.
+
+Output
+ For each query of type 1 print in a single line the sum of numbers on the given segment. Print the answers to the queries in the order in which the queries go in the input.
+ Please, do not use the %lld specifier to read or write 64-bit integers in С++. It is preferred to use the cin , cout streams, or the %I64d specifier.
+
+Examples
+Input
+5
+
+4 10 3 13 7
+
+8
+
+1 2 4
+
+2 1 3 3
+
+1 2 4
+
+1 3 3
+
+2 2 5 5
+
+1 1 5
+
+2 1 2 10
+
+1 2 3
+Output
+26
+
+22
+
+0
+
+34
+
+11
+Input
+6
+
+4 7 4 0 7 3
+
+5
+
+2 2 3 8
+
+1 1 5
+
+2 3 5 1
+
+2 4 5 6
+
+1 2 3
+Output
+38
+
+28"
+https://codeforces.com/problemset/problem/1359/D,"['data structures', 'dp', 'implementation', 'two pointers']",PROGRAMMING,2000,1359,D,"Description:
+
+
+Alice and Bob are playing yet another card game. This time the rules are the following. There are  n cards lying in a row in front of them. The  i -th card has value  a i .
+ First, Alice chooses a non-empty consecutive segment of cards  [ l ; r ] (  l ≤ r ). After that Bob removes a single card  j from that segment  ( l ≤ j ≤ r ) . The score of the game is the total value of the remaining cards on the segment  ( a l + a l + 1 + ⋯ + a j − 1 + a j + 1 + ⋯ + a r − 1 + a r ) . In particular, if Alice chooses a segment with just one element, then the score after Bob removes the only card is  0 .
+ Alice wants to make the score as big as possible. Bob takes such a card that the score is as small as possible.
+ What segment should Alice choose so that the score is maximum possible? Output the maximum score.
+
+Input
+ The first line contains a single integer  n (  1 ≤ n ≤ 10 5 ) — the number of cards.
+ The second line contains  n integers  a 1 , a 2 , … , a n (  − 30 ≤ a i ≤ 30 ) — the values on the cards.
+
+Output
+ Print a single integer — the final score of the game.
+
+Examples
+Input
+5
+5 -2 10 -1 4
+Output
+6
+Input
+8
+5 2 5 3 -30 -30 6 9
+Output
+10
+Input
+3
+-10 6 -15
+Output
+0
+
+Note
+ In the first example Alice chooses a segment  [ 1 ; 5 ] — the entire row of cards. Bob removes card  3 with the value  10 from the segment. Thus, the final score is  5 + ( − 2 ) + ( − 1 ) + 4 = 6 .
+ In the second example Alice chooses a segment  [ 1 ; 4 ] , so that Bob removes either card  1 or  3 with the value  5 , making the answer  5 + 2 + 3 = 10 .
+ In the third example Alice can choose any of the segments of length  1 :  [ 1 ; 1 ] ,  [ 2 ; 2 ] or  [ 3 ; 3 ] . Bob removes the only card, so the score is  0 . If Alice chooses some other segment then the answer will be less than  0 ."
+https://codeforces.com/problemset/problem/432/D,"['dp', 'string suffix structures', 'strings', 'two pointers']",PROGRAMMING,2000,432,D,"Description:
+
+
+You have a string s = s 1 s 2 ... s | s | , where | s | is the length of string s , and s i its i -th character.
+ Let's introduce several definitions:
+ A substring s [ i .. j ]  (1 ≤ i ≤ j ≤ | s |) of string s is string s i s i + 1 ... s j . The prefix of string s of length l  (1 ≤ l ≤ | s |) is string s [1.. l ] . The suffix of string s of length l  (1 ≤ l ≤ | s |) is string s [| s | - l + 1..| s |] .
+ Your task is, for any prefix of string s which matches a suffix of string s , print the number of times it occurs in string s as a substring.
+
+Input
+ The single line contains a sequence of characters s 1 s 2 ... s | s |  (1 ≤ | s | ≤ 10 5 ) — string s . The string only consists of uppercase English letters.
+
+Output
+ In the first line, print integer k  (0 ≤ k ≤ | s |) — the number of prefixes that match a suffix of string s . Next print k lines, in each line print two integers l i  c i . Numbers l i  c i mean that the prefix of the length l i matches the suffix of length l i and occurs in string s as a substring c i times. Print pairs l i  c i  in the order of increasing  l i .
+
+Examples
+Input
+ABACABA
+Output
+3
+
+1 4
+
+3 2
+
+7 1
+Input
+AAA
+Output
+3
+
+1 3
+
+2 2
+
+3 1"
+https://codeforces.com/problemset/problem/1311/D,"['brute force', 'math']",PROGRAMMING,2000,1311,D,"Description:
+
+
+You are given three integers  a ≤ b ≤ c .
+ In one move, you can add  + 1 or  − 1 to any of these integers (i.e. increase or decrease any number by one). You can perform such operation any (possibly, zero) number of times, you can even perform this operation several times with one number. Note that you cannot make non-positive numbers using such operations .
+ You have to perform the minimum number of such operations in order to obtain three integers  A ≤ B ≤ C such that  B is divisible by  A and  C is divisible by  B .
+ You have to answer  t independent test cases.
+
+Input
+ The first line of the input contains one integer  t (  1 ≤ t ≤ 100 ) — the number of test cases.
+ The next  t lines describe test cases. Each test case is given on a separate line as three space-separated integers  a , b and  c (  1 ≤ a ≤ b ≤ c ≤ 10 4 ).
+
+Output
+ For each test case, print the answer. In the first line print  r e s — the minimum number of operations you have to perform to obtain three integers  A ≤ B ≤ C such that  B is divisible by  A and  C is divisible by  B . On the second line print any suitable triple  A , B and  C .
+
+Example
+Input
+8
+1 2 3
+123 321 456
+5 10 15
+15 18 21
+100 100 101
+1 22 29
+3 19 38
+6 30 46
+Output
+1
+1 1 3
+102
+114 228 456
+4
+4 8 16
+6
+18 18 18
+1
+100 100 100
+7
+1 22 22
+2
+1 19 38
+8
+6 24 48"
+https://codeforces.com/problemset/problem/449/B,"['graphs', 'greedy', 'shortest paths']",PROGRAMMING,2000,449,B,"Description:
+
+
+Jzzhu is the president of country A. There are n cities numbered from 1 to n in his country. City 1 is the capital of A. Also there are m roads connecting the cities. One can go from city u i to v i (and vise versa) using the i -th road, the length of this road is x i . Finally, there are k train routes in the country. One can use the i -th train route to go from capital of the country to city s i (and vise versa), the length of this route is y i .
+ Jzzhu doesn't want to waste the money of the country, so he is going to close some of the train routes. Please tell Jzzhu the maximum number of the train routes which can be closed under the following condition: the length of the shortest path from every city to the capital mustn't change.
+
+Input
+ The first line contains three integers n , m , k  (2 ≤ n ≤ 10 5 ; 1 ≤ m ≤ 3·10 5 ; 1 ≤ k ≤ 10 5 ) .
+ Each of the next m lines contains three integers u i , v i , x i  (1 ≤ u i , v i ≤ n ; u i ≠ v i ; 1 ≤ x i ≤ 10 9 ) .
+ Each of the next k lines contains two integers s i and y i  (2 ≤ s i ≤ n ; 1 ≤ y i ≤ 10 9 ) .
+ It is guaranteed that there is at least one way from every city to the capital. Note, that there can be multiple roads between two cities. Also, there can be multiple routes going to the same city from the capital.
+
+Output
+ Output a single integer representing the maximum number of the train routes which can be closed.
+
+Examples
+Input
+5 5 3
+
+1 2 1
+
+2 3 2
+
+1 3 3
+
+3 4 4
+
+1 5 5
+
+3 5
+
+4 5
+
+5 5
+Output
+2
+Input
+2 2 3
+
+1 2 2
+
+2 1 3
+
+2 1
+
+2 2
+
+2 3
+Output
+2"
+https://codeforces.com/problemset/problem/1132/F,['dp'],PROGRAMMING,2000,1132,F,"Description:
+
+
+You are given a string $$$s$$$ of length $$$n$$$ consisting of lowercase Latin letters. You may apply some operations to this string: in one operation you can delete some contiguous substring of this string, if all letters in the substring you delete are equal. For example, after deleting substring bbbb from string abbbbaccdd we get the string aaccdd .
+ Calculate the minimum number of operations to delete the whole string $$$s$$$.
+
+Input
+ The first line contains one integer $$$n$$$ ($$$1 ≤ n ≤ 500$$$) — the length of string $$$s$$$.
+ The second line contains the string $$$s$$$ ($$$|s| = n$$$) consisting of lowercase Latin letters.
+
+Output
+ Output a single integer — the minimal number of operation to delete string $$$s$$$.
+
+Examples
+Input
+5
+abaca
+Output
+3
+Input
+8
+abcddcba
+Output
+4"
+https://codeforces.com/problemset/problem/1349/B,"['constructive algorithms', 'greedy', 'math']",PROGRAMMING,2000,1349,B,"Description:
+
+
+Slime has a sequence of positive integers  a 1 , a 2 , … , a n .
+ In one operation Orac can choose an arbitrary subsegment  [ l … r ] of this sequence and replace all values  a l , a l + 1 , … , a r to the value of median of  { a l , a l + 1 , … , a r } .
+ In this problem, for the integer multiset  s , the median of  s is equal to the  ⌊ | s | + 1 2 ⌋ -th smallest number in it. For example, the median of  { 1 , 4 , 4 , 6 , 5 } is  4 , and the median of  { 1 , 7 , 5 , 8 } is  5 .
+ Slime wants Orac to make  a 1 = a 2 = … = a n = k using these operations.
+ Orac thinks that it is impossible, and he does not want to waste his time, so he decided to ask you if it is possible to satisfy the Slime's requirement, he may ask you these questions several times.
+
+Input
+ The first line of the input is a single integer  t : the number of queries.
+ The first line of each query contains two integers  n  ( 1 ≤ n ≤ 100  000 ) and  k  ( 1 ≤ k ≤ 10 9 ) , the second line contains  n positive integers  a 1 , a 2 , … , a n  ( 1 ≤ a i ≤ 10 9 )
+ The total sum of  n is at most  100  000 .
+
+Output
+ The output should contain  t lines. The  i -th line should be equal to ' yes ' if it is possible to make all integers  k in some number of operations or ' no ', otherwise. You can print each letter in lowercase or uppercase.
+
+Example
+Input
+5
+5 3
+1 5 2 6 1
+1 6
+6
+3 2
+1 2 3
+4 3
+3 1 2 3
+10 3
+1 2 3 4 5 6 7 8 9 10
+Output
+no
+yes
+yes
+no
+yes
+
+Note
+ In the first query, Orac can't turn all elements into  3 .
+ In the second query,  a 1 = 6 is already satisfied.
+ In the third query, Orac can select the complete array and turn all elements into  2 .
+ In the fourth query, Orac can't turn all elements into  3 .
+ In the fifth query, Orac can select  [ 1 , 6 ] at first and then select  [ 2 , 10 ] ."
+https://codeforces.com/problemset/problem/1200/E,"['brute force', 'hashing', 'implementation', 'string suffix structures', 'strings']",PROGRAMMING,2000,1200,E,"Description:
+
+
+Amugae has a sentence consisting of  n words. He want to compress this sentence into one word. Amugae doesn't like repetitions, so when he merges two words into one word, he removes the longest prefix of the second word that coincides with a suffix of the first word. For example, he merges "" sample "" and "" please "" into "" samplease "".
+ Amugae will merge his sentence left to right (i.e. first merge the first two words, then merge the result with the third word and so on). Write a program that prints the compressed word after the merging process ends.
+
+Input
+ The first line contains an integer  n (  1 ≤ n ≤ 10 5 ), the number of the words in Amugae's sentence.
+ The second line contains  n words separated by single space. Each words is non-empty and consists of uppercase and lowercase English letters and digits (' A ', ' B ', ..., ' Z ', ' a ', ' b ', ..., ' z ', ' 0 ', ' 1 ', ..., ' 9 '). The total length of the words does not exceed  10 6 .
+
+Output
+ In the only line output the compressed word after the merging process ends as described in the problem.
+
+Examples
+Input
+5
+I want to order pizza
+Output
+Iwantorderpizza
+Input
+5
+sample please ease in out
+Output
+sampleaseinout"
+https://codeforces.com/problemset/problem/1244/C,"['brute force', 'math', 'number theory']",PROGRAMMING,2000,1244,C,"Description:
+
+
+The football season has just ended in Berland. According to the rules of Berland football, each match is played between two teams. The result of each match is either a draw, or a victory of one of the playing teams. If a team wins the match, it gets  w points, and the opposing team gets  0 points. If the game results in a draw, both teams get  d points.
+ The manager of the Berland capital team wants to summarize the results of the season, but, unfortunately, all information about the results of each match is lost. The manager only knows that the team has played  n games and got  p points for them.
+ You have to determine three integers  x ,  y and  z — the number of wins, draws and loses of the team. If there are multiple answers, print any of them. If there is no suitable triple  ( x , y , z ) , report about it.
+
+Input
+ The first line contains four integers  n ,  p ,  w and  d   ( 1 ≤ n ≤ 10 12 , 0 ≤ p ≤ 10 17 , 1 ≤ d < w ≤ 10 5 ) — the number of games, the number of points the team got, the number of points awarded for winning a match, and the number of points awarded for a draw, respectively. Note that  w > d , so the number of points awarded for winning is strictly greater than the number of points awarded for draw.
+
+Output
+ If there is no answer, print  − 1 .
+ Otherwise print three non-negative integers  x ,  y and  z — the number of wins, draws and losses of the team. If there are multiple possible triples  ( x , y , z ) , print any of them. The numbers should meet the following conditions:
+ x ⋅ w + y ⋅ d = p , x + y + z = n .
+
+Examples
+Input
+30 60 3 1
+Output
+17 9 4
+Input
+10 51 5 4
+Output
+-1
+Input
+20 0 15 5
+Output
+0 0 20
+
+Note
+ One of the possible answers in the first example —  17 wins,  9 draws and  4 losses. Then the team got  17 ⋅ 3 + 9 ⋅ 1 = 60 points in  17 + 9 + 4 = 30 games.
+ In the second example the maximum possible score is  10 ⋅ 5 = 50 . Since  p = 51 , there is no answer.
+ In the third example the team got  0 points, so all  20 games were lost."
+https://codeforces.com/problemset/problem/1385/E,"['constructive algorithms', 'dfs and similar', 'graphs']",PROGRAMMING,2000,1385,E,"Description:
+
+
+You are given a graph consisting of  n vertices and  m edges. It is not guaranteed that the given graph is connected. Some edges are already directed and you can't change their direction. Other edges are undirected and you have to choose some direction for all these edges.
+ You have to direct undirected edges in such a way that the resulting graph is directed and acyclic (i.e. the graph with all edges directed and having no directed cycles). Note that you have to direct all undirected edges.
+ You have to answer  t independent test cases.
+
+Input
+ The first line of the input contains one integer  t (  1 ≤ t ≤ 2 ⋅ 10 4 ) — the number of test cases. Then  t test cases follow.
+ The first line of the test case contains two integers  n and  m (  2 ≤ n ≤ 2 ⋅ 10 5 ,  1 ≤ m ≤ m i n ( 2 ⋅ 10 5 , n ( n − 1 ) 2 ) ) — the number of vertices and the number of edges in the graph, respectively.
+ The next  m lines describe edges of the graph. The  i -th edge is described with three integers  t i ,  x i and  y i (  t i ∈ [ 0 ; 1 ] ,  1 ≤ x i , y i ≤ n ) — the type of the edge (  t i = 0 if the edge is undirected and  t i = 1 if the edge is directed) and vertices this edge connects (the undirected edge connects vertices  x i and  y i and directed edge is going from the vertex  x i to the vertex  y i ). It is guaranteed that the graph do not contain self-loops (i.e. edges from the vertex to itself) and multiple edges (i.e. for each pair (  x i , y i ) there are no other pairs (  x i , y i ) or (  y i , x i )).
+ It is guaranteed that both sum  n and sum  m do not exceed  2 ⋅ 10 5 (  ∑ n ≤ 2 ⋅ 10 5 ;  ∑ m ≤ 2 ⋅ 10 5 ).
+
+Output
+ For each test case print the answer — "" NO "" if it is impossible to direct undirected edges in such a way that the resulting graph is directed and acyclic, otherwise print "" YES "" on the first line and  m lines describing edges of the resulted directed acyclic graph ( in any order ). Note that you cannot change the direction of the already directed edges. If there are several answers, you can print any.
+
+Example
+Input
+4
+3 1
+0 1 3
+5 5
+0 2 1
+1 1 5
+1 5 4
+0 5 2
+1 3 5
+4 5
+1 1 2
+0 4 3
+1 3 1
+0 2 3
+1 2 4
+4 5
+1 4 1
+1 1 3
+0 1 2
+1 2 4
+1 3 2
+Output
+YES
+3 1
+YES
+2 1
+1 5
+5 4
+2 5
+3 5
+YES
+1 2
+3 4
+3 1
+3 2
+2 4
+NO
+
+Note
+ Explanation of the second test case of the example:
+ 
+ Explanation of the third test case of the example:
+ "
+https://codeforces.com/problemset/problem/540/C,['dfs and similar'],PROGRAMMING,2000,540,C,"Description:
+
+
+You play a computer game. Your character stands on some level of a multilevel ice cave. In order to move on forward, you need to descend one level lower and the only way to do this is to fall through the ice.
+ The level of the cave where you are is a rectangular square grid of n rows and m columns. Each cell consists either from intact or from cracked ice. From each cell you can move to cells that are side-adjacent with yours (due to some limitations of the game engine you cannot make jumps on the same place, i.e. jump from a cell to itself). If you move to the cell with cracked ice, then your character falls down through it and if you move to the cell with intact ice, then the ice on this cell becomes cracked.
+ Let's number the rows with integers from 1 to n from top to bottom and the columns with integers from 1 to m from left to right. Let's denote a cell on the intersection of the r -th row and the c -th column as ( r , c ) .
+ You are staying in the cell ( r 1 , c 1 ) and this cell is cracked because you've just fallen here from a higher level. You need to fall down through the cell ( r 2 , c 2 ) since the exit to the next level is there. Can you do this?
+
+Input
+ The first line contains two integers, n and m ( 1 ≤ n , m ≤ 500 ) — the number of rows and columns in the cave description.
+ Each of the next n lines describes the initial state of the level of the cave, each line consists of m characters "" . "" (that is, intact ice) and "" X "" (cracked ice).
+ The next line contains two integers, r 1 and c 1 ( 1 ≤ r 1 ≤ n , 1 ≤ c 1 ≤ m ) — your initial coordinates. It is guaranteed that the description of the cave contains character ' X ' in cell ( r 1 , c 1 ) , that is, the ice on the starting cell is initially cracked.
+ The next line contains two integers r 2 and c 2 ( 1 ≤ r 2 ≤ n , 1 ≤ c 2 ≤ m ) — the coordinates of the cell through which you need to fall. The final cell may coincide with the starting one.
+
+Output
+ If you can reach the destination, print ' YES ', otherwise print ' NO '.
+
+Examples
+Input
+4 6
+
+X...XX
+
+...XX.
+
+.X..X.
+
+......
+
+1 6
+
+2 2
+Output
+YES
+Input
+5 4
+
+.X..
+
+...X
+
+X.X.
+
+....
+
+.XX.
+
+5 3
+
+1 1
+Output
+NO
+Input
+4 7
+
+..X.XX.
+
+.XX..X.
+
+X...X..
+
+X......
+
+2 2
+
+1 6
+Output
+YES
+
+Note
+ In the first sample test one possible path is:
+ 
+ After the first visit of cell (2, 2) the ice on it cracks and when you step there for the second time, your character falls through the ice as intended."
+https://codeforces.com/problemset/problem/1288/D,"['binary search', 'bitmasks', 'dp']",PROGRAMMING,2000,1288,D,"Description:
+
+
+You are given  n arrays  a 1 ,  a 2 , ...,  a n ; each array consists of exactly  m integers. We denote the  y -th element of the  x -th array as  a x , y .
+ You have to choose two arrays  a i and  a j (  1 ≤ i , j ≤ n , it is possible that  i = j ). After that, you will obtain a new array  b consisting of  m integers, such that for every  k ∈ [ 1 , m ]   b k = max ( a i , k , a j , k ) .
+ Your goal is to choose  i and  j so that the value of  min k = 1 m b k is maximum possible.
+
+Input
+ The first line contains two integers  n and  m (  1 ≤ n ≤ 3 ⋅ 10 5 ,  1 ≤ m ≤ 8 ) — the number of arrays and the number of elements in each array, respectively.
+ Then  n lines follow, the  x -th line contains the array  a x represented by  m integers  a x , 1 ,  a x , 2 , ...,  a x , m (  0 ≤ a x , y ≤ 10 9 ).
+
+Output
+ Print two integers  i and  j (  1 ≤ i , j ≤ n , it is possible that  i = j ) — the indices of the two arrays you have to choose so that the value of  min k = 1 m b k is maximum possible. If there are multiple answers, print any of them.
+
+Example
+Input
+6 5
+5 0 3 1 2
+1 8 9 1 3
+1 2 3 4 5
+9 1 0 3 7
+2 3 0 6 3
+6 4 1 7 0
+Output
+1 5"
+https://codeforces.com/problemset/problem/920/F,"['brute force', 'data structures', 'dsu', 'number theory']",PROGRAMMING,2000,920,F,"Description:
+
+
+Let D ( x ) be the number of positive divisors of a positive integer x . For example, D (2) = 2 ( 2 is divisible by 1 and 2 ), D (6) = 4 ( 6 is divisible by 1 , 2 , 3 and 6 ).
+ You are given an array a of n integers. You have to process two types of queries:
+ REPLACE  l  r — for every  replace a i with D ( a i ) ; SUM  l  r — calculate  .
+ Print the answer for each SUM query.
+
+Input
+ The first line contains two integers n and m ( 1 ≤ n , m ≤ 3·10 5 ) — the number of elements in the array and the number of queries to process, respectively.
+ The second line contains n integers a 1 , a 2 , ..., a n ( 1 ≤ a i ≤ 10 6 ) — the elements of the array.
+ Then m lines follow, each containing 3 integers t i , l i , r i denoting i -th query. If t i = 1 , then i -th query is REPLACE  l i  r i , otherwise it's SUM  l i  r i ( 1 ≤ t i ≤ 2 , 1 ≤ l i ≤ r i ≤ n ).
+ There is at least one SUM query.
+
+Output
+ For each SUM query print the answer to it.
+
+Example
+Input
+7 6
+
+6 4 1 10 3 2 4
+
+2 1 7
+
+2 4 5
+
+1 3 5
+
+2 4 4
+
+1 5 7
+
+2 1 7
+Output
+30
+
+13
+
+4
+
+22"
+https://codeforces.com/problemset/problem/514/C,"['binary search', 'data structures', 'hashing', 'string suffix structures', 'strings']",PROGRAMMING,2000,514,C,"Description:
+
+
+Watto, the owner of a spare parts store, has recently got an order for the mechanism that can process strings in a certain way. Initially the memory of the mechanism is filled with n strings. Then the mechanism should be able to process queries of the following type: ""Given string s , determine if the memory of the mechanism contains string t that consists of the same number of characters as s and differs from s in exactly one position"".
+ Watto has already compiled the mechanism, all that's left is to write a program for it and check it on the data consisting of n initial lines and m queries. He decided to entrust this job to you.
+
+Input
+ The first line contains two non-negative numbers n and m ( 0 ≤ n ≤ 3·10 5 , 0 ≤ m ≤ 3·10 5 ) — the number of the initial strings and the number of queries, respectively.
+ Next follow n non-empty strings that are uploaded to the memory of the mechanism.
+ Next follow m non-empty strings that are the queries to the mechanism.
+ The total length of lines in the input doesn't exceed 6·10 5 . Each line consists only of letters 'a' , 'b' , 'c' .
+
+Output
+ For each query print on a single line "" YES "" (without the quotes), if the memory of the mechanism contains the required string, otherwise print "" NO "" (without the quotes).
+
+Examples
+Input
+2 3
+
+aaaaa
+
+acacaca
+
+aabaa
+
+ccacacc
+
+caaac
+Output
+YES
+
+NO
+
+NO"
+https://codeforces.com/problemset/problem/118/E,"['dfs and similar', 'graphs']",PROGRAMMING,2000,118,E,"Description:
+
+
+Bertown has n junctions and m bidirectional roads. We know that one can get from any junction to any other one by the existing roads.
+ As there were more and more cars in the city, traffic jams started to pose real problems. To deal with them the government decided to make the traffic one-directional on all the roads, thus easing down the traffic. Your task is to determine whether there is a way to make the traffic one-directional so that there still is the possibility to get from any junction to any other one. If the answer is positive, you should also find one of the possible ways to orient the roads.
+
+Input
+ The first line contains two space-separated integers n and m ( 2 ≤ n ≤ 10 5 , n - 1 ≤ m ≤ 3·10 5 ) which represent the number of junctions and the roads in the town correspondingly. Then follow m lines, each containing two numbers which describe the roads in the city. Each road is determined by two integers a i and b i ( 1 ≤ a i , b i ≤ n , a i ≠ b i ) — the numbers of junctions it connects.
+ It is guaranteed that one can get from any junction to any other one along the existing bidirectional roads. Each road connects different junctions, there is no more than one road between each pair of junctions.
+
+Output
+ If there's no solution, print the single number 0 . Otherwise, print m lines each containing two integers p i and q i — each road's orientation. That is the traffic flow will move along a one-directional road from junction p i to junction q i . You can print the roads in any order. If there are several solutions to that problem, print any of them.
+
+Examples
+Input
+6 8
+
+1 2
+
+2 3
+
+1 3
+
+4 5
+
+4 6
+
+5 6
+
+2 4
+
+3 5
+Output
+1 2
+
+2 3
+
+3 1
+
+4 5
+
+5 6
+
+6 4
+
+4 2
+
+3 5
+Input
+6 7
+
+1 2
+
+2 3
+
+1 3
+
+4 5
+
+4 6
+
+5 6
+
+2 4
+Output
+0"
+https://codeforces.com/problemset/problem/474/F,"['data structures', 'math', 'number theory']",PROGRAMMING,2100,474,F,"Description:
+
+
+Mole is hungry again. He found one ant colony, consisting of n ants, ordered in a row. Each ant i ( 1 ≤ i ≤ n ) has a strength s i .
+ In order to make his dinner more interesting, Mole organizes a version of «Hunger Games» for the ants. He chooses two numbers l and r ( 1 ≤ l ≤ r ≤ n ) and each pair of ants with indices between l and r (inclusively) will fight. When two ants i and j fight, ant i gets one battle point only if s i divides s j (also, ant j gets one battle point only if s j divides s i ).
+ After all fights have been finished, Mole makes the ranking. An ant i , with v i battle points obtained, is going to be freed only if v i = r - l , or in other words only if it took a point in every fight it participated. After that, Mole eats the rest of the ants. Note that there can be many ants freed or even none.
+ In order to choose the best sequence, Mole gives you t segments [ l i , r i ] and asks for each of them how many ants is he going to eat if those ants fight.
+
+Input
+ The first line contains one integer n ( 1 ≤ n ≤ 10 5 ), the size of the ant colony.
+ The second line contains n integers s 1 , s 2 , ..., s n ( 1 ≤ s i ≤ 10 9 ), the strengths of the ants.
+ The third line contains one integer t ( 1 ≤ t ≤ 10 5 ), the number of test cases.
+ Each of the next t lines contains two integers l i and r i ( 1 ≤ l i ≤ r i ≤ n ), describing one query.
+
+Output
+ Print to the standard output t lines. The i -th line contains number of ants that Mole eats from the segment [ l i , r i ] .
+
+Examples
+Input
+5
+
+1 3 2 4 2
+
+4
+
+1 5
+
+2 5
+
+3 5
+
+4 5
+Output
+4
+
+4
+
+1
+
+1
+
+Note
+ In the first test battle points for each ant are v = [4, 0, 2, 0, 2] , so ant number 1 is freed. Mole eats the ants 2 , 3 , 4 , 5 .
+ In the second test case battle points are v = [0, 2, 0, 2] , so no ant is freed and all of them are eaten by Mole.
+ In the third test case battle points are v = [2, 0, 2] , so ants number 3 and 5 are freed. Mole eats only the ant 4 .
+ In the fourth test case battle points are v = [0, 1] , so ant number 5 is freed. Mole eats the ant 4 ."
+https://codeforces.com/problemset/problem/1187/E,"['dfs and similar', 'dp', 'trees']",PROGRAMMING,2100,1187,E,"Description:
+
+
+You are given a tree (an undirected connected acyclic graph) consisting of  n vertices. You are playing a game on this tree.
+ Initially all vertices are white. On the first turn of the game you choose one vertex and paint it black. Then on each turn you choose a white vertex adjacent (connected by an edge) to any black vertex and paint it black.
+ Each time when you choose a vertex (even during the first turn), you gain the number of points equal to the size of the connected component consisting only of white vertices that contains the chosen vertex. The game ends when all vertices are painted black.
+ Let's see the following example:
+ 
+ Vertices  1 and  4 are painted black already. If you choose the vertex  2 , you will gain  4 points for the connected component consisting of vertices  2 , 3 , 5 and  6 . If you choose the vertex  9 , you will gain  3 points for the connected component consisting of vertices  7 , 8 and  9 .
+ Your task is to maximize the number of points you gain.
+
+Input
+ The first line contains an integer  n — the number of vertices in the tree (  2 ≤ n ≤ 2 ⋅ 10 5 ).
+ Each of the next  n − 1 lines describes an edge of the tree. Edge  i is denoted by two integers  u i and  v i , the indices of vertices it connects (  1 ≤ u i , v i ≤ n ,  u i ≠ v i ).
+ It is guaranteed that the given edges form a tree.
+
+Output
+ Print one integer — the maximum number of points you gain if you will play optimally.
+
+Examples
+Input
+9
+1 2
+2 3
+2 5
+2 6
+1 4
+4 9
+9 7
+9 8
+Output
+36
+Input
+5
+1 2
+1 3
+2 4
+2 5
+Output
+14
+
+Note
+ The first example tree is shown in the problem statement."
+https://codeforces.com/problemset/problem/609/E,"['data structures', 'dfs and similar', 'dsu', 'graphs', 'trees']",PROGRAMMING,2100,609,E,"Description:
+
+
+Connected undirected weighted graph without self-loops and multiple edges is given. Graph contains n vertices and m edges.
+ For each edge ( u , v ) find the minimal possible weight of the spanning tree that contains the edge ( u , v ) .
+ The weight of the spanning tree is the sum of weights of all edges included in spanning tree.
+
+Input
+ First line contains two integers n and m ( 1 ≤ n ≤ 2·10 5 , n - 1 ≤ m ≤ 2·10 5 ) — the number of vertices and edges in graph.
+ Each of the next m lines contains three integers u i , v i , w i ( 1 ≤ u i , v i ≤ n , u i ≠ v i , 1 ≤ w i ≤ 10 9 ) — the endpoints of the i -th edge and its weight.
+
+Output
+ Print m lines. i -th line should contain the minimal possible weight of the spanning tree that contains i -th edge.
+ The edges are numbered from 1 to m in order of their appearing in input.
+
+Examples
+Input
+5 7
+
+1 2 3
+
+1 3 1
+
+1 4 5
+
+2 3 2
+
+2 5 3
+
+3 4 2
+
+4 5 4
+Output
+9
+
+8
+
+11
+
+8
+
+8
+
+8
+
+9"
+https://codeforces.com/problemset/problem/1486/D,"['binary search', 'data structures', 'dp']",PROGRAMMING,2100,1486,D,"Description:
+
+
+You are a given an array  a of length  n . Find a subarray  a [ l . . r ] with length at least  k with the largest median.
+ A median in an array of length  n is an element which occupies position number  ⌊ n + 1 2 ⌋ after we sort the elements in non-decreasing order. For example:  m e d i a n ( [ 1 , 2 , 3 , 4 ] ) = 2 ,  m e d i a n ( [ 3 , 2 , 1 ] ) = 2 ,  m e d i a n ( [ 2 , 1 , 2 , 1 ] ) = 1 .
+ Subarray  a [ l . . r ] is a contiguous part of the array  a , i. e. the array  a l , a l + 1 , … , a r for some  1 ≤ l ≤ r ≤ n , its length is  r − l + 1 .
+
+Input
+ The first line contains two integers  n and  k (  1 ≤ k ≤ n ≤ 2 ⋅ 10 5 ).
+ The second line contains  n integers  a 1 , a 2 , … , a n (  1 ≤ a i ≤ n ).
+
+Output
+ Output one integer  m — the maximum median you can get.
+
+Examples
+Input
+5 3
+1 2 3 2 1
+Output
+2
+Input
+4 2
+1 2 3 4
+Output
+3
+
+Note
+ In the first example all the possible subarrays are  [ 1..3 ] ,  [ 1..4 ] ,  [ 1..5 ] ,  [ 2..4 ] ,  [ 2..5 ] and  [ 3..5 ] and the median for all of them is  2 , so the maximum possible median is  2 too.
+ In the second example  m e d i a n ( [ 3..4 ] ) = 3 ."
+https://codeforces.com/problemset/problem/321/C,"['constructive algorithms', 'dfs and similar', 'divide and conquer', 'greedy', 'trees']",PROGRAMMING,2100,321,C,"Description:
+
+
+Now Fox Ciel becomes a commander of Tree Land. Tree Land, like its name said, has n cities connected by n - 1 undirected roads, and for any two cities there always exists a path between them.
+ Fox Ciel needs to assign an officer to each city. Each officer has a rank — a letter from ' A ' to ' Z '. So there will be 26 different ranks, and ' A ' is the topmost, so ' Z ' is the bottommost.
+ There are enough officers of each rank. But there is a special rule must obey: if x and y are two distinct cities and their officers have the same rank, then on the simple path between x and y there must be a city z that has an officer with higher rank. The rule guarantee that a communications between same rank officers will be monitored by higher rank officer.
+ Help Ciel to make a valid plan, and if it's impossible, output "" Impossible! "".
+
+Input
+ The first line contains an integer n ( 2 ≤ n ≤ 10 5 ) — the number of cities in Tree Land.
+ Each of the following n - 1 lines contains two integers a and b ( 1 ≤ a , b ≤ n , a ≠ b ) — they mean that there will be an undirected road between a and b . Consider all the cities are numbered from 1 to n .
+ It guaranteed that the given graph will be a tree.
+
+Output
+ If there is a valid plane, output n space-separated characters in a line — i -th character is the rank of officer in the city with number i .
+ Otherwise output "" Impossible! "".
+
+Examples
+Input
+4
+
+1 2
+
+1 3
+
+1 4
+Output
+A B B B
+Input
+10
+
+1 2
+
+2 3
+
+3 4
+
+4 5
+
+5 6
+
+6 7
+
+7 8
+
+8 9
+
+9 10
+Output
+D C B A D C B D C D
+
+Note
+ In the first example, for any two officers of rank ' B ', an officer with rank ' A ' will be on the path between them. So it is a valid solution."
+https://codeforces.com/problemset/problem/484/B,"['binary search', 'math', 'sortings', 'two pointers']",PROGRAMMING,2100,484,B,"Description:
+
+
+You are given a sequence a consisting of n integers. Find the maximum possible value of  (integer remainder of a i divided by a j ), where 1 ≤ i , j ≤ n and a i ≥ a j .
+
+Input
+ The first line contains integer n — the length of the sequence ( 1 ≤ n ≤ 2·10 5 ).
+ The second line contains n space-separated integers a i ( 1 ≤ a i ≤ 10 6 ).
+
+Output
+ Print the answer to the problem.
+
+Examples
+Input
+3
+
+3 4 5
+Output
+2"
+https://codeforces.com/problemset/problem/519/E,"['binary search', 'data structures', 'dfs and similar', 'dp', 'trees']",PROGRAMMING,2100,519,E,"Description:
+
+
+A and B are preparing themselves for programming contests.
+ The University where A and B study is a set of rooms connected by corridors. Overall, the University has n rooms connected by n - 1 corridors so that you can get from any room to any other one by moving along the corridors. The rooms are numbered from 1 to n .
+ Every day А and B write contests in some rooms of their university, and after each contest they gather together in the same room and discuss problems. A and B want the distance from the rooms where problems are discussed to the rooms where contests are written to be equal. The distance between two rooms is the number of edges on the shortest path between them.
+ As they write contests in new rooms every day, they asked you to help them find the number of possible rooms to discuss problems for each of the following m days.
+
+Input
+ The first line contains integer n ( 1 ≤ n ≤ 10 5 ) — the number of rooms in the University.
+ The next n - 1 lines describe the corridors. The i -th of these lines ( 1 ≤ i ≤ n - 1 ) contains two integers a i and b i ( 1 ≤ a i , b i ≤ n ), showing that the i -th corridor connects rooms a i and b i .
+ The next line contains integer m ( 1 ≤ m ≤ 10 5 ) — the number of queries.
+ Next m lines describe the queries. The j -th of these lines ( 1 ≤ j ≤ m ) contains two integers x j and y j ( 1 ≤ x j , y j ≤ n ) that means that on the j -th day A will write the contest in the room x j , B will write in the room y j .
+
+Output
+ In the i -th ( 1 ≤ i ≤ m ) line print the number of rooms that are equidistant from the rooms where A and B write contest on the i -th day.
+
+Examples
+Input
+4
+
+1 2
+
+1 3
+
+2 4
+
+1
+
+2 3
+Output
+1
+Input
+4
+
+1 2
+
+2 3
+
+2 4
+
+2
+
+1 2
+
+1 3
+Output
+0
+
+2
+
+Note
+ in the first sample there is only one room at the same distance from rooms number 2 and 3 — room number 1."
+https://codeforces.com/problemset/problem/208/E,"['binary search', 'data structures', 'dfs and similar', 'trees']",PROGRAMMING,2100,208,E,"Description:
+
+
+Polycarpus got hold of a family relationship tree. The tree describes family relationships of n people, numbered 1 through n . Each person in the tree has no more than one parent.
+ Let's call person a a 1-ancestor of person b , if a is the parent of b .
+ Let's call person a a k -ancestor ( k > 1) of person b , if person b has a 1-ancestor, and a is a ( k - 1) -ancestor of b 's 1-ancestor.
+ Family relationships don't form cycles in the found tree. In other words, there is no person who is his own ancestor, directly or indirectly (that is, who is an x -ancestor for himself, for some x , x > 0 ).
+ Let's call two people x and y  ( x ≠ y )  p -th cousins ( p > 0) , if there is person z , who is a p -ancestor of x and a p -ancestor of y .
+ Polycarpus wonders how many counsins and what kinds of them everybody has. He took a piece of paper and wrote m pairs of integers v i , p i . Help him to calculate the number of p i -th cousins that person v i has, for each pair v i , p i .
+
+Input
+ The first input line contains a single integer n  (1 ≤ n ≤ 10 5 ) — the number of people in the tree. The next line contains n space-separated integers r 1 , r 2 , ..., r n , where r i  (1 ≤ r i ≤ n ) is the number of person i 's parent or 0 , if person i has no parent. It is guaranteed that family relationships don't form cycles.
+ The third line contains a single number m  (1 ≤ m ≤ 10 5 ) — the number of family relationship queries Polycarus has. Next m lines contain pairs of space-separated integers. The i -th line contains numbers v i , p i  (1 ≤ v i , p i ≤ n ) .
+
+Output
+ Print m space-separated integers — the answers to Polycarpus' queries. Print the answers to the queries in the order, in which the queries occur in the input.
+
+Examples
+Input
+6
+
+0 1 1 0 4 4
+
+7
+
+1 1
+
+1 2
+
+2 1
+
+2 2
+
+4 1
+
+5 1
+
+6 1
+Output
+0 0 1 0 0 1 1"
+https://codeforces.com/problemset/problem/920/E,"['data structures', 'dfs and similar', 'dsu', 'graphs']",PROGRAMMING,2100,920,E,"Description:
+
+
+You are given an undirected graph consisting of n vertices and  edges. Instead of giving you the edges that exist in the graph, we give you m unordered pairs ( x , y ) such that there is no edge between x and y , and if some pair of vertices is not listed in the input, then there is an edge between these vertices.
+ You have to find the number of connected components in the graph and the size of each component. A connected component is a set of vertices X such that for every two vertices from this set there exists at least one path in the graph connecting these vertices, but adding any other vertex to X violates this rule.
+
+Input
+ The first line contains two integers n and m ( 1 ≤ n ≤ 200000 ,  ).
+ Then m lines follow, each containing a pair of integers x and y ( 1 ≤ x , y ≤ n , x ≠ y ) denoting that there is no edge between x and y . Each pair is listed at most once; ( x , y ) and ( y , x ) are considered the same (so they are never listed in the same test). If some pair of vertices is not listed in the input, then there exists an edge between those vertices.
+
+Output
+ Firstly print k — the number of connected components in this graph.
+ Then print k integers — the sizes of components. You should output these integers in non-descending order.
+
+Example
+Input
+5 5
+
+1 2
+
+3 4
+
+3 2
+
+4 2
+
+2 5
+Output
+2
+
+1 4"
+https://codeforces.com/problemset/problem/1433/F,['dp'],PROGRAMMING,2100,1433,F,"Description:
+
+
+You are given a matrix  a of size  n × m consisting of integers.
+ You can choose no more than   ⌊ m 2 ⌋ elements in each row . Your task is to choose these elements in such a way that their sum is divisible by   k and this sum is the maximum .
+ In other words, you can choose no more than a half (rounded down) of elements in each row, you have to find the maximum sum of these elements divisible by  k .
+ Note that you can choose zero elements (and the sum of such set is  0 ).
+
+Input
+ The first line of the input contains three integers  n ,  m and  k (  1 ≤ n , m , k ≤ 70 ) — the number of rows in the matrix, the number of columns in the matrix and the value of  k . The next  n lines contain  m elements each, where the  j -th element of the  i -th row is  a i , j (  1 ≤ a i , j ≤ 70 ).
+
+Output
+ Print one integer — the maximum sum divisible by  k you can obtain.
+
+Examples
+Input
+3 4 3
+1 2 3 4
+5 2 2 2
+7 1 1 4
+Output
+24
+Input
+5 5 4
+1 2 4 2 1
+3 5 1 2 4
+1 5 7 1 2
+3 8 7 1 2
+8 4 7 1 6
+Output
+56
+
+Note
+ In the first example, the optimal answer is  2 and  4 in the first row,  5 and  2 in the second row and  7 and  4 in the third row. The total sum is  2 + 4 + 5 + 2 + 7 + 4 = 24 ."
+https://codeforces.com/problemset/problem/1312/E,"['dp', 'greedy']",PROGRAMMING,2100,1312,E,"Description:
+
+
+You are given an array  a 1 , a 2 , … , a n . You can perform the following operation any number of times:
+ Choose a pair of two neighboring equal elements  a i = a i + 1 (if there is at least one such pair). Replace them by one element with value  a i + 1 .
+ After each such operation, the length of the array will decrease by one (and elements are renumerated accordingly). What is the minimum possible length of the array  a you can get?
+
+Input
+ The first line contains the single integer  n (  1 ≤ n ≤ 500 ) — the initial length of the array  a .
+ The second line contains  n integers  a 1 , a 2 , … , a n (  1 ≤ a i ≤ 1000 ) — the initial array  a .
+
+Output
+ Print the only integer — the minimum possible length you can get after performing the operation described above any number of times.
+
+Examples
+Input
+5
+4 3 2 2 3
+Output
+2
+Input
+7
+3 3 4 4 4 3 3
+Output
+2
+Input
+3
+1 3 5
+Output
+3
+Input
+1
+1000
+Output
+1
+
+Note
+ In the first test, this is one of the optimal sequences of operations:  4   3   2   2   3   →   4   3   3   3   →   4   4   3   →   5   3 .
+ In the second test, this is one of the optimal sequences of operations:  3   3   4   4   4   3   3   →   4   4   4   4   3   3   →   4   4   4   4   4   →   5   4   4   4   →   5   5   4   →   6   4 .
+ In the third and fourth tests, you can't perform the operation at all."
+https://codeforces.com/problemset/problem/1499/D,"['dp', 'math', 'number theory']",PROGRAMMING,2100,1499,D,"Description:
+
+
+You are given three positive (greater than zero) integers  c ,  d and  x .
+ You have to find the number of pairs of positive integers  ( a , b ) such that equality  c ⋅ l c m ( a , b ) − d ⋅ g c d ( a , b ) = x holds. Where  l c m ( a , b ) is the least common multiple of  a and  b and  g c d ( a , b ) is the greatest common divisor of  a and  b .
+
+Input
+ The first line contains one integer  t (  1 ≤ t ≤ 10 4 ) — the number of test cases.
+ Each test case consists of one line containing three integer  c ,  d and  x (  1 ≤ c , d , x ≤ 10 7 ).
+
+Output
+ For each test case, print one integer — the number of pairs (  a , b ) such that the above equality holds.
+
+Example
+Input
+4
+1 1 3
+4 2 6
+3 3 7
+2 7 25
+Output
+4
+3
+0
+8
+
+Note
+ In the first example, the correct pairs are: (  1 , 4 ), (  4 , 1 ), (  3 , 6 ), (  6 , 3 ).
+ In the second example, the correct pairs are: (  1 , 2 ), (  2 , 1 ), (  3 , 3 )."
+https://codeforces.com/problemset/problem/796/D,"['constructive algorithms', 'dfs and similar', 'dp', 'graphs', 'shortest paths', 'trees']",PROGRAMMING,2100,796,D,"Description:
+
+
+Inzane finally found Zane with a lot of money to spare, so they together decided to establish a country of their own.
+ Ruling a country is not an easy job. Thieves and terrorists are always ready to ruin the country's peace. To fight back, Zane and Inzane have enacted a very effective law: from each city it must be possible to reach a police station by traveling at most d kilometers along the roads.
+ 
+ There are n cities in the country, numbered from 1 to n , connected only by exactly n - 1 roads. All roads are 1 kilometer long. It is initially possible to travel from a city to any other city using these roads. The country also has k police stations located in some cities. In particular, the city's structure satisfies the requirement enforced by the previously mentioned law. Also note that there can be multiple police stations in one city.
+ However, Zane feels like having as many as n - 1 roads is unnecessary. The country is having financial issues, so it wants to minimize the road maintenance cost by shutting down as many roads as possible.
+ Help Zane find the maximum number of roads that can be shut down without breaking the law. Also, help him determine such roads.
+
+Input
+ The first line contains three integers n , k , and d ( 2 ≤ n ≤ 3·10 5 , 1 ≤ k ≤ 3·10 5 , 0 ≤ d ≤ n - 1 ) — the number of cities, the number of police stations, and the distance limitation in kilometers, respectively.
+ The second line contains k integers p 1 , p 2 , ..., p k ( 1 ≤ p i ≤ n ) — each denoting the city each police station is located in.
+ The i -th of the following n - 1 lines contains two integers u i and v i ( 1 ≤ u i , v i ≤ n , u i ≠ v i ) — the cities directly connected by the road with index i .
+ It is guaranteed that it is possible to travel from one city to any other city using only the roads. Also, it is possible from any city to reach a police station within d kilometers.
+
+Output
+ In the first line, print one integer s that denotes the maximum number of roads that can be shut down.
+ In the second line, print s distinct integers, the indices of such roads, in any order.
+ If there are multiple answers, print any of them.
+
+Examples
+Input
+6 2 4
+
+1 6
+
+1 2
+
+2 3
+
+3 4
+
+4 5
+
+5 6
+Output
+1
+
+5
+Input
+6 3 2
+
+1 5 6
+
+1 2
+
+1 3
+
+1 4
+
+1 5
+
+5 6
+Output
+2
+
+4 5
+
+Note
+ In the first sample, if you shut down road 5 , all cities can still reach a police station within k = 4 kilometers.
+ In the second sample, although this is the only largest valid set of roads that can be shut down, you can print either 4 5 or 5 4 in the second line."
+https://codeforces.com/problemset/problem/343/D,"['data structures', 'dfs and similar', 'graphs', 'trees']",PROGRAMMING,2100,343,D,"Description:
+
+
+Mad scientist Mike has constructed a rooted tree, which consists of n vertices. Each vertex is a reservoir which can be either empty or filled with water.
+ The vertices of the tree are numbered from 1 to n with the root at vertex 1. For each vertex, the reservoirs of its children are located below the reservoir of this vertex, and the vertex is connected with each of the children by a pipe through which water can flow downwards.
+ Mike wants to do the following operations with the tree:
+ Fill vertex v with water. Then v and all its children are filled with water. Empty vertex v . Then v and all its ancestors are emptied. Determine whether vertex v is filled with water at the moment.
+ Mike has already compiled a full list of operations that he wants to perform in order. Before experimenting with the tree Mike decided to run the list through a simulation. Help Mike determine what results will he get after performing all the operations.
+
+Input
+ The first line of the input contains an integer n ( 1 ≤ n ≤ 500000 ) — the number of vertices in the tree. Each of the following n - 1 lines contains two space-separated numbers a i , b i ( 1 ≤ a i , b i ≤ n , a i ≠ b i ) — the edges of the tree.
+ The next line contains a number q ( 1 ≤ q ≤ 500000 ) — the number of operations to perform. Each of the following q lines contains two space-separated numbers c i ( 1 ≤ c i ≤ 3 ), v i ( 1 ≤ v i ≤ n ), where c i is the operation type (according to the numbering given in the statement), and v i is the vertex on which the operation is performed.
+ It is guaranteed that the given graph is a tree.
+
+Output
+ For each type 3 operation print 1 on a separate line if the vertex is full, and 0 if the vertex is empty. Print the answers to queries in the order in which the queries are given in the input.
+
+Examples
+Input
+5
+
+1 2
+
+5 1
+
+2 3
+
+4 2
+
+12
+
+1 1
+
+2 3
+
+3 1
+
+3 2
+
+3 3
+
+3 4
+
+1 2
+
+2 4
+
+3 1
+
+3 3
+
+3 4
+
+3 5
+Output
+0
+
+0
+
+0
+
+1
+
+0
+
+1
+
+0
+
+1"
+https://codeforces.com/problemset/problem/620/E,"['bitmasks', 'data structures', 'trees']",PROGRAMMING,2100,620,E,"Description:
+
+
+The New Year holidays are over, but Resha doesn't want to throw away the New Year tree. He invited his best friends Kerim and Gural to help him to redecorate the New Year tree.
+ The New Year tree is an undirected tree with n vertices and root in the vertex 1 .
+ You should process the queries of the two types:
+ Change the colours of all vertices in the subtree of the vertex v to the colour c . Find the number of different colours in the subtree of the vertex v .
+
+Input
+ The first line contains two integers n , m ( 1 ≤ n , m ≤ 4·10 5 ) — the number of vertices in the tree and the number of the queries.
+ The second line contains n integers c i ( 1 ≤ c i ≤ 60 ) — the colour of the i -th vertex.
+ Each of the next n - 1 lines contains two integers x j , y j ( 1 ≤ x j , y j ≤ n ) — the vertices of the j -th edge. It is guaranteed that you are given correct undirected tree.
+ The last m lines contains the description of the queries. Each description starts with the integer t k ( 1 ≤ t k ≤ 2 ) — the type of the k -th query. For the queries of the first type then follows two integers v k , c k ( 1 ≤ v k ≤ n , 1 ≤ c k ≤ 60 ) — the number of the vertex whose subtree will be recoloured with the colour c k . For the queries of the second type then follows integer v k ( 1 ≤ v k ≤ n ) — the number of the vertex for which subtree you should find the number of different colours.
+
+Output
+ For each query of the second type print the integer a — the number of different colours in the subtree of the vertex given in the query.
+ Each of the numbers should be printed on a separate line in order of query appearing in the input.
+
+Examples
+Input
+7 10
+
+1 1 1 1 1 1 1
+
+1 2
+
+1 3
+
+1 4
+
+3 5
+
+3 6
+
+3 7
+
+1 3 2
+
+2 1
+
+1 4 3
+
+2 1
+
+1 2 5
+
+2 1
+
+1 6 4
+
+2 1
+
+2 2
+
+2 3
+Output
+2
+
+3
+
+4
+
+5
+
+1
+
+2
+Input
+23 30
+
+1 2 2 6 5 3 2 1 1 1 2 4 5 3 4 4 3 3 3 3 3 4 6
+
+1 2
+
+1 3
+
+1 4
+
+2 5
+
+2 6
+
+3 7
+
+3 8
+
+4 9
+
+4 10
+
+4 11
+
+6 12
+
+6 13
+
+7 14
+
+7 15
+
+7 16
+
+8 17
+
+8 18
+
+10 19
+
+10 20
+
+10 21
+
+11 22
+
+11 23
+
+2 1
+
+2 5
+
+2 6
+
+2 7
+
+2 8
+
+2 9
+
+2 10
+
+2 11
+
+2 4
+
+1 12 1
+
+1 13 1
+
+1 14 1
+
+1 15 1
+
+1 16 1
+
+1 17 1
+
+1 18 1
+
+1 19 1
+
+1 20 1
+
+1 21 1
+
+1 22 1
+
+1 23 1
+
+2 1
+
+2 5
+
+2 6
+
+2 7
+
+2 8
+
+2 9
+
+2 10
+
+2 11
+
+2 4
+Output
+6
+
+1
+
+3
+
+3
+
+2
+
+1
+
+2
+
+3
+
+5
+
+5
+
+1
+
+2
+
+2
+
+1
+
+1
+
+1
+
+2
+
+3"
+https://codeforces.com/problemset/problem/455/C,"['dfs and similar', 'dp', 'dsu', 'ternary search', 'trees']",PROGRAMMING,2100,455,C,"Description:
+
+
+Andrew plays a game called ""Civilization"". Dima helps him.
+ The game has n cities and m bidirectional roads. The cities are numbered from 1 to n . Between any pair of cities there either is a single (unique) path, or there is no path at all. A path is such a sequence of distinct cities v 1 , v 2 , ..., v k , that there is a road between any contiguous cities v i and v i + 1 ( 1 ≤ i < k ). The length of the described path equals to ( k - 1) . We assume that two cities lie in the same region if and only if, there is a path connecting these two cities.
+ During the game events of two types take place:
+ Andrew asks Dima about the length of the longest path in the region where city x lies. Andrew asks Dima to merge the region where city x lies with the region where city y lies. If the cities lie in the same region, then no merging is needed. Otherwise, you need to merge the regions as follows: choose a city from the first region, a city from the second region and connect them by a road so as to minimize the length of the longest path in the resulting region. If there are multiple ways to do so, you are allowed to choose any of them.
+ Dima finds it hard to execute Andrew's queries, so he asks you to help him. Help Dima.
+
+Input
+ The first line contains three integers n , m , q ( 1 ≤ n ≤ 3·10 5 ; 0 ≤ m < n ; 1 ≤ q ≤ 3·10 5 ) — the number of cities, the number of the roads we already have and the number of queries, correspondingly.
+ Each of the following m lines contains two integers, a i and b i ( a i ≠ b i ;  1 ≤ a i , b i ≤ n ). These numbers represent the road between cities a i and b i . There can be at most one road between two cities.
+ Each of the following q lines contains one of the two events in the following format:
+ 1  x i . It is the request Andrew gives to Dima to find the length of the maximum path in the region that contains city x i ( 1 ≤ x i ≤ n ). 2  x i  y i . It is the request Andrew gives to Dima to merge the region that contains city x i and the region that contains city y i ( 1 ≤ x i , y i ≤ n ). Note, that x i can be equal to y i .
+
+Output
+ For each event of the first type print the answer on a separate line.
+
+Examples
+Input
+6 0 6
+
+2 1 2
+
+2 3 4
+
+2 5 6
+
+2 3 2
+
+2 5 3
+
+1 1
+Output
+4"
+https://codeforces.com/problemset/problem/1/C,"['geometry', 'math']",PROGRAMMING,2100,1,C,"Description:
+
+
+Nowadays all circuses in Berland have a round arena with diameter 13 meters, but in the past things were different.
+ In Ancient Berland arenas in circuses were shaped as a regular (equiangular) polygon, the size and the number of angles could vary from one circus to another. In each corner of the arena there was a special pillar, and the rope strung between the pillars marked the arena edges.
+ Recently the scientists from Berland have discovered the remains of the ancient circus arena. They found only three pillars, the others were destroyed by the time.
+ You are given the coordinates of these three pillars. Find out what is the smallest area that the arena could have.
+
+Input
+ The input file consists of three lines, each of them contains a pair of numbers –– coordinates of the pillar. Any coordinate doesn't exceed 1000 by absolute value, and is given with at most six digits after decimal point.
+
+Output
+ Output the smallest possible area of the ancient arena. This number should be accurate to at least 6 digits after the decimal point. It's guaranteed that the number of angles in the optimal polygon is not larger than 100.
+
+Examples
+Input
+0.000000 0.000000
+
+1.000000 1.000000
+
+0.000000 1.000000
+Output
+1.00000000"
+https://codeforces.com/problemset/problem/837/D,"['dp', 'math']",PROGRAMMING,2100,837,D,"Description:
+
+
+Let's call the roundness of the number the number of zeros to which it ends.
+ You have an array of n numbers. You need to choose a subset of exactly k numbers so that the roundness of the product of the selected numbers will be maximum possible.
+
+Input
+ The first line contains two integer numbers n and k ( 1 ≤ n ≤ 200, 1 ≤ k ≤ n ).
+ The second line contains n space-separated integer numbers a 1 , a 2 , ..., a n ( 1 ≤ a i ≤ 10 18 ).
+
+Output
+ Print maximal roundness of product of the chosen subset of length k .
+
+Examples
+Input
+3 2
+
+50 4 20
+Output
+3
+Input
+5 3
+
+15 16 3 25 9
+Output
+3
+Input
+3 3
+
+9 77 13
+Output
+0
+
+Note
+ In the first example there are 3 subsets of 2 numbers. [50, 4] has product 200 with roundness  2 , [4, 20] — product 80 , roundness  1 , [50, 20] — product 1000 , roundness  3 .
+ In the second example subset [15, 16, 25] has product 6000 , roundness  3 .
+ In the third example all subsets has product with roundness  0 ."
+https://codeforces.com/problemset/problem/1006/F,"['bitmasks', 'brute force', 'dp', 'meet-in-the-middle']",PROGRAMMING,2100,1006,F,"Description:
+
+
+There is a rectangular grid of size  n × m . Each cell has a number written on it; the number on the cell (  i , j ) is  a i , j . Your task is to calculate the number of paths from the upper-left cell (  1 , 1 ) to the bottom-right cell (  n , m ) meeting the following constraints:
+ You can move to the right or to the bottom only. Formally, from the cell (  i , j ) you may move to the cell (  i , j + 1 ) or to the cell (  i + 1 , j ). The target cell can't be outside of the grid. The xor of all the numbers on the path from the cell (  1 , 1 ) to the cell (  n , m ) must be equal to  k ( xor operation is the bitwise exclusive OR, it is represented as ' ^ ' in Java or C++ and "" xor "" in Pascal).
+ Find the number of such paths in the given grid.
+
+Input
+ The first line of the input contains three integers  n ,  m and  k (  1 ≤ n , m ≤ 20 ,  0 ≤ k ≤ 10 18 ) — the height and the width of the grid, and the number  k .
+ The next  n lines contain  m integers each, the  j -th element in the  i -th line is  a i , j (  0 ≤ a i , j ≤ 10 18 ).
+
+Output
+ Print one integer — the number of paths from (  1 , 1 ) to (  n , m ) with xor sum equal to  k .
+
+Examples
+Input
+3 3 11
+
+2 1 5
+
+7 10 0
+
+12 6 4
+Output
+3
+Input
+3 4 2
+
+1 3 3 3
+
+0 3 3 2
+
+3 0 1 1
+Output
+5
+Input
+3 4 1000000000000000000
+
+1 3 3 3
+
+0 3 3 2
+
+3 0 1 1
+Output
+0
+
+Note
+ All the paths from the first example:
+ ( 1 , 1 ) → ( 2 , 1 ) → ( 3 , 1 ) → ( 3 , 2 ) → ( 3 , 3 ) ; ( 1 , 1 ) → ( 2 , 1 ) → ( 2 , 2 ) → ( 2 , 3 ) → ( 3 , 3 ) ; ( 1 , 1 ) → ( 1 , 2 ) → ( 2 , 2 ) → ( 3 , 2 ) → ( 3 , 3 ) .
+ All the paths from the second example:
+ ( 1 , 1 ) → ( 2 , 1 ) → ( 3 , 1 ) → ( 3 , 2 ) → ( 3 , 3 ) → ( 3 , 4 ) ; ( 1 , 1 ) → ( 2 , 1 ) → ( 2 , 2 ) → ( 3 , 2 ) → ( 3 , 3 ) → ( 3 , 4 ) ; ( 1 , 1 ) → ( 2 , 1 ) → ( 2 , 2 ) → ( 2 , 3 ) → ( 2 , 4 ) → ( 3 , 4 ) ; ( 1 , 1 ) → ( 1 , 2 ) → ( 2 , 2 ) → ( 2 , 3 ) → ( 3 , 3 ) → ( 3 , 4 ) ; ( 1 , 1 ) → ( 1 , 2 ) → ( 1 , 3 ) → ( 2 , 3 ) → ( 3 , 3 ) → ( 3 , 4 ) ."
+https://codeforces.com/problemset/problem/1450/C1,"['constructive algorithms', 'math']",PROGRAMMING,2100,1450,C1,"Description:
+
+
+The only difference between the easy and hard versions is that tokens of type O do not appear in the input of the easy version.
+ Errichto gave Monogon the following challenge in order to intimidate him from taking his top contributor spot on Codeforces.
+ In a Tic-Tac-Toe grid, there are  n rows and  n columns. Each cell of the grid is either empty or contains a token. There are two types of tokens: X and O . If there exist three tokens of the same type consecutive in a row or column, it is a winning configuration. Otherwise, it is a draw configuration.
+ The patterns in the first row are winning configurations. The patterns in the second row are draw configurations.
+ In an operation, you can change an X to an O , or an O to an X . Let  k denote the total number of tokens in the grid. Your task is to make the grid a draw in at most  ⌊ k 3 ⌋ (rounding down) operations.
+ You are not required to minimize the number of operations.
+
+Input
+ The first line contains a single integer  t (  1 ≤ t ≤ 100 ) — the number of test cases.
+ The first line of each test case contains a single integer  n (  1 ≤ n ≤ 300 ) — the size of the grid.
+ The following  n lines each contain a string of  n characters, denoting the initial grid. The character in the  i -th row and  j -th column is ' . ' if the cell is empty, or it is the type of token in the cell: ' X ' or ' O '.
+ It is guaranteed that not all cells are empty.
+ In the easy version, the character ' O ' does not appear in the input.
+ The sum of  n across all test cases does not exceed  300 .
+
+Output
+ For each test case, print the state of the grid after applying the operations.
+ We have proof that a solution always exists. If there are multiple solutions, print any.
+
+Example
+Input
+3
+3
+.X.
+XXX
+.X.
+6
+XX.XXX
+XXXXXX
+XXX.XX
+XXXXXX
+XX.X.X
+XXXXXX
+5
+XXX.X
+.X..X
+XXX.X
+..X..
+..X..
+Output
+.X.
+XOX
+.X.
+XX.XXO
+XOXXOX
+OXX.XX
+XOOXXO
+XX.X.X
+OXXOXX
+XOX.X
+.X..X
+XXO.O
+..X..
+..X..
+
+Note
+ In the first test case, there are initially three ' X ' consecutive in the second row and the second column. By changing the middle token to ' O ' we make the grid a draw, and we only changed  1 ≤ ⌊ 5 / 3 ⌋ token.
+ In the second test case, we change only  9 ≤ ⌊ 32 / 3 ⌋ tokens, and there does not exist any three ' X ' or ' O ' consecutive in a row or column, so it is a draw.
+ In the third test case, we change only  3 ≤ ⌊ 12 / 3 ⌋ tokens, and the resulting grid is a draw."

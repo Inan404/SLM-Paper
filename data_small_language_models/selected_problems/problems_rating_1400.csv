@@ -1,0 +1,694 @@
+url,tags,type,rating,contest_id,index,statement
+https://codeforces.com/problemset/problem/279/B,"['binary search', 'brute force', 'implementation', 'two pointers']",PROGRAMMING,1400,279,B,"Description:
+
+
+When Valera has got some free time, he goes to the library to read some books. Today he's got t free minutes to read. That's why Valera took n books in the library and for each book he estimated the time he is going to need to read it. Let's number the books by integers from 1 to n . Valera needs a i minutes to read the i -th book.
+ Valera decided to choose an arbitrary book with number i and read the books one by one, starting from this book. In other words, he will first read book number i , then book number i + 1 , then book number i + 2 and so on. He continues the process until he either runs out of the free time or finishes reading the n -th book. Valera reads each book up to the end, that is, he doesn't start reading the book if he doesn't have enough free time to finish reading it.
+ Print the maximum number of books Valera can read.
+
+Input
+ The first line contains two integers n and t  (1 ≤ n ≤ 10 5 ; 1 ≤ t ≤ 10 9 ) — the number of books and the number of free minutes Valera's got. The second line contains a sequence of n integers a 1 , a 2 , ..., a n  (1 ≤ a i ≤ 10 4 ) , where number a i shows the number of minutes that the boy needs to read the i -th book.
+
+Output
+ Print a single integer — the maximum number of books Valera can read.
+
+Examples
+Input
+4 5
+
+3 1 2 1
+Output
+3
+Input
+3 3
+
+2 2 3
+Output
+1"
+https://codeforces.com/problemset/problem/520/B,"['dfs and similar', 'graphs', 'greedy', 'implementation', 'math', 'shortest paths']",PROGRAMMING,1400,520,B,"Description:
+
+
+Vasya has found a strange device. On the front panel of a device there are: a red button, a blue button and a display showing some positive integer. After clicking the red button, device multiplies the displayed number by two. After clicking the blue button, device subtracts one from the number on the display. If at some point the number stops being positive, the device breaks down. The display can show arbitrarily large numbers. Initially, the display shows number n .
+ Bob wants to get number m on the display. What minimum number of clicks he has to make in order to achieve this result?
+
+Input
+ The first and the only line of the input contains two distinct integers n and m ( 1 ≤ n , m ≤ 10 4 ), separated by a space .
+
+Output
+ Print a single number — the minimum number of times one needs to push the button required to get the number m out of number n .
+
+Examples
+Input
+4 6
+Output
+2
+Input
+10 1
+Output
+9
+
+Note
+ In the first example you need to push the blue button once, and then push the red button once.
+ In the second example, doubling the number is unnecessary, so we need to push the blue button nine times."
+https://codeforces.com/problemset/problem/489/C,"['dp', 'greedy', 'implementation']",PROGRAMMING,1400,489,C,"Description:
+
+
+You have a positive integer m and a non-negative integer s . Your task is to find the smallest and the largest of the numbers that have length m and sum of digits s . The required numbers should be non-negative integers written in the decimal base without leading zeroes.
+
+Input
+ The single line of the input contains a pair of integers m , s ( 1 ≤ m ≤ 100, 0 ≤ s ≤ 900 ) — the length and the sum of the digits of the required numbers.
+
+Output
+ In the output print the pair of the required non-negative integer numbers — first the minimum possible number, then — the maximum possible number. If no numbers satisfying conditions required exist, print the pair of numbers "" -1 -1 "" (without the quotes).
+
+Examples
+Input
+2 15
+Output
+69 96
+Input
+3 0
+Output
+-1 -1"
+https://codeforces.com/problemset/problem/1526/B,"['dp', 'math', 'number theory']",PROGRAMMING,1400,1526,B,"Description:
+
+
+You are given an integer  x . Can you make  x by summing up some number of  11 , 111 , 1111 , 11111 , … ? (You can use any number among them any number of times).
+ For instance,
+ 33 = 11 + 11 + 11 144 = 111 + 11 + 11 + 11
+
+Input
+ The first line of input contains a single integer  t   ( 1 ≤ t ≤ 10000 ) — the number of testcases.
+ The first and only line of each testcase contains a single integer  x   ( 1 ≤ x ≤ 10 9 ) — the number you have to make.
+
+Output
+ For each testcase, you should output a single string. If you can make  x , output ""YES"" (without quotes). Otherwise, output ""NO"".
+ You can print each letter of ""YES"" and ""NO"" in any case (upper or lower).
+
+Example
+Input
+3
+33
+144
+69
+Output
+YES
+YES
+NO
+
+Note
+ Ways to make  33 and  144 were presented in the statement. It can be proved that we can't present  69 this way."
+https://codeforces.com/problemset/problem/698/A,['dp'],PROGRAMMING,1400,698,A,"Description:
+
+
+Vasya has n days of vacations! So he decided to improve his IT skills and do sport. Vasya knows the following information about each of this n days: whether that gym opened and whether a contest was carried out in the Internet on that day. For the i -th day there are four options:
+ on this day the gym is closed and the contest is not carried out; on this day the gym is closed and the contest is carried out; on this day the gym is open and the contest is not carried out; on this day the gym is open and the contest is carried out.
+ On each of days Vasya can either have a rest or write the contest (if it is carried out on this day), or do sport (if the gym is open on this day).
+ Find the minimum number of days on which Vasya will have a rest (it means, he will not do sport and write the contest at the same time). The only limitation that Vasya has — he does not want to do the same activity on two consecutive days: it means, he will not do sport on two consecutive days, and write the contest on two consecutive days .
+
+Input
+ The first line contains a positive integer n ( 1 ≤ n ≤ 100 ) — the number of days of Vasya's vacations.
+ The second line contains the sequence of integers a 1 , a 2 , ..., a n ( 0 ≤ a i ≤ 3 ) separated by space, where:
+ a i equals 0, if on the i -th day of vacations the gym is closed and the contest is not carried out; a i equals 1, if on the i -th day of vacations the gym is closed, but the contest is carried out; a i equals 2, if on the i -th day of vacations the gym is open and the contest is not carried out; a i equals 3, if on the i -th day of vacations the gym is open and the contest is carried out.
+
+Output
+ Print the minimum possible number of days on which Vasya will have a rest. Remember that Vasya refuses:
+ to do sport on any two consecutive days, to write the contest on any two consecutive days.
+
+Examples
+Input
+4
+
+1 3 2 0
+Output
+2
+Input
+7
+
+1 3 3 2 1 2 3
+Output
+0
+Input
+2
+
+2 2
+Output
+1
+
+Note
+ In the first test Vasya can write the contest on the day number 1 and do sport on the day number 3. Thus, he will have a rest for only 2 days.
+ In the second test Vasya should write contests on days number 1, 3, 5 and 7, in other days do sport. Thus, he will not have a rest for a single day.
+ In the third test Vasya can do sport either on a day number 1 or number 2. He can not do sport in two days, because it will be contrary to the his limitation. Thus, he will have a rest for only one day."
+https://codeforces.com/problemset/problem/479/C,"['greedy', 'sortings']",PROGRAMMING,1400,479,C,"Description:
+
+
+Student Valera is an undergraduate student at the University. His end of term exams are approaching and he is to pass exactly n exams. Valera is a smart guy, so he will be able to pass any exam he takes on his first try. Besides, he can take several exams on one day, and in any order.
+ According to the schedule, a student can take the exam for the i -th subject on the day number a i . However, Valera has made an arrangement with each teacher and the teacher of the i -th subject allowed him to take an exam before the schedule time on day b i ( b i < a i ). Thus, Valera can take an exam for the i -th subject either on day a i , or on day b i . All the teachers put the record of the exam in the student's record book on the day of the actual exam and write down the date of the mark as number a i .
+ Valera believes that it would be rather strange if the entries in the record book did not go in the order of non-decreasing date. Therefore Valera asks you to help him. Find the minimum possible value of the day when Valera can take the final exam if he takes exams so that all the records in his record book go in the order of non-decreasing date.
+
+Input
+ The first line contains a single positive integer n ( 1 ≤ n ≤ 5000 ) — the number of exams Valera will take.
+ Each of the next n lines contains two positive space-separated integers a i and b i ( 1 ≤ b i < a i ≤ 10 9 ) — the date of the exam in the schedule and the early date of passing the i -th exam, correspondingly.
+
+Output
+ Print a single integer — the minimum possible number of the day when Valera can take the last exam if he takes all the exams so that all the records in his record book go in the order of non-decreasing date.
+
+Examples
+Input
+3
+
+5 2
+
+3 1
+
+4 2
+Output
+2
+Input
+3
+
+6 1
+
+5 2
+
+4 3
+Output
+6
+
+Note
+ In the first sample Valera first takes an exam in the second subject on the first day (the teacher writes down the schedule date that is 3). On the next day he takes an exam in the third subject (the teacher writes down the schedule date, 4), then he takes an exam in the first subject (the teacher writes down the mark with date 5). Thus, Valera takes the last exam on the second day and the dates will go in the non-decreasing order: 3, 4, 5.
+ In the second sample Valera first takes an exam in the third subject on the fourth day. Then he takes an exam in the second subject on the fifth day. After that on the sixth day Valera takes an exam in the first subject."
+https://codeforces.com/problemset/problem/1324/D,"['binary search', 'data structures', 'sortings', 'two pointers']",PROGRAMMING,1400,1324,D,"Description:
+
+
+The next lecture in a high school requires two topics to be discussed. The  i -th topic is interesting by  a i units for the teacher and by  b i units for the students.
+ The pair of topics  i and  j (  i < j ) is called good if  a i + a j > b i + b j (i.e. it is more interesting for the teacher).
+ Your task is to find the number of good pairs of topics.
+
+Input
+ The first line of the input contains one integer  n (  2 ≤ n ≤ 2 ⋅ 10 5 ) — the number of topics.
+ The second line of the input contains  n integers  a 1 , a 2 , … , a n (  1 ≤ a i ≤ 10 9 ), where  a i is the interestingness of the  i -th topic for the teacher.
+ The third line of the input contains  n integers  b 1 , b 2 , … , b n (  1 ≤ b i ≤ 10 9 ), where  b i is the interestingness of the  i -th topic for the students.
+
+Output
+ Print one integer — the number of good pairs of topic.
+
+Examples
+Input
+5
+4 8 2 6 2
+4 5 4 1 3
+Output
+7
+Input
+4
+1 3 2 4
+1 3 2 4
+Output
+0"
+https://codeforces.com/problemset/problem/1195/C,['dp'],PROGRAMMING,1400,1195,C,"Description:
+
+
+Finally, a basketball court has been opened in SIS, so Demid has decided to hold a basketball exercise session.  2 ⋅ n students have come to Demid's exercise session, and he lined up them into two rows of the same size (there are exactly  n people in each row). Students are numbered from  1 to  n in each row in order from left to right.
+ 
+ Now Demid wants to choose a team to play basketball. He will choose players from left to right, and the index of each chosen player (excluding the first one taken ) will be strictly greater than the index of the previously chosen player. To avoid giving preference to one of the rows, Demid chooses students in such a way that no consecutive chosen students belong to the same row. The first student can be chosen among all  2 n students (there are no additional constraints), and a team can consist of any number of students.
+ Demid thinks, that in order to compose a perfect team, he should choose students in such a way, that the total height of all chosen students is maximum possible. Help Demid to find the maximum possible total height of players in a team he can choose.
+
+Input
+ The first line of the input contains a single integer  n (  1 ≤ n ≤ 10 5 ) — the number of students in each row.
+ The second line of the input contains  n integers  h 1 , 1 , h 1 , 2 , … , h 1 , n (  1 ≤ h 1 , i ≤ 10 9 ), where  h 1 , i is the height of the  i -th student in the first row.
+ The third line of the input contains  n integers  h 2 , 1 , h 2 , 2 , … , h 2 , n (  1 ≤ h 2 , i ≤ 10 9 ), where  h 2 , i is the height of the  i -th student in the second row.
+
+Output
+ Print a single integer — the maximum possible total height of players in a team Demid can choose.
+
+Examples
+Input
+5
+9 3 5 7 3
+5 8 1 4 5
+Output
+29
+Input
+3
+1 2 9
+10 1 1
+Output
+19
+Input
+1
+7
+4
+Output
+7
+
+Note
+ In the first example Demid can choose the following team as follows:
+ 
+ In the second example Demid can choose the following team as follows:
+ "
+https://codeforces.com/problemset/problem/515/C,"['greedy', 'math', 'sortings']",PROGRAMMING,1400,515,C,"Description:
+
+
+Drazil is playing a math game with Varda.
+ Let's define  for positive integer x as a product of factorials of its digits. For example,  .
+ First, they choose a decimal number a consisting of n digits that contains at least one digit larger than 1 . This number may possibly start with leading zeroes. Then they should find maximum positive number x satisfying following two conditions:
+ 1. x doesn't contain neither digit 0 nor digit 1 .
+ 2.  =  .
+ Help friends find such number.
+
+Input
+ The first line contains an integer n ( 1 ≤ n ≤ 15 ) — the number of digits in a .
+ The second line contains n digits of a . There is at least one digit in a that is larger than 1 . Number a may possibly contain leading zeroes.
+
+Output
+ Output a maximum possible integer satisfying the conditions above. There should be no zeroes and ones in this number decimal representation.
+
+Examples
+Input
+4
+
+1234
+Output
+33222
+Input
+3
+
+555
+Output
+555
+
+Note
+ In the first case,"
+https://codeforces.com/problemset/problem/1348/B,"['constructive algorithms', 'data structures', 'greedy', 'sortings']",PROGRAMMING,1400,1348,B,"Description:
+
+
+Phoenix loves beautiful arrays. An array is beautiful if all its subarrays of length  k have the same sum. A subarray of an array is any sequence of consecutive elements.
+ Phoenix currently has an array  a of length  n . He wants to insert some number of integers, possibly zero, into his array such that it becomes beautiful. The inserted integers must be between  1 and  n inclusive. Integers may be inserted anywhere (even before the first or after the last element), and he is not trying to minimize the number of inserted integers.
+
+Input
+ The input consists of multiple test cases. The first line contains an integer  t (  1 ≤ t ≤ 50 ) — the number of test cases.
+ The first line of each test case contains two integers  n and  k (  1 ≤ k ≤ n ≤ 100 ).
+ The second line of each test case contains  n space-separated integers (  1 ≤ a i ≤ n ) — the array that Phoenix currently has. This array may or may not be already beautiful.
+
+Output
+ For each test case, if it is impossible to create a beautiful array, print -1 . Otherwise, print two lines.
+ The first line should contain the length of the beautiful array  m (  n ≤ m ≤ 10 4 ). You don't need to minimize  m .
+ The second line should contain  m space-separated integers (  1 ≤ b i ≤ n ) — a beautiful array that Phoenix can obtain after inserting some, possibly zero, integers into his array  a . You may print integers that weren't originally in array  a .
+ If there are multiple solutions, print any. It's guaranteed that if we can make array  a beautiful, we can always make it with resulting length no more than  10 4 .
+
+Example
+Input
+4
+4 2
+1 2 2 1
+4 3
+1 2 2 1
+3 2
+1 2 3
+4 4
+4 3 4 2
+Output
+5
+1 2 1 2 1
+4
+1 2 2 1
+-1
+7
+4 3 2 1 4 3 2
+
+Note
+ In the first test case, we can make array  a beautiful by inserting the integer  1 at index  3 (in between the two existing  2 s). Now, all subarrays of length  k = 2 have the same sum  3 . There exists many other possible solutions, for example:
+ 2 , 1 , 2 , 1 , 2 , 1 1 , 2 , 1 , 2 , 1 , 2
+ In the second test case, the array is already beautiful: all subarrays of length  k = 3 have the same sum  5 .
+ In the third test case, it can be shown that we cannot insert numbers to make array  a beautiful.
+ In the fourth test case, the array  b shown is beautiful and all subarrays of length  k = 4 have the same sum  10 . There exist other solutions also."
+https://codeforces.com/problemset/problem/1201/C,"['binary search', 'greedy', 'math', 'sortings']",PROGRAMMING,1400,1201,C,"Description:
+
+
+You are given an array  a of  n integers, where  n is odd. You can make the following operation with it:
+ Choose one of the elements of the array (for example  a i ) and increase it by  1 (that is, replace it with  a i + 1 ).
+ You want to make the median of the array the largest possible using at most  k operations.
+ The median of the odd-sized array is the middle element after the array is sorted in non-decreasing order. For example, the median of the array  [ 1 , 5 , 2 , 3 , 5 ] is  3 .
+
+Input
+ The first line contains two integers  n and  k (  1 ≤ n ≤ 2 ⋅ 10 5 ,  n is odd,  1 ≤ k ≤ 10 9 ) — the number of elements in the array and the largest number of operations you can make.
+ The second line contains  n integers  a 1 , a 2 , … , a n (  1 ≤ a i ≤ 10 9 ).
+
+Output
+ Print a single integer — the maximum possible median after the operations.
+
+Examples
+Input
+3 2
+1 3 5
+Output
+5
+Input
+5 5
+1 2 1 1 1
+Output
+3
+Input
+7 7
+4 1 2 4 3 4 4
+Output
+5
+
+Note
+ In the first example, you can increase the second element twice. Than array will be  [ 1 , 5 , 5 ] and it's median is  5 .
+ In the second example, it is optimal to increase the second number and than increase third and fifth. This way the answer is  3 .
+ In the third example, you can make four operations: increase first, fourth, sixth, seventh element. This way the array will be  [ 5 , 1 , 2 , 5 , 3 , 5 , 5 ] and the median will be  5 ."
+https://codeforces.com/problemset/problem/1370/C,"['games', 'math', 'number theory']",PROGRAMMING,1400,1370,C,"Description:
+
+
+Ashishgup and FastestFinger play a game.
+ They start with a number  n and play in turns. In each turn, a player can make any one of the following moves:
+ Divide  n by any of its odd divisors greater than  1 . Subtract  1 from  n if  n is greater than  1 .
+ Divisors of a number include the number itself.
+ The player who is unable to make a move loses the game.
+ Ashishgup moves first. Determine the winner of the game if both of them play optimally.
+
+Input
+ The first line contains a single integer  t (  1 ≤ t ≤ 100 )  — the number of test cases. The description of the test cases follows.
+ The only line of each test case contains a single integer  —  n (  1 ≤ n ≤ 10 9 ).
+
+Output
+ For each test case, print "" Ashishgup "" if he wins, and "" FastestFinger "" otherwise (without quotes).
+
+Example
+Input
+7
+1
+2
+3
+4
+5
+6
+12
+Output
+FastestFinger
+Ashishgup
+Ashishgup
+FastestFinger
+Ashishgup
+FastestFinger
+Ashishgup
+
+Note
+ In the first test case,  n = 1 , Ashishgup cannot make a move. He loses.
+ In the second test case,  n = 2 , Ashishgup subtracts  1 on the first move. Now  n = 1 , FastestFinger cannot make a move, so he loses.
+ In the third test case,  n = 3 , Ashishgup divides by  3 on the first move. Now  n = 1 , FastestFinger cannot make a move, so he loses.
+ In the last test case,  n = 12 , Ashishgup divides it by  3 . Now  n = 4 , FastestFinger is forced to subtract  1 , and Ashishgup gets  3 , so he wins by dividing it by  3 ."
+https://codeforces.com/problemset/problem/507/B,"['geometry', 'math']",PROGRAMMING,1400,507,B,"Description:
+
+
+Amr loves Geometry. One day he came up with a very interesting problem.
+ Amr has a circle of radius r and center in point ( x , y ) . He wants the circle center to be in new position ( x ', y ') .
+ In one step Amr can put a pin to the border of the circle in a certain point, then rotate the circle around that pin by any angle and finally remove the pin.
+ Help Amr to achieve his goal in minimum number of steps.
+
+Input
+ Input consists of 5 space-separated integers r , x , y , x '  y ' ( 1 ≤ r ≤ 10 5 , - 10 5 ≤ x , y , x ', y ' ≤ 10 5 ), circle radius, coordinates of original center of the circle and coordinates of destination center of the circle respectively.
+
+Output
+ Output a single integer — minimum number of steps required to move the center of the circle to the destination point.
+
+Examples
+Input
+2 0 0 0 4
+Output
+1
+Input
+1 1 1 4 4
+Output
+3
+Input
+4 5 6 5 6
+Output
+0
+
+Note
+ In the first sample test the optimal way is to put a pin at point (0, 2) and rotate the circle by 180 degrees counter-clockwise (or clockwise, no matter).
+ "
+https://codeforces.com/problemset/problem/1374/D,"['math', 'sortings', 'two pointers']",PROGRAMMING,1400,1374,D,"Description:
+
+
+You are given an array  a consisting of  n positive integers.
+ Initially, you have an integer  x = 0 . During one move, you can do one of the following two operations:
+ Choose exactly one   i from  1 to  n and increase  a i by  x (  a i := a i + x ), then increase  x by  1 (  x := x + 1 ). Just increase  x by  1 (  x := x + 1 ).
+ The first operation can be applied no more than once to each  i from  1 to  n .
+ Your task is to find the minimum number of moves required to obtain such an array that each its element is divisible by   k (the value  k is given).
+ You have to answer  t independent test cases.
+
+Input
+ The first line of the input contains one integer  t (  1 ≤ t ≤ 2 ⋅ 10 4 ) — the number of test cases. Then  t test cases follow.
+ The first line of the test case contains two integers  n and  k (  1 ≤ n ≤ 2 ⋅ 10 5 ; 1 ≤ k ≤ 10 9 ) — the length of  a and the required divisior. The second line of the test case contains  n integers  a 1 , a 2 , … , a n (  1 ≤ a i ≤ 10 9 ), where  a i is the  i -th element of  a .
+ It is guaranteed that the sum of  n does not exceed  2 ⋅ 10 5 (  ∑ n ≤ 2 ⋅ 10 5 ).
+
+Output
+ For each test case, print the answer — the minimum number of moves required to obtain such an array that each its element is divisible by   k .
+
+Example
+Input
+5
+4 3
+1 2 1 3
+10 6
+8 7 1 8 3 7 5 10 8 9
+5 10
+20 100 50 20 100500
+10 25
+24 24 24 24 24 24 24 24 24 24
+8 8
+1 2 3 4 5 6 7 8
+Output
+6
+18
+0
+227
+8
+
+Note
+ Consider the first test case of the example:
+ x = 0 ,  a = [ 1 , 2 , 1 , 3 ] . Just increase  x ; x = 1 ,  a = [ 1 , 2 , 1 , 3 ] . Add  x to the second element and increase  x ; x = 2 ,  a = [ 1 , 3 , 1 , 3 ] . Add  x to the third element and increase  x ; x = 3 ,  a = [ 1 , 3 , 3 , 3 ] . Add  x to the fourth element and increase  x ; x = 4 ,  a = [ 1 , 3 , 3 , 6 ] . Just increase  x ; x = 5 ,  a = [ 1 , 3 , 3 , 6 ] . Add  x to the first element and increase  x ; x = 6 ,  a = [ 6 , 3 , 3 , 6 ] . We obtained the required array.
+ Note that you can't add  x to the same element more than once ."
+https://codeforces.com/problemset/problem/1285/C,"['brute force', 'math', 'number theory']",PROGRAMMING,1400,1285,C,"Description:
+
+
+Today, Osama gave Fadi an integer  X , and Fadi was wondering about the minimum possible value of  m a x ( a , b ) such that  L C M ( a , b ) equals  X . Both  a and  b should be positive integers.
+ L C M ( a , b ) is the smallest positive integer that is divisible by both  a and  b . For example,  L C M ( 6 , 8 ) = 24 ,  L C M ( 4 , 12 ) = 12 ,  L C M ( 2 , 3 ) = 6 .
+ Of course, Fadi immediately knew the answer. Can you be just like Fadi and find any such pair?
+
+Input
+ The first and only line contains an integer  X (  1 ≤ X ≤ 10 12 ).
+
+Output
+ Print two positive integers,  a and  b , such that the value of  m a x ( a , b ) is minimum possible and  L C M ( a , b ) equals  X . If there are several possible such pairs, you can print any.
+
+Examples
+Input
+2
+Output
+1 2
+Input
+6
+Output
+2 3
+Input
+4
+Output
+1 4
+Input
+1
+Output
+1 1"
+https://codeforces.com/problemset/problem/1363/B,"['implementation', 'strings']",PROGRAMMING,1400,1363,B,"Description:
+
+
+Shubham has a binary string  s . A binary string is a string containing only characters "" 0 "" and "" 1 "".
+ He can perform the following operation on the string any amount of times:
+ Select an index of the string, and flip the character at that index. This means, if the character was "" 0 "", it becomes "" 1 "", and vice versa.
+ A string is called good if it does not contain "" 010 "" or "" 101 "" as a subsequence  — for instance, "" 1001 "" contains "" 101 "" as a subsequence, hence it is not a good string, while "" 1000 "" doesn't contain neither "" 010 "" nor "" 101 "" as subsequences, so it is a good string.
+ What is the minimum number of operations he will have to perform, so that the string becomes good? It can be shown that with these operations we can make any string good.
+ A string  a is a subsequence of a string  b if  a can be obtained from  b by deletion of several (possibly, zero or all) characters.
+
+Input
+ The first line of the input contains a single integer  t   ( 1 ≤ t ≤ 100 ) — the number of test cases.
+ Each of the next  t lines contains a binary string  s   ( 1 ≤ | s | ≤ 1000 ) .
+
+Output
+ For every string, output the minimum number of operations required to make it good.
+
+Example
+Input
+7
+001
+100
+101
+010
+0
+1
+001100
+Output
+0
+0
+1
+1
+0
+0
+2
+
+Note
+ In test cases  1 ,  2 ,  5 ,  6 no operations are required since they are already good strings.
+ For the  3 rd test case: "" 001 "" can be achieved by flipping the first character  — and is one of the possible ways to get a good string.
+ For the  4 th test case: "" 000 "" can be achieved by flipping the second character  — and is one of the possible ways to get a good string.
+ For the  7 th test case: "" 000000 "" can be achieved by flipping the third and fourth characters  — and is one of the possible ways to get a good string."
+https://codeforces.com/problemset/problem/1365/C,"['constructive algorithms', 'data structures', 'greedy', 'implementation']",PROGRAMMING,1400,1365,C,"Description:
+
+
+After the mysterious disappearance of Ashish, his two favourite disciples Ishika and Hriday, were each left with one half of a secret message. These messages can each be represented by a permutation of size  n . Let's call them  a and  b .
+ Note that a permutation of  n elements is a sequence of numbers  a 1 , a 2 , … , a n , in which every number from  1 to  n appears exactly once.
+ The message can be decoded by an arrangement of sequence  a and  b , such that the number of matching pairs of elements between them is maximum. A pair of elements  a i and  b j is said to match if:
+ i = j , that is, they are at the same index. a i = b j
+ His two disciples are allowed to perform the following operation any number of times:
+ choose a number  k and cyclically shift one of the permutations to the left or right  k times.
+ A single cyclic shift to the left on any permutation  c is an operation that sets  c 1 := c 2 , c 2 := c 3 , … , c n := c 1 simultaneously. Likewise, a single cyclic shift to the right on any permutation  c is an operation that sets  c 1 := c n , c 2 := c 1 , … , c n := c n − 1 simultaneously.
+ Help Ishika and Hriday find the maximum number of pairs of elements that match after performing the operation any (possibly zero) number of times.
+
+Input
+ The first line of the input contains a single integer  n   ( 1 ≤ n ≤ 2 ⋅ 10 5 ) — the size of the arrays.
+ The second line contains  n integers  a 1 ,  a 2 , ...,  a n   ( 1 ≤ a i ≤ n ) — the elements of the first permutation.
+ The third line contains  n integers  b 1 ,  b 2 , ...,  b n   ( 1 ≤ b i ≤ n ) — the elements of the second permutation.
+
+Output
+ Print the maximum number of matching pairs of elements after performing the above operations some (possibly zero) times.
+
+Examples
+Input
+5
+1 2 3 4 5
+2 3 4 5 1
+Output
+5
+Input
+5
+5 4 3 2 1
+1 2 3 4 5
+Output
+1
+Input
+4
+1 3 2 4
+4 2 3 1
+Output
+2
+
+Note
+ For the first case:  b can be shifted to the right by  k = 1 . The resulting permutations will be  { 1 , 2 , 3 , 4 , 5 } and  { 1 , 2 , 3 , 4 , 5 } .
+ For the second case: The operation is not required. For all possible rotations of  a and  b , the number of matching pairs won't exceed  1 .
+ For the third case:  b can be shifted to the left by  k = 1 . The resulting permutations will be  { 1 , 3 , 2 , 4 } and  { 2 , 3 , 1 , 4 } . Positions  2 and  4 have matching pairs of elements. For all possible rotations of  a and  b , the number of matching pairs won't exceed  2 ."
+https://codeforces.com/problemset/problem/414/B,"['combinatorics', 'dp', 'number theory']",PROGRAMMING,1400,414,B,"Description:
+
+
+Mashmokh's boss, Bimokh, didn't like Mashmokh. So he fired him. Mashmokh decided to go to university and participate in ACM instead of finding a new job. He wants to become a member of Bamokh's team. In order to join he was given some programming tasks and one week to solve them. Mashmokh is not a very experienced programmer. Actually he is not a programmer at all. So he wasn't able to solve them. That's why he asked you to help him with these tasks. One of these tasks is the following.
+ A sequence of l integers b 1 , b 2 , ..., b l  (1 ≤ b 1 ≤ b 2 ≤ ... ≤ b l ≤ n ) is called good if each number divides (without a remainder) by the next number in the sequence. More formally  for all i  (1 ≤ i ≤ l - 1) .
+ Given n and k find the number of good sequences of length k . As the answer can be rather large print it modulo 1000000007  (10 9 + 7) .
+
+Input
+ The first line of input contains two space-separated integers n , k (1 ≤ n , k ≤ 2000) .
+
+Output
+ Output a single integer — the number of good sequences of length k modulo 1000000007  (10 9 + 7) .
+
+Examples
+Input
+3 2
+Output
+5
+Input
+6 4
+Output
+39
+Input
+2 1
+Output
+2
+
+Note
+ In the first sample the good sequences are: [1, 1], [2, 2], [3, 3], [1, 2], [1, 3] ."
+https://codeforces.com/problemset/problem/1350/B,"['dp', 'math', 'number theory']",PROGRAMMING,1400,1350,B,"Description:
+
+
+There are  n models in the shop numbered from  1 to  n , with sizes  s 1 , s 2 , … , s n .
+ Orac will buy some of the models and will arrange them in the order of increasing numbers (i.e. indices, but not sizes).
+ Orac thinks that the obtained arrangement is beatiful , if for any two adjacent models with indices  i j and  i j + 1 (note that  i j < i j + 1 , because Orac arranged them properly),  i j + 1 is divisible by  i j and  s i j < s i j + 1 .
+ For example, for  6 models with sizes  { 3 , 6 , 7 , 7 , 7 , 7 } , he can buy models with indices  1 ,  2 , and  6 , and the obtained arrangement will be beautiful. Also, note that the arrangement with exactly one model is also considered beautiful.
+ Orac wants to know the maximum number of models that he can buy, and he may ask you these queries many times.
+
+Input
+ The first line contains one integer  t  ( 1 ≤ t ≤ 100 ) : the number of queries.
+ Each query contains two lines. The first line contains one integer  n  ( 1 ≤ n ≤ 100  000 ) : the number of models in the shop, and the second line contains  n integers  s 1 , … , s n  ( 1 ≤ s i ≤ 10 9 ) : the sizes of models.
+ It is guaranteed that the total sum of  n is at most  100  000 .
+
+Output
+ Print  t lines, the  i -th of them should contain the maximum number of models that Orac can buy for the  i -th query.
+
+Example
+Input
+4
+4
+5 3 4 6
+7
+1 4 2 3 6 4 9
+5
+5 4 3 2 1
+1
+9
+Output
+2
+3
+1
+1
+
+Note
+ In the first query, for example, Orac can buy models with indices  2 and  4 , the arrangement will be beautiful because  4 is divisible by  2 and  6 is more than  3 . By enumerating, we can easily find that there are no beautiful arrangements with more than two models.
+ In the second query, Orac can buy models with indices  1 ,  3 , and  6 . By enumerating, we can easily find that there are no beautiful arrangements with more than three models.
+ In the third query, there are no beautiful arrangements with more than one model."
+https://codeforces.com/problemset/problem/1506/D,"['constructive algorithms', 'data structures', 'greedy']",PROGRAMMING,1400,1506,D,"Description:
+
+
+You are given an array  a of length  n consisting of integers. You can apply the following operation, consisting of several steps, on the array  a  zero or more times:
+ you select two different numbers in the array  a i and  a j ; you remove  i -th and  j -th elements from the array.
+ For example, if  n = 6 and  a = [ 1 , 6 , 1 , 1 , 4 , 4 ] , then you can perform the following sequence of operations:
+ select  i = 1 , j = 5 . The array  a becomes equal to  [ 6 , 1 , 1 , 4 ] ; select  i = 1 , j = 2 . The array  a becomes equal to  [ 1 , 4 ] .
+ What can be the minimum size of the array after applying some sequence of operations to it?
+
+Input
+ The first line contains a single integer  t (  1 ≤ t ≤ 10 4 ). Then  t test cases follow.
+ The first line of each test case contains a single integer  n (  1 ≤ n ≤ 2 ⋅ 10 5 ) is length of the array  a .
+ The second line of each test case contains  n integers  a 1 , a 2 , … , a n (  1 ≤ a i ≤ 10 9 ).
+ It is guaranteed that the sum of  n over all test cases does not exceed  2 ⋅ 10 5 .
+
+Output
+ For each test case, output the minimum possible size of the array after applying some sequence of operations to it.
+
+Example
+Input
+5
+6
+1 6 1 1 4 4
+2
+1 2
+2
+1 1
+5
+4 5 4 5 4
+6
+2 3 2 1 3 1
+Output
+0
+0
+2
+1
+0"
