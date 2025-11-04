@@ -1,41 +1,17 @@
-## SLM Paper - Initial Sketch
+# Works on Souza et al.’s SLM paper
 
-## Thoughts
+I mainly tried to observe why deep seek r1 14B was underperforming in code generation tasks in spite of  being a reasoning model and having the same number of parameters as the best performing phi model. My hypothesis was that the paper’s generalistic approach for all models led to a lot of parsing errors on the output of the deepseek model as a huge margin of the outputs from deepseek were flagged as ‘Not a Valid Answer’ .  DeepSeek-R1 14B's underperformance (23.9% pass@3) versus PHI-4 14B (63.6%) stems primarily from output serialization failures, the 35.5% "Not Answered" rate indicates the pipeline cannot extract valid code from verbose reasoning traces. I took multiple attemps on solving this, effectively increasing deepseek’s accuracy by minimizaing the mismatches between the parser and the model’s output and introducing smaller agents under deepseek to make the whole task modular.
 
-1. Why is deepseek underperforming ? 
-2. Has the model been fine tuned or wikll fine tuning perform better ? 
-3. Does longer solution correlate to good solve ? 
-4. Are thinking models generally udnerperforming ? 
-5. Does deepseek lack a proper parser in the pipeline ? 
-6. Why do we need Semantic Consistency here ? 
-7. What if we implement Langchnain Sequential chain ? 
+The measures I took:
 
-## 1
+ (1) **Enhanced Parsing**: Implement AST-aware code extraction with regex fallbacks to handle mixed reasoning-code outputs and reduce the 16.4% compilation error rate. Trial and error of prompts and tuning model temperature and hyperparameter. Properly distinguishing the reasoning block of the model and the output block.
 
-- Use phi-14b dataset with their exact methods to reproduce the results
+(2) **Agentic Decomposition**: Chain DeepSeek-R1's reasoning with PHI-4's code generation via an intermediate state encoder, leveraging reasoning strengths while mitigating code generation instability (64.2% vs 77.5% semantic consistency). 
 
-## 2
+(3) **Exact Reproduction**: Validate failures are methodology-agnostic by replicating Souza et al.'s protocol on the same 280 Codeforces problems with identical prompts. 
 
-- Test to see if deepseek having the same issue
+(4) **Distilled Models(Proposed, Not Implemented)** : Train lightweight student models on DeepSeek/Phi-14B reasoning trajectories to reduce output bloat (82.2 tokens average) while preserving correctness. This will leas us to get the accuracy found by Souza et al with smaller models fitting the purpose of the paper.
 
-## 3
+(5) **Recursive Error Correction( Proposed , not Implemented still)** : Implement verdict-driven iterative refinement loops where Codeforces failure signals (TLE, Runtime Error, Wrong Answer) inform correction prompts across up to 5 iterations. 
 
-- Try to parse deepseek differently
-
-## 4
-
-- Try Agentic method combining thinking and coding models
-
-## 5
-
-- Use distilled models of LLMs ?
-
-## 6
-
-- Try Error correction by recursive method ?
-
-# Work done till now :
-
-1. Reproduced the results (Phi - 14B - 1 Language) 
-2. Trying Changin Prompt for Deepseek —( Worsens Score) 
-3. Trying to utilize thinking models to prune syntax errors after generating (WIP)
+These interventions treat DeepSeek's failures as systems-level challenges rather than fundamental reasoning deficits.
